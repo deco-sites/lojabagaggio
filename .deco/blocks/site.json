@@ -1,1 +1,67 @@
-{"seo":{"type":"website","image":"https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/a5d890ba-e5b8-471e-8b77-7412c1d4fa56","title":"Storefront","jsonLDs":[],"noIndexing":false,"description":"Improve your page performance with deco.cx ","titleTemplate":"%s | deco.cx","descriptionTemplate":"%s | Deco.cx"},"theme":{"__resolveType":"Fashion theme"},"global":[{"__resolveType":"website/sections/Analytics/Analytics.tsx","dangerouslyRunOnMainThread":true},{"__resolveType":"algolia/sections/Analytics/Algolia.tsx"},{"__resolveType":"analytics/sections/Analytics/DecoAnalytics.tsx"},{"__resolveType":"htmx/sections/htmx.tsx"}],"routes":[{"__resolveType":"vtex/loaders/proxy.ts","includeSiteMap":[],"extraPathsToProxy":[],"includeScriptsToHead":{"includes":[{"__resolveType":"analytics/loaders/DecoAnalyticsScript.ts"}],"includePlausible":true}},{"__resolveType":"website/loaders/pages.ts"},{"__resolveType":"website/loaders/redirects.ts"}],"caching":{"directives":[]},"commerce":{"platform":"other"},"platform":"vtex","__resolveType":"site/apps/site.ts","firstByteThresholdMS":true,"abTesting":{"replaces":[],"includeScriptsToHead":{"includes":[]}}}
+{
+  "seo": {
+    "type": "website",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/d4ce349f-5ce4-42e1-8e73-b63207c5487d",
+    "title": "Malas, Mochilas, Acessórios de Viagem e mais | Bagaggio",
+    "jsonLDs": [],
+    "noIndexing": false,
+    "description": "Bagaggio: Mochilas a partir R$99,90, Bolsas até 50%OFF*, Malas 40%OFF* e Muito Mais. Clique e Confira!",
+    "titleTemplate": "%s | Bagaggio",
+    "descriptionTemplate": "%s | Bagaggio",
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/5138d355-4e63-49f6-bdfe-e5f09326638b"
+  },
+  "theme": {
+    "__resolveType": "Fashion theme"
+  },
+  "global": [
+    {
+      "__resolveType": "website/sections/Analytics/Analytics.tsx",
+      "dangerouslyRunOnMainThread": true
+    },
+    {
+      "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
+    },
+    {
+      "__resolveType": "htmx/sections/htmx.tsx"
+    }
+  ],
+  "routes": [
+    {
+      "__resolveType": "vtex/loaders/proxy.ts",
+      "includeSiteMap": [],
+      "extraPathsToProxy": [],
+      "includeScriptsToHead": {
+        "includes": [
+          {
+            "__resolveType": "analytics/loaders/DecoAnalyticsScript.ts"
+          }
+        ],
+        "includePlausible": true
+      }
+    },
+    {
+      "__resolveType": "website/loaders/pages.ts"
+    },
+    {
+      "__resolveType": "website/loaders/redirects.ts"
+    }
+  ],
+  "caching": {
+    "directives": []
+  },
+  "commerce": {
+    "platform": "other"
+  },
+  "platform": "vtex",
+  "__resolveType": "site/apps/site.ts",
+  "firstByteThresholdMS": false,
+  "abTesting": {
+    "replaces": [],
+    "includeScriptsToHead": {
+      "includes": []
+    }
+  },
+  "flavor": {
+    "framework": "fresh"
+  }
+}
