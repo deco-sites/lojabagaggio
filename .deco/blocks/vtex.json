@@ -1,1 +1,11 @@
-{"account":"bravtexfashionstore","platform":"vtex","publicUrl":"fashion.bravtexstores.com.br","salesChannel":"1","__resolveType":"decohub/apps/vtex.ts","defaultSegment":{"channelPrivacy":"public"}}
+{
+  "account": "lojabagaggio",
+  "platform": "vtex",
+  "publicUrl": "www.bagaggio.com.br",
+  "salesChannel": "1",
+  "__resolveType": "decohub/apps/vtex.ts",
+  "defaultSegment": {
+    "channelPrivacy": "public"
+  },
+  "usePortalSitemap": true
+}
