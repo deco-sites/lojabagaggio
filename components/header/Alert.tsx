@@ -1,8 +1,12 @@
-import Slider from "../../components/ui/Slider.tsx";
-import { useId } from "../../sdk/useId.ts";
+import Icon from "../ui/Icon.tsx";
+
+export interface Alert {
+  link?: string;
+  label: string;
+}
 
 export interface Props {
-  alerts?: string[];
+  alerts?: Alert[];
   /**
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
@@ -10,22 +14,27 @@ export interface Props {
   interval?: number;
 }
 
-function Alert({ alerts = [], interval = 5 }: Props) {
-  const id = useId();
-
+function Alert({ alerts = [] }: Props) {
   return (
-    <div id={id}>
-      <Slider class="carousel carousel-center w-screen bg-secondary gap-6">
-        {alerts.map((alert, index) => (
-          <Slider.Item index={index} class="carousel-item">
-            <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
-              {alert}
-            </span>
-          </Slider.Item>
+    <div class="bg-secondary">
+      <div class="flex items-center gap-12 container">
+        <div class="flex items-center justify-between gap-1">
+          <Icon id="pin" size={20} strokeWidth={16} />
+          <span class="text-[13px] text-base-300 flex justify-center items-center h-[38px]">
+            22471-003
+          </span>
+        </div>
+        <span class="hidden sm:block w-[1px] h-[25px] bg-base-300">
+        </span>
+        {alerts.map((alert) => (
+          <a
+            href={alert.link}
+            class="hidden sm:flex text-[13px] text-base-300 justify-center items-center h-[38px]"
+          >
+            {alert.label}
+          </a>
         ))}
-      </Slider>
-
-      <Slider.JS rootId={id} interval={interval && interval * 1e3} />
+      </div>
     </div>
   );
 }

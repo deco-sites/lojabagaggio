@@ -1,0 +1,11 @@
+{
+  "platform": "vtex",
+  "salesChannel": "1",
+  "defaultSegment": {
+    "channelPrivacy": "public"
+  },
+  "__resolveType": "site/apps/deco/vtex.ts",
+  "account": "lojabagaggio",
+  "publicUrl": "www.bagaggio.com.br",
+  "usePortalSitemap": true
+}

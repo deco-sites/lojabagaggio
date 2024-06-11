@@ -125,7 +125,6 @@ function BlogPosts({
       <div class="px-9">
         <Header
           title={title || "BlogPosts"}
-          fontSize={layout?.headerfontSize || "Normal"}
           alignment={layout?.headerAlignment || "center"}
         />
       </div>

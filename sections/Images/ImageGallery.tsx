@@ -1,14 +1,18 @@
-import { Picture, Source } from "apps/website/components/Picture.tsx";
-import Image from "apps/website/components/Image.tsx";
-import Header from "../../components/ui/SectionHeader.tsx";
 import type { ImageWidget } from "apps/admin/widgets.ts";
+import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Header from "../../components/ui/SectionHeader.tsx";
+import { clx } from "../../sdk/clx.ts";
 
 /**
  * @titleBy alt
  */
 export interface Banner {
-  srcMobile: ImageWidget;
+  srcMobile?: ImageWidget;
+  mobileWidth?: number;
+  mobileHeight?: number;
   srcDesktop?: ImageWidget;
+  desktopWidth?: number;
+  desktopHeight?: number;
   /**
    * @description Image alt text
    */
@@ -30,12 +34,10 @@ export type BorderRadius =
   | "full";
 
 export interface Props {
+  hideMobile?: boolean;
+  hideDesktop?: boolean;
   title?: string;
   description?: string;
-  /**
-   * @maxItems 4
-   * @minItems 4
-   */
   banners?: Banner[];
   layout?: {
     /**
@@ -47,9 +49,6 @@ export interface Props {
       /** @default none */
       desktop?: BorderRadius;
     };
-    headerAlignment?: "center" | "left";
-    mobile?: "Asymmetric" | "Symmetrical";
-    desktop?: "Asymmetric" | "Symmetrical";
   };
 }
 
@@ -116,9 +115,6 @@ const DEFAULT_PROPS: Props = {
       "mobile": "3xl",
       "desktop": "2xl",
     },
-    "headerAlignment": "center",
-    "mobile": "Asymmetric",
-    "desktop": "Asymmetric",
   },
 };
 
@@ -132,32 +128,49 @@ function Banner(
     };
   },
 ) {
-  const { borderRadius, srcMobile, srcDesktop, alt } = props;
+  const {
+    borderRadius,
+    srcMobile,
+    srcDesktop,
+    alt,
+    mobileHeight,
+    mobileWidth,
+    desktopHeight,
+    desktopWidth,
+  } = props;
   const radiusDesktop = RADIUS.desktop[borderRadius?.desktop ?? "none"];
   const radiusMobile = RADIUS.mobile[borderRadius?.desktop ?? "none"];
+
+  if (!srcMobile && !srcDesktop) {
+    return null;
+  }
 
   return (
     <a
       href={props.href}
-      class={`overflow-hidden ${radiusDesktop} ${radiusMobile}`}
+      class={`block overflow-hidden ${radiusDesktop} ${radiusMobile}`}
     >
       <Picture>
-        <Source
-          width={190}
-          height={190}
-          media="(max-width: 767px)"
-          src={srcMobile}
-        />
-        <Source
-          width={640}
-          height={420}
-          media="(min-width: 768px)"
-          src={srcDesktop || srcMobile}
-        />
+        {srcMobile && (
+          <Source
+            width={mobileWidth || 190}
+            height={mobileHeight || 190}
+            media="(max-width: 767px)"
+            src={srcMobile}
+          />
+        )}
+        {srcDesktop && (
+          <Source
+            width={desktopWidth || 640}
+            height={desktopHeight || 420}
+            media="(min-width: 768px)"
+            src={srcDesktop}
+          />
+        )}
         <img
           width={640}
           class="w-full h-full object-cover"
-          src={srcMobile}
+          src={srcMobile || srcDesktop}
           alt={alt}
           decoding="async"
           loading="lazy"
@@ -168,35 +181,36 @@ function Banner(
 }
 
 export default function Gallery(props: Props) {
-  const { title, description, banners, layout } = {
+  const { title, description, banners } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  const mobileItemLayout = (index: number) =>
-    layout?.mobile === "Symmetrical"
-      ? "row-span-3"
-      : index === 0 || index === 3
-      ? "row-span-3"
-      : "row-span-2";
-
-  const desktopItemLayout = (index: number) =>
-    layout?.desktop === "Symmetrical"
-      ? "sm:row-span-3"
-      : index === 0 || index === 3
-      ? "sm:row-span-3"
-      : "sm:row-span-2";
+  if (!banners?.length) return null;
 
   return (
-    <section class="container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
+    <section
+      class={clx(
+        "container px-4 py-6 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0",
+        props.hideMobile && "hidden",
+        props.hideDesktop ? "sm:hidden" : "sm:flex",
+      )}
+    >
       <Header
         title={title}
         description={description}
-        alignment={layout?.headerAlignment || "center"}
+        alignment={"left"}
       />
-      <ul class="grid grid-flow-col grid-cols-2 grid-rows-6 gap-4 list-none">
-        {banners?.map((banner, index) => (
-          <li class={`${mobileItemLayout(index)} ${desktopItemLayout(index)}`}>
+      <ul
+        class={clx(
+          banners?.length === 2 && "grid sm:grid-cols-2 gap-2",
+          (banners?.length === 3 || banners?.length === 6) &&
+            "grid sm:grid-cols-3 gap-2",
+          "items-end",
+        )}
+      >
+        {banners?.map((banner) => (
+          <li class="">
             <Banner {...banner} borderRadius={props.layout?.borderRadius} />
           </li>
         ))}

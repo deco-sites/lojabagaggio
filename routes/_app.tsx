@@ -1,7 +1,8 @@
 import { asset, Head } from "$fresh/runtime.ts";
 import { defineApp } from "$fresh/server.ts";
+import { scriptAsDataURI } from "apps/utils/dataURI.ts";
 import { Context } from "deco/deco.ts";
-import Theme from "../sections/Theme/Theme.tsx";
+import Scripts from "../components/Scripts.tsx";
 
 const sw = () =>
   addEventListener("load", () =>
@@ -13,13 +14,14 @@ export default defineApp(async (_req, ctx) => {
 
   return (
     <>
-      {/* Include default fonts and css vars */}
-      <Theme />
-
       {/* Include Icons and manifest */}
       <Head>
         {/* Enable View Transitions API */}
-        <meta name="view-transition" content="same-origin" />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `@view-transition { navigation: auto; }`,
+          }}
+        />
 
         {/* Tailwind v3 CSS file */}
         <link
@@ -34,11 +36,8 @@ export default defineApp(async (_req, ctx) => {
       {/* Rest of Preact tree */}
       <ctx.Component />
 
-      {/* Include service worker */}
-      <script
-        type="module"
-        dangerouslySetInnerHTML={{ __html: `(${sw})();` }}
-      />
+      <Scripts />
+      <script type="module" src={scriptAsDataURI(sw)} />
     </>
   );
 });
