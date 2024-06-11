@@ -1,51 +1,57 @@
-import Button from "../ui/Button.tsx";
+import { type JSX } from "preact";
+import { clx } from "../../sdk/clx.ts";
+import { useCallback } from "../../sdk/useCallback.ts";
+import { useId } from "../../sdk/useId.ts";
 
-interface Props {
-  quantity: number;
-  disabled?: boolean;
-  loading?: boolean;
-  onChange?: (quantity: number) => void;
-}
+const script = (delta: number) => {
+  event!.stopPropagation();
+  const button = event!.currentTarget as HTMLButtonElement;
+  const input = button.parentElement
+    ?.querySelector<HTMLInputElement>('input[type="number"]')!;
+  const min = Number(input.min) || -Infinity;
+  const max = Number(input.max) || Infinity;
+  input.value = `${Math.min(Math.max(input.valueAsNumber + delta, min), max)}`;
+  input.dispatchEvent(new Event("change", { bubbles: true }));
+};
 
-const QUANTITY_MAX_VALUE = 100;
-
-function QuantitySelector({ onChange, quantity, disabled, loading }: Props) {
-  const decrement = () => onChange?.(Math.max(0, quantity - 1));
-
-  const increment = () =>
-    onChange?.(Math.min(quantity + 1, QUANTITY_MAX_VALUE));
-
+function QuantitySelector(
+  { id = useId(), ...props }: JSX.IntrinsicElements["input"],
+) {
   return (
-    <div class="join border rounded-none w-min">
-      <Button
-        class="btn-square btn-ghost join-item"
-        onClick={decrement}
-        disabled={disabled}
-        loading={loading}
+    <div class="join border rounded-none w-full h-8">
+      <button
+        type="button"
+        class="btn btn-square btn-ghost min-h-[30px] h-[30px]"
+        hx-on:click={useCallback(script, -1)}
       >
         -
-      </Button>
-      <input
-        class="input text-center join-item [appearance:textfield]"
-        type="number"
-        inputMode="numeric"
-        pattern="[0-9]*"
-        max={QUANTITY_MAX_VALUE}
-        min={1}
-        value={quantity}
-        disabled={disabled}
-        onBlur={(e) => onChange?.(e.currentTarget.valueAsNumber)}
-        maxLength={3}
-        size={3}
-      />
-      <Button
-        class="btn-square btn-ghost join-item"
-        onClick={increment}
-        disabled={disabled}
-        loading={loading}
+      </button>
+      <div
+        data-tip={`Quantity must be between ${props.min} and ${props.max}`}
+        class={clx(
+          "flex-grow join-item",
+          "flex justify-center items-center",
+          "has-[:invalid]:tooltip has-[:invalid]:tooltip-error has-[:invalid]:tooltip-open has-[:invalid]:tooltip-bottom",
+        )}
+      >
+        <input
+          id={id}
+          class={clx(
+            "input text-center [appearance:textfield] flex-grow",
+            "invalid:input-error h-[30px] text-xs font-bold",
+          )}
+          inputMode="numeric"
+          type="number"
+          {...props}
+        />
+      </div>
+      <button
+        type="button"
+        class="btn btn-square btn-ghost min-h-[30px] h-[30px]"
+        hx-on:click={useCallback(script, 1)}
       >
         +
-      </Button>
+      </button>
     </div>
   );
 }
