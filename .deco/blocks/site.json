@@ -1,14 +1,14 @@
 {
   "seo": {
     "type": "website",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/5da6c4be-55fc-4e1d-bd9a-86d1df531fc5",
-    "title": "Prezunic Supermercado Online: Promoções Imperdíveis",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/d4ce349f-5ce4-42e1-8e73-b63207c5487d",
     "jsonLDs": [],
     "noIndexing": false,
-    "description": "Aproveite as ofertas",
-    "titleTemplate": "%s | Prezunic",
-    "descriptionTemplate": "%s | Prezunic",
-    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/005e40fb-0f49-4240-ae27-a37b4841f3c7"
+    "titleTemplate": "%s | Bagaggio",
+    "descriptionTemplate": "%s | Bagaggio",
+    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/5138d355-4e63-49f6-bdfe-e5f09326638b",
+    "title": "Malas, Mochilas, Acessórios de Viagem e mais | Bagaggio",
+    "description": "Bagaggio: Mochilas a partir R$99,90, Bolsas até 50%OFF*, Malas 40%OFF* e Muito Mais. Clique e Confira!"
   },
   "theme": {
     "__resolveType": "Fashion theme"
