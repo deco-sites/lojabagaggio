@@ -17,6 +17,26 @@
             "weight": "700"
           }
         ]
+      },
+      {
+        "variations": [
+          {
+            "weight": "100"
+          },
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "700"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "100"
+          }
+        ],
+        "family": "Roboto"
       }
     ],
     "__resolveType": "website/loaders/fonts/googleFonts.ts"
@@ -28,11 +48,11 @@
   ],
   "mainColors": {
     "neutral": "#f9f9f9",
-    "primary": "#0068ae",
-    "warning": "#e08e00",
+    "primary": "#005143",
+    "warning": "#39393a",
     "base-100": "#ffffff",
     "tertiary": "#d0181e",
-    "secondary": "#a4e84b",
+    "secondary": "#920110",
     "error": "#c11f1f",
     "info": "#3d4ed1"
   },
@@ -54,11 +74,11 @@
   "mode": "dark",
   "colorScheme": "any",
   "complementaryColors": {
-    "base-200": "#888888",
-    "base-300": "#333333",
+    "base-200": "#9b9595",
+    "base-300": "#727272",
     "neutral-content": "#f4f4f4",
-    "base-content": "#666666",
-    "primary-content": "#f3f3f3",
-    "secondary-content": "#6eae46"
+    "base-content": "#353535",
+    "primary-content": "#005143",
+    "secondary-content": "#39393a"
   }
 }

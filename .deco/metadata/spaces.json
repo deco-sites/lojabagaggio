@@ -171,6 +171,43 @@
       "name": "SEO",
       "pinned": true,
       "icon": "world-search",
+      "layout": [],
+      "tabs": {
+        "site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D": {
+          "name": "Partial Form",
+          "icon": "pencil",
+          "render": "function",
+          "viewId": "Partial Form",
+          "viewProps": {
+            "spaceId": "{\"path\":[\"seo\"],\"filepath\":\"/.deco/blocks/site.json\"}"
+          },
+          "id": "site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D",
+          "state": {
+            "__signal": null
+          }
+        },
+        "site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D": {
+          "name": "Preview",
+          "icon": "world",
+          "accepts": "function",
+          "render": "function",
+          "viewId": "Preview",
+          "viewProps": {
+            "spaceId": "/.deco/blocks/site.json"
+          },
+          "id": "site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D",
+          "state": {
+            "__signal": null
+          }
+        }
+      },
+      "category": "Advanced"
+    },
+    {
+      "id": "themes",
+      "name": "Themes",
+      "pinned": true,
+      "icon": "palette",
       "layout": {
         "settings": {
           "hasHeaders": true,
@@ -210,19 +247,19 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
+                "width": 33.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D\" />",
+                    "id": "themes::Theme%20Selector::palette::Theme%20Selector::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-themes::Theme%20Selector::palette::Theme%20Selector::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D"
+                      "id": "themes::Theme%20Selector::palette::Theme%20Selector::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true
@@ -231,19 +268,40 @@
               },
               {
                 "type": "stack",
-                "width": 50,
+                "width": 20.29839026305457,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
-                    "id": "site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D\" />",
+                    "id": "themes::Theme%20Viewer::palette::Theme%20Viewer::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-themes::Theme%20Viewer::palette::Theme%20Viewer::%7B%7D\" />",
                     "type": "component",
                     "componentName": "component",
                     "componentState": {
-                      "id": "site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D"
+                      "id": "themes::Theme%20Viewer::palette::Theme%20Viewer::%7B%7D"
+                    },
+                    "isClosable": true,
+                    "reorderEnabled": true
+                  }
+                ]
+              },
+              {
+                "type": "stack",
+                "width": 46.36827640361209,
+                "isClosable": true,
+                "reorderEnabled": true,
+                "title": "",
+                "activeItemIndex": 0,
+                "content": [
+                  {
+                    "id": "themes::Theme%20Preview::palette::Theme%20Preview::%7B%7D",
+                    "title": "<div class=\"contents text-base-700\" id=\"header-themes::Theme%20Preview::palette::Theme%20Preview::%7B%7D\" />",
+                    "type": "component",
+                    "componentName": "component",
+                    "componentState": {
+                      "id": "themes::Theme%20Preview::palette::Theme%20Preview::%7B%7D"
                     },
                     "isClosable": true,
                     "reorderEnabled": true
@@ -259,43 +317,6 @@
         "openPopouts": [],
         "maximisedItemId": null
       },
-      "tabs": {
-        "site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D": {
-          "name": "Partial Form",
-          "icon": "pencil",
-          "render": "function",
-          "viewId": "Partial Form",
-          "viewProps": {
-            "spaceId": "{\"path\":[\"seo\"],\"filepath\":\"/.deco/blocks/site.json\"}"
-          },
-          "id": "site-seo::Partial%20Form::pencil::Partial%20Form::%7B%22spaceId%22%3A%22%7B%5C%22path%5C%22%3A%5B%5C%22seo%5C%22%5D%2C%5C%22filepath%5C%22%3A%5C%22%2F.deco%2Fblocks%2Fsite.json%5C%22%7D%22%7D",
-          "state": {
-            "__signal": null
-          }
-        },
-        "site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D": {
-          "name": "Preview",
-          "icon": "world",
-          "accepts": "function",
-          "render": "function",
-          "viewId": "Preview",
-          "viewProps": {
-            "spaceId": "/.deco/blocks/site.json"
-          },
-          "id": "site-seo::Preview::world::Preview::%7B%22spaceId%22%3A%22%2F.deco%2Fblocks%2Fsite.json%22%7D",
-          "state": {
-            "__signal": null
-          }
-        }
-      },
-      "category": "Advanced"
-    },
-    {
-      "id": "themes",
-      "name": "Themes",
-      "pinned": true,
-      "icon": "palette",
-      "layout": [],
       "tabs": {
         "themes::Theme%20Selector::palette::Theme%20Selector::%7B%7D": {
           "name": "Theme Selector",
@@ -869,7 +890,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -883,6 +904,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fsite.json::Properties::list::Properties::%7B%7D"
                     },
+                    "width": 30,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -890,7 +912,7 @@
               },
               {
                 "type": "stack",
-                "width": 50,
+                "width": 58.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -904,6 +926,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D"
                     },
+                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -925,6 +948,7 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Properties",
+          "width": 30,
           "id": "%2F.deco%2Fblocks%2Fsite.json::Properties::list::Properties::%7B%7D",
           "state": {
             "__signal": null
@@ -936,6 +960,7 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
+          "width": 70,
           "id": "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
