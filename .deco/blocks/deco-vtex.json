@@ -1,11 +1,10 @@
 {
+  "account": "prezunic",
   "platform": "vtex",
+  "publicUrl": "www.prezunic.com.br",
   "salesChannel": "1",
   "defaultSegment": {
     "channelPrivacy": "public"
   },
-  "__resolveType": "site/apps/deco/vtex.ts",
-  "account": "lojabagaggio",
-  "publicUrl": "www.bagaggio.com.br",
-  "usePortalSitemap": true
+  "__resolveType": "site/apps/deco/vtex.ts"
 }
