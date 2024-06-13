@@ -1,77 +1,11 @@
 {
   "logo": {
     "alt": "Glamour logo by deco",
-    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/d807865f-2552-403c-ba72-c7d175206687",
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/d09f7496-2995-4e40-b487-c033773fde85",
     "width": 62,
     "height": 62
   },
-  "alerts": [
-    {
-      "0": "U",
-      "1": "s",
-      "2": "e",
-      "3": " ",
-      "4": "t",
-      "5": "h",
-      "6": "i",
-      "7": "s",
-      "8": " ",
-      "9": "t",
-      "10": "e",
-      "11": "m",
-      "12": "p",
-      "13": "l",
-      "14": "a",
-      "15": "t",
-      "16": "e",
-      "17": " ",
-      "18": "t",
-      "19": "o",
-      "20": " ",
-      "21": "c",
-      "22": "r",
-      "23": "e",
-      "24": "a",
-      "25": "t",
-      "26": "e",
-      "27": " ",
-      "28": "y",
-      "29": "o",
-      "30": "u",
-      "31": "r",
-      "32": " ",
-      "33": "s",
-      "34": "t",
-      "35": "o",
-      "36": "r",
-      "37": "e",
-      "38": " ",
-      "39": "a",
-      "40": "t",
-      "41": " ",
-      "42": "d",
-      "43": "e",
-      "44": "c",
-      "45": "o",
-      "46": ".",
-      "47": "c",
-      "48": "x",
-      "link": "/clube-prezunic",
-      "label": "Clube Prezunic"
-    },
-    {
-      "label": "Ofertas do Dia",
-      "link": "/ofertas/ofertas-do-dia/"
-    },
-    {
-      "label": " Encartes",
-      "link": "/ofertas/encartes/"
-    },
-    {
-      "link": "https://blog.prezunic.com.br/",
-      "label": " Blog Prezunic"
-    }
-  ],
+  "alerts": [],
   "navItems": {
     "__resolveType": "navbar"
   },
@@ -97,48 +31,11 @@
     "__resolveType": "vtex/loaders/user.ts"
   },
   "loading": "lazy",
-  "highlightItems": [
-    {
-      "label": "Ofertas Prime 👑",
-      "href": "/ofertasprime"
-    },
-    {
-      "label": "Cortes em Bife 🥩 ",
-      "href": "/142?map=productClusterIds"
-    },
-    {
-      "label": "Saudáveis 🥦 ",
-      "href": "/saudaveis"
-    },
-    {
-      "label": "Vinhos 🍷",
-      "href": "/bebida-alcoolica/vinhos-e-espumantes"
-    },
-    {
-      "label": "Churrasco 🍗",
-      "href": "/141?map=productClusterIds"
-    },
-    {
-      "label": "Bebidas  🥤 ",
-      "href": "/bebida-nao-alcoolica"
-    },
-    {
-      "label": "Combos Feirinha 🧅",
-      "href": "/combos-especiais"
-    },
-    {
-      "label": "Perfumaria 🧴 ",
-      "href": "/higiene-e-beleza"
-    },
-    {
-      "label": "Pets 🐶 ",
-      "href": "/pet-shop"
-    }
-  ],
+  "highlightItems": [],
   "contentBefore": {
     "show": true,
     "text": "<p><span style=\"color: #ffffff\">Conheça o </span><strong><span style=\"color: #ffffff\">Prizunic Prime</span></strong><span style=\"color: #ffffff\"> e ganhe frete grátis</span></p>",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/f01d98c9-4e8f-4e37-9e2a-8108a87d9926",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/62d6b505-2f79-4192-8e14-90dda1e99a5d",
     "bg": "#3f3f3f",
     "link": "/"
   }
