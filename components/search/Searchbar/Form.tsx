@@ -78,11 +78,11 @@ export default function Searchbar(
   const slot = useId();
 
   return (
-    <div class="w-full gap-8">
+    <div class="w-full gap-8 flex justify-center">
       <form
         id={SEARCHBAR_INPUT_FORM_ID}
         action={ACTION}
-        class="flex pl-4 pr-2 justify-between join rounded-none sm:rounded-full border-y-[1px] sm:border-[1px] border-base-200 w-full sm:w-[480px] h-[42px] relative"
+        class="flex pl-4 justify-between join rounded-none  border sm:rounded-lg  border-lightGray w-full sm:max-w-[810px]  h-9 relative"
       >
         <input
           tabIndex={0}
@@ -100,13 +100,13 @@ export default function Searchbar(
         />
         <button
           type="submit"
-          class=""
+          class="bg-lightGray  w-10 absolute top-[-0.8px] -right-1 h-[34.9px] text-white rounded-e-lg border-none ml-1 border  flex items-center justify-center"
           aria-label="Search"
           for={SEARCHBAR_INPUT_FORM_ID}
           tabIndex={-1}
         >
           <Icon
-            class="inline text-primary"
+            class="inline text-white "
             id="MagnifyingGlass"
             size={24}
             strokeWidth={0.01}
