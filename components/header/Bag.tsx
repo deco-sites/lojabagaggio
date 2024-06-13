@@ -18,10 +18,10 @@ function Bag() {
         )}
       >
         <Icon
-          id="cart"
+          id="bag"
           size={26}
           strokeWidth={2}
-          class="text-primary scale-90"
+          class="text-gray scale-90"
         />
       </span>
     </label>

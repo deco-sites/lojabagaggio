@@ -19,6 +19,7 @@ import Alert, { type Alert as AlertType } from "./Alert.tsx";
 import Bag from "./Bag.tsx";
 import Login from "./Login.tsx";
 import Menu from "./Menu.tsx";
+import NavItem from "./NavItem.tsx";
 
 export interface Logo {
   src: ImageWidget;
@@ -51,10 +52,6 @@ export interface SectionProps {
 
   variant?: "preview" | "full" | "menu";
 
-  highlightItems?: {
-    label: string;
-    href: string;
-  }[];
   contentBefore?: {
     show: boolean;
     bg: Color;
@@ -62,6 +59,8 @@ export interface SectionProps {
     text: Text;
     link: string;
   };
+
+  isShow: boolean;
 }
 /** @format rich-text */
 type Text = string;
@@ -74,68 +73,71 @@ type Props = Omit<SectionProps, "alert" | "loading"> & {
 };
 
 function Desktop(
-  { logo, searchbar, user, variant, highlightItems }: Props,
+  { logo, searchbar, user, variant, navItems, isShow }: Props & {
+    isShow: boolean;
+  },
 ) {
+  const items = navItems ?? [];
   return (
     <>
-      <div class="container flex justify-between items-center w-full px-6 h-[72px]">
-        <div class="flex justify-between items-center gap-8">
-          <label
-            for={SIDEMENU_DRAWER_ID}
-            class="btn btn-circle md:btn-sm btn-xs btn-ghost"
-            aria-label="open menu"
-            hx-target={`#${SIDEMENU_CONTAINER_ID}`}
-            hx-swap="outerHTML"
-            hx-trigger="click once"
-            hx-get={useSection({ props: { variant: "menu" } })}
-          >
-            <Icon id="menu" size={20} strokeWidth={0.01} class="text-primary" />
-          </label>
-          <div class="flex justify-center py-2">
-            {logo && (
-              <a href="/" aria-label="Store logo">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={logo.width || 62}
-                  height={logo.height || 62}
+      <div class="flex flex-col w-full px-6 items-center ">
+        <div class="w-9/10">
+          <div class=" flex justify-between items-center py-3">
+            <div class="flex justify-between items-center gap-8">
+              <div class="flex justify-center py-2">
+                {logo && (
+                  <a href="/" aria-label="Store logo" class="lg:w-45">
+                    <Image
+                      src={logo.src}
+                      alt={logo.alt}
+                      width={logo.width || 62}
+                      height={logo.height || 62}
+                      class="w-full"
+                    />
+                  </a>
+                )}
+              </div>
+            </div>
+            <div class="flex items-center w-full">
+              <Searchbar {...searchbar} />
+            </div>
+            <div class="flex-none flex items-center justify-end gap-2 col-span-1">
+              <Login user={user} variant={variant} />
+
+              <a
+                class="rounded-full no-animation btn-square btn-ghost flex items-center justify-center"
+                href="/wishlist"
+              >
+                <Icon
+                  class="text-lightGray"
+                  id="Heart"
+                  width={24}
+                  height={24}
+                  strokeWidth={1}
                 />
               </a>
-            )}
-          </div>
-          <Searchbar {...searchbar} />
-        </div>
-        <div class="flex-none flex items-center justify-end gap-2 col-span-1">
-          <Login user={user} variant={variant} />
 
-          <div class="flex items-center text-xs font-thin">
-            <Bag />
-          </div>
-        </div>
-      </div>
-      <div class="container flex justify-between items-center p-2">
-        {highlightItems?.map((item) => (
-          <a href={item.href} class="text-sm">
-            {item.label}
-          </a>
-        ))}
-      </div>
-      <Drawer
-        id={SIDEMENU_DRAWER_ID}
-        aside={
-          <div
-            data-aside
-            class="absolute top-[150px] h-full w-full"
-          >
-            <div
-              class="h-full flex items-center justify-center"
-              id={SIDEMENU_CONTAINER_ID}
-              style={{ minWidth: "100vw" }}
-            >
+              <div class="flex items-center text-xs font-thin">
+                <Bag />
+              </div>
             </div>
           </div>
-        }
-      />
+
+          <div
+            class="flex w-full"
+            hx-get={useSection({ props: { isShow: true } })}
+            hx-trigger="mouseenter once"
+            hx-target="#header"
+            hx-swap="outerHTML"
+          >
+            <ul
+              class={`flex items-center justify-between w-full `}
+            >
+              {items.map((item) => <NavItem item={item} isShow={isShow} />)}
+            </ul>
+          </div>
+        </div>
+      </div>
     </>
   );
 }
@@ -171,7 +173,7 @@ function Mobile(
             aria-label="open menu"
             hx-target={`#${SIDEMENU_CONTAINER_ID}`}
             hx-swap="outerHTML"
-            hx-trigger="click once"
+            hx-trigger="mouseenter"
             hx-get={useSection({ props: { variant: "menu" } })}
           >
             <Icon id="menu" size={20} strokeWidth={0.01} class="text-primary" />
@@ -228,6 +230,7 @@ function Header({
       hx-get={useSection()}
       hx-target="closest section"
       hx-swap="outerHTML"
+      id="header"
     >
       {/* Minicart Drawer */}
       <Drawer
@@ -255,20 +258,6 @@ function Header({
       />
 
       <div class="bg-base-100 fixed w-full z-40">
-        {contentBefore && contentBefore.show &&
-          (
-            <a
-              href={contentBefore.link}
-              style={{ background: contentBefore.bg || "white" }}
-              class="hidden sm:flex gap-2 justify-center items-center py-2"
-            >
-              {contentBefore.image &&
-                <Image src={contentBefore.image} width={133} height={32} />}
-              {contentBefore.text && (
-                <p dangerouslySetInnerHTML={{ __html: contentBefore.text }}></p>
-              )}
-            </a>
-          )}
         {alerts.length > 0 && <Alert alerts={alerts} />}
         {device === "desktop"
           ? <Desktop logo={logo} {...props} />
