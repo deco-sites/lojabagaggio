@@ -97,44 +97,7 @@
     "__resolveType": "vtex/loaders/user.ts"
   },
   "loading": "lazy",
-  "highlightItems": [
-    {
-      "label": "Ofertas Prime 👑",
-      "href": "/ofertasprime"
-    },
-    {
-      "label": "Cortes em Bife 🥩 ",
-      "href": "/142?map=productClusterIds"
-    },
-    {
-      "label": "Saudáveis 🥦 ",
-      "href": "/saudaveis"
-    },
-    {
-      "label": "Vinhos 🍷",
-      "href": "/bebida-alcoolica/vinhos-e-espumantes"
-    },
-    {
-      "label": "Churrasco 🍗",
-      "href": "/141?map=productClusterIds"
-    },
-    {
-      "label": "Bebidas  🥤 ",
-      "href": "/bebida-nao-alcoolica"
-    },
-    {
-      "label": "Combos Feirinha 🧅",
-      "href": "/combos-especiais"
-    },
-    {
-      "label": "Perfumaria 🧴 ",
-      "href": "/higiene-e-beleza"
-    },
-    {
-      "label": "Pets 🐶 ",
-      "href": "/pet-shop"
-    }
-  ],
+  "highlightItems": [],
   "contentBefore": {
     "show": true,
     "text": "<p><span style=\"color: #ffffff\">Conheça o </span><strong><span style=\"color: #ffffff\">Prizunic Prime</span></strong><span style=\"color: #ffffff\"> e ganhe frete grátis</span></p>",
