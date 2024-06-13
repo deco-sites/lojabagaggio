@@ -14,8 +14,7 @@ function Login({ user, variant }: Props) {
         href="/login"
         aria-label="Login"
       >
-        <Icon id="myaccount" size={20} strokeWidth={0.4} class="text-primary" />
-        <span class="text-base-300 font-semibold">Minha conta</span>
+        <Icon id="myaccount" size={28} strokeWidth={0.4} class="text-" />
       </a>
     );
   }
