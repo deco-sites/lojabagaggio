@@ -46,10 +46,14 @@
               "children": [],
               "name": "Malas personalizáveis",
               "url": "/malas?initialMap=c&initialQuery=malas&map=category-1,atributos&order=OrderByReleaseDateDESC&query=/malas/personalizavel&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mala de bordo",
+              "url": "/malas/mala-bordo?order=OrderByReleaseDateDESC"
             }
-          ],
-          "name": "Mala de bordo",
-          "url": "/malas/mala-bordo?order=OrderByReleaseDateDESC"
+          ]
         }
       ],
       "@type": "SiteNavigationElement",
@@ -61,6 +65,411 @@
           "embedUrl": "/malas?order=OrderByReleaseDateDESC"
         }
       ]
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochilas Masculinas",
+              "url": "/mochilas/mochila-masculina?order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochilas Femininas",
+              "url": "/mochilas/mochila-feminina?order=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochilas Escolares",
+              "url": "/escolar/mochila-escolar?O=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochilas Juvenis",
+              "url": "/mochila-juvenil"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochilas Personalizáveis",
+              "url": "/mochilas?initialMap=c&initialQuery=mochilas&map=category-1,atributos&order=OrderByReleaseDateDESC&query=/mochilas/personalizaveis&searchState"
+            }
+          ],
+          "name": "Categorias"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila para Notebook",
+              "url": "/mochilas/para-notebook?map=category-1,atributos"
+            },
+            {
+              "image": [],
+              "children": [],
+              "url": "/mochila-de-couro",
+              "name": "Mochila de Couro"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila Executiva",
+              "url": "/mochilas?initialMap=c&initialQuery=mochilas&map=category-1,atributos&order=OrderByTopSaleDESC&query=/mochilas/executiva&searchState"
+            }
+          ],
+          "name": "Modelos"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila Pequena",
+              "url": "/Mochila Pequena"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila Média",
+              "url": "/mochila-media"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila Grande",
+              "url": "/mochila-grande"
+            }
+          ],
+          "name": "Tamanhos"
+        }
+      ],
+      "image": [
+        {
+          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/5e212334-24f0-4c13-aace-bf08a509c296",
+          "contentUrl": "/mochilas?order=OrderByReleaseDateDESC"
+        }
+      ],
+      "name": "Mochilas",
+      "url": "/mochilas?order=OrderByReleaseDateDESC"
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Carteira Masculina",
+              "url": "/carteiras/carteira-masculina?order=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Carteiras Femininas",
+              "url": "/carteiras/carteira-feminina?order=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Porta Cartão",
+              "url": "/carteiras/porta-cartao?order=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Porta Passaporte",
+              "url": "/carteiras/porta-passaporte?order=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Porta Moeda",
+              "url": "/carteiras/porta-moeda?order=OrderByReleaseDateDESC"
+            }
+          ],
+          "name": "Categorias"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Slim",
+              "url": "/carteira-slim"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Sem Fecho",
+              "url": "/carteiras?initialMap=c&initialQuery=carteiras&map=category-1,atributos&order=OrderByTopSaleDESC&query=/carteiras/sem-fecho&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Fecho em Botão",
+              "url": "/carteiras?initialMap=c&initialQuery=carteiras&map=category-1,atributos&order=OrderByTopSaleDESC&query=/carteiras/fecho-em-botao&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Fecho em Zíper",
+              "url": "/carteiras?initialMap=c&initialQuery=carteiras&map=category-1,atributos&order=OrderByTopSaleDESC&query=/carteiras/fecho-em-ziper&searchState"
+            }
+          ],
+          "name": "Modelos"
+        }
+      ],
+      "image": [],
+      "name": "CARTEIRAS",
+      "url": "/carteiras?order=OrderByReleaseDateDESC"
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Bolsa de Ombro",
+              "url": "/bolsas/bolsa-de-ombro?order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Bolsa Transversal",
+              "url": "/bolsas/bolsa-transversal?order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Linha Maternidade",
+              "url": "/totti?_q=totti&map=ft"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Shoulder Bag",
+              "url": "/shoulderbag"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Bolsa Mochila",
+              "url": "/bolsa-mochila"
+            }
+          ]
+        }
+      ],
+      "image": [],
+      "name": "BOLSAS",
+      "url": "/bolsas?order=OrderByReleaseDateDESC"
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Pasta Feminina",
+              "url": "/pastas/pasta-feminina?order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Pasta Masculina",
+              "url": "/pastas/pasta-masculina?order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Pasta de Couro",
+              "url": "/pastas?initialMap=c&initialQuery=pastas&map=category-1,material&order=OrderByReleaseDateDESC&query=/pastas/couro&searchState"
+            }
+          ],
+          "name": "Categoria"
+        }
+      ],
+      "image": [],
+      "name": "PASTAS",
+      "url": "/pastas?order=OrderByTopSaleDESC"
+    },
+    {
+      "children": [
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila com Rodinha",
+              "url": "/escolar/mochila-rodinha?order=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Mochila sem Rodinhas",
+              "url": "/escolar/mochila-escolar?O=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Lancheira",
+              "url": "/escolar/lancheira?O=OrderByReleaseDateDESC&order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Estojo",
+              "url": "/escolar/estojo?O=OrderByReleaseDateDESC&order=OrderByTopSaleDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Kit Escolar",
+              "url": "/escolar/kit-escolar?O=OrderByReleaseDateDESC"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Garrafa",
+              "url": "/volta-as-aulas?initialMap=c&initialQuery=Escolar&map=category-1,category-2&query=/escolar/garrafa&searchState"
+            }
+          ],
+          "name": "Categorias"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Mickey e Minnie",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,personagens,personagens&order=OrderByTopSaleDESC&query=/escolar/mickey/minnie&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Frozen",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,personagens&order=OrderByTopSaleDESC&query=/escolar/frozen&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Homem Aranha",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,personagens&order=OrderByTopSaleDESC&query=/escolar/homem-aranha&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Princesas Disney",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,personagens&order=OrderByTopSaleDESC&query=/escolar/princesas-disney&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Vingadores",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens&order=OrderByTopSaleDESC&query=/escolar/capitao-america/homem-aranha/homem-de-ferro/hulk/pantera-negra/super-herois-marvel/thor/vingadores&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "ver todos ",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens,personagens&order=OrderByTopSaleDESC&query=/escolar/barbie/bela/branca-de-neve/capitao-america/carros/cinderela/frozen/homem-aranha/homem-de-ferro/hulk/lol/mickey/minnie/moana/mulan/outros/pantera-negra/pets/princesas-disney/rei-leao/star-wars/super-herois-marvel/super-mario/toy-story/vingadores&searchState"
+            }
+          ],
+          "name": "Personagens"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Infantil",
+              "url": "/mochila-infantil"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Juvenil",
+              "url": "/escolar?initialMap=c&initialQuery=escolar&map=category-1,faixa-etaria&order=OrderByBestDiscountDESC&query=/escolar/juvenil&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Ver todos",
+              "url": "/escolar?order=OrderByTopSaleDESC"
+            }
+          ],
+          "name": "Faixa etária"
+        },
+        {
+          "image": [],
+          "children": [
+            {
+              "image": [],
+              "children": [],
+              "name": "Monte seu kit com 10% off",
+              "url": "/monte-seu-kit-escolar"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Kit Mochila de Rodinha, Lancheira e Estojo",
+              "url": "/escolar/kit-escolar?initialMap=c,c&initialQuery=escolar/kit-escolar&map=category-1,category-2,atributos,tamanho&order=OrderByReleaseDateDESC&query=/escolar/kit-escolar/com-rodinhas/kit&searchState"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Kit Mochila sem Rodinhas, Lancheira e Estojo",
+              "url": "/kit-escolar?initialMap=c,c&initialQuery=escolar/kit-escolar&map=category-1,category-2,tamanho,atributos&order=OrderByTopSaleDESC&query=/escolar/kit-escolar/kit/sem-rodinhas&searchState=null"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Ver todos ",
+              "url": "/kit-escolar?initialMap=c,c&initialQuery=escolar/kit-escolar&map=category-1,category-2,tamanho,atributos&order=OrderByTopSaleDESC&query=/escolar/kit-escolar/kit/sem-rodinhas&searchState=null#:~:text=Lancheira%20e%20Estojo-,Ver%20todos,-ACESS%C3%93RIOS"
+            }
+          ],
+          "name": "Kit Escolar"
+        }
+      ],
+      "image": [],
+      "name": "ESCOLAR",
+      "url": "/volta-as-aulas"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "ACESSÓRIOS",
+      "url": "/acessorios?order=OrderByTopSaleDESC"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "Para empresas ",
+      "url": "/para-empresas"
+    },
+    {
+      "children": [],
+      "image": [],
+      "name": "outlet",
+      "url": "/outlet?order=OrderByReleaseDateDESC"
     }
   ],
   "__resolveType": "commerce/loaders/navbar.ts"
