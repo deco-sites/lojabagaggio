@@ -33,14 +33,14 @@ function Login() {
         href="/login"
         aria-label="Login"
       >
-        <Icon id="User" size={20} strokeWidth={0.4} />
+        <Icon id="User" size={28} strokeWidth={0.4} />
       </a>
       <a
         class="btn btn-sm btn-ghost font-thin no-animation hidden"
         href="/account"
         aria-label="Account"
       >
-        <Icon id="User" size={20} strokeWidth={0.4} />
+        <Icon id="User" size={28} strokeWidth={0.4} />
       </a>
       <script
         type="module"
