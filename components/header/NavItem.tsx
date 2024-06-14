@@ -16,11 +16,11 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
           : "hover:border-primary border-transparent border-solid border-b-4 lg:mt-1"
       }  items-center`}
     >
-      <a href={url} class="py-6 ">
+      <a href={url} class="py-2 ">
         <span
           class={`${
-            name === "OUTLET" ? "text-[#FF1010]" : "text-black"
-          } uppercase text-sm  font-medium`}
+            name === "OUTLET" ? "text-[#FF1010]" : "text-lightGray"
+          } uppercase text-15  font-normal font-roboto`}
         >
           {name}
         </span>
