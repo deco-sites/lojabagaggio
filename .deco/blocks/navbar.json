@@ -4,51 +4,63 @@
       "children": [
         {
           "@type": "SiteNavigationElement",
-          "url": "/combos-especiais/combo",
-          "name": "Combo",
           "children": [
             {
-              "@type": "SiteNavigationElement",
-              "url": "/combos-especiais/combo/bebidas",
-              "name": "Bebidas",
-              "children": []
+              "image": [],
+              "children": [],
+              "url": "/malas/mala-pequena?order=OrderByTopSaleDESC",
+              "name": "Mala Pequena"
             },
             {
-              "@type": "SiteNavigationElement",
-              "url": "/combos-especiais/combo/cesta-basica",
-              "name": "Cesta Básica",
-              "children": []
+              "image": [],
+              "children": [],
+              "name": "Mala Média",
+              "url": "/malas/mala-media?order=OrderByReleaseDateDESC"
             },
             {
-              "@type": "SiteNavigationElement",
-              "url": "/combos-especiais/combo/churrasco",
-              "name": "Churrasco",
-              "children": []
+              "image": [],
+              "children": [],
+              "name": "Mala grande",
+              "url": "/malas/mala-grande?OrderByReleaseDateDESC"
             },
             {
-              "@type": "SiteNavigationElement",
-              "url": "/combos-especiais/combo/hortifruti",
-              "name": "Hortifruti",
-              "children": []
+              "image": [],
+              "children": [],
+              "name": "Conjunto de Mala",
+              "url": "/malas/conjunto-malas?order=OrderByTopSaleDESC"
             },
             {
-              "@type": "SiteNavigationElement",
-              "url": "/combos-especiais/combo/limpeza",
-              "name": "Limpeza",
-              "children": []
+              "image": [],
+              "children": [],
+              "name": "Bolsa de Viagem",
+              "url": "/bolsa-de-viagem?order=OrderByReleaseDateDESC"
             },
             {
-              "@type": "SiteNavigationElement",
-              "url": "/combos-especiais/combo/sazonais",
-              "name": "Sazonais",
-              "children": []
+              "image": [],
+              "children": [],
+              "url": "/bolsa-de-viagem?order=OrderByReleaseDateDESC",
+              "name": "Bolsa de Viagem"
+            },
+            {
+              "image": [],
+              "children": [],
+              "name": "Malas personalizáveis",
+              "url": "/malas?initialMap=c&initialQuery=malas&map=category-1,atributos&order=OrderByReleaseDateDESC&query=/malas/personalizavel&searchState"
             }
-          ]
+          ],
+          "name": "Mala de bordo",
+          "url": "/malas/mala-bordo?order=OrderByReleaseDateDESC"
         }
       ],
       "@type": "SiteNavigationElement",
       "url": "/malas",
-      "name": "malas"
+      "name": "malas",
+      "image": [
+        {
+          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/941278cb-98ac-4dd4-b244-551775a5991f",
+          "embedUrl": "/malas?order=OrderByReleaseDateDESC"
+        }
+      ]
     }
   ],
   "__resolveType": "commerce/loaders/navbar.ts"
