@@ -12,13 +12,20 @@ export default function Logo({ logo }: Props) {
   return (
     <>
       {logo?.image && (
-        <Image
-          loading="lazy"
-          src={logo?.image}
-          alt={logo?.description}
-          width={75}
-          height={75}
-        />
+        <div class="flex flex-col gap-3">
+          <div class="w-28 max-h-16">
+            <Image
+              loading="lazy"
+              src={logo?.image}
+              alt={logo?.description}
+              width={200}
+              height={200}
+            />
+          </div>
+          <div class="">
+            {logo?.description}
+          </div>
+        </div>
       )}
     </>
   );

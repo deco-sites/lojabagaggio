@@ -1,14 +1,13 @@
 {
   "seo": {
     "type": "website",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/d4ce349f-5ce4-42e1-8e73-b63207c5487d",
+    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2177/a5d890ba-e5b8-471e-8b77-7412c1d4fa56",
+    "title": "Storefront",
     "jsonLDs": [],
     "noIndexing": false,
-    "titleTemplate": "%s | Bagaggio",
-    "descriptionTemplate": "%s | Bagaggio",
-    "favicon": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/5138d355-4e63-49f6-bdfe-e5f09326638b",
-    "title": "Malas, Mochilas, Acessórios de Viagem e mais | Bagaggio",
-    "description": "Bagaggio: Mochilas a partir R$99,90, Bolsas até 50%OFF*, Malas 40%OFF* e Muito Mais. Clique e Confira!"
+    "description": "Improve your page performance with deco.cx ",
+    "titleTemplate": "%s | deco.cx",
+    "descriptionTemplate": "%s | Deco.cx"
   },
   "theme": {
     "__resolveType": "Fashion theme"
@@ -24,6 +23,13 @@
     },
     {
       "__resolveType": "analytics/sections/Analytics/DecoAnalytics.tsx"
+    },
+    {
+      "__resolveType": "site/sections/Session.tsx",
+      "minicart": null,
+      "wishlist": null,
+      "mode": "lazy",
+      "user": null
     }
   ],
   "routes": [
@@ -55,7 +61,7 @@
   },
   "platform": "vtex",
   "__resolveType": "site/apps/site.ts",
-  "firstByteThresholdMS": false,
+  "firstByteThresholdMS": true,
   "abTesting": {
     "replaces": [],
     "includeScriptsToHead": {

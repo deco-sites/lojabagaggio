@@ -1,18 +1,13 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
 import Header from "../../components/ui/SectionHeader.tsx";
-import { clx } from "../../sdk/clx.ts";
 
 /**
  * @titleBy alt
  */
 export interface Banner {
-  srcMobile?: ImageWidget;
-  mobileWidth?: number;
-  mobileHeight?: number;
+  srcMobile: ImageWidget;
   srcDesktop?: ImageWidget;
-  desktopWidth?: number;
-  desktopHeight?: number;
   /**
    * @description Image alt text
    */
@@ -34,10 +29,12 @@ export type BorderRadius =
   | "full";
 
 export interface Props {
-  hideMobile?: boolean;
-  hideDesktop?: boolean;
   title?: string;
   description?: string;
+  /**
+   * @maxItems 4
+   * @minItems 4
+   */
   banners?: Banner[];
   layout?: {
     /**
@@ -49,6 +46,9 @@ export interface Props {
       /** @default none */
       desktop?: BorderRadius;
     };
+    headerAlignment?: "center" | "left";
+    mobile?: "Asymmetric" | "Symmetrical";
+    desktop?: "Asymmetric" | "Symmetrical";
   };
 }
 
@@ -115,6 +115,9 @@ const DEFAULT_PROPS: Props = {
       "mobile": "3xl",
       "desktop": "2xl",
     },
+    "headerAlignment": "center",
+    "mobile": "Asymmetric",
+    "desktop": "Asymmetric",
   },
 };
 
@@ -128,49 +131,32 @@ function Banner(
     };
   },
 ) {
-  const {
-    borderRadius,
-    srcMobile,
-    srcDesktop,
-    alt,
-    mobileHeight,
-    mobileWidth,
-    desktopHeight,
-    desktopWidth,
-  } = props;
+  const { borderRadius, srcMobile, srcDesktop, alt } = props;
   const radiusDesktop = RADIUS.desktop[borderRadius?.desktop ?? "none"];
   const radiusMobile = RADIUS.mobile[borderRadius?.desktop ?? "none"];
-
-  if (!srcMobile && !srcDesktop) {
-    return null;
-  }
 
   return (
     <a
       href={props.href}
-      class={`block overflow-hidden ${radiusDesktop} ${radiusMobile}`}
+      class={`overflow-hidden ${radiusDesktop} ${radiusMobile}`}
     >
       <Picture>
-        {srcMobile && (
-          <Source
-            width={mobileWidth || 190}
-            height={mobileHeight || 190}
-            media="(max-width: 767px)"
-            src={srcMobile}
-          />
-        )}
-        {srcDesktop && (
-          <Source
-            width={desktopWidth || 640}
-            height={desktopHeight || 420}
-            media="(min-width: 768px)"
-            src={srcDesktop}
-          />
-        )}
+        <Source
+          width={190}
+          height={190}
+          media="(max-width: 767px)"
+          src={srcMobile}
+        />
+        <Source
+          width={640}
+          height={420}
+          media="(min-width: 768px)"
+          src={srcDesktop || srcMobile}
+        />
         <img
           width={640}
           class="w-full h-full object-cover"
-          src={srcMobile || srcDesktop}
+          src={srcMobile}
           alt={alt}
           decoding="async"
           loading="lazy"
@@ -181,36 +167,35 @@ function Banner(
 }
 
 export default function Gallery(props: Props) {
-  const { title, description, banners } = {
+  const { title, description, banners, layout } = {
     ...DEFAULT_PROPS,
     ...props,
   };
 
-  if (!banners?.length) return null;
+  const mobileItemLayout = (index: number) =>
+    layout?.mobile === "Symmetrical"
+      ? "row-span-3"
+      : index === 0 || index === 3
+      ? "row-span-3"
+      : "row-span-2";
+
+  const desktopItemLayout = (index: number) =>
+    layout?.desktop === "Symmetrical"
+      ? "sm:row-span-3"
+      : index === 0 || index === 3
+      ? "sm:row-span-3"
+      : "sm:row-span-2";
 
   return (
-    <section
-      class={clx(
-        "container px-4 py-6 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0",
-        props.hideMobile && "hidden",
-        props.hideDesktop ? "sm:hidden" : "sm:flex",
-      )}
-    >
+    <section class="container px-4 py-8 flex flex-col gap-8 lg:gap-10 lg:py-10 lg:px-0">
       <Header
         title={title}
         description={description}
-        alignment={"left"}
+        alignment={layout?.headerAlignment || "center"}
       />
-      <ul
-        class={clx(
-          banners?.length === 2 && "grid sm:grid-cols-2 gap-2",
-          (banners?.length === 3 || banners?.length === 6) &&
-            "grid sm:grid-cols-3 gap-2",
-          "items-end",
-        )}
-      >
-        {banners?.map((banner) => (
-          <li class="">
+      <ul class="grid grid-flow-col grid-cols-2 grid-rows-6 gap-4 list-none">
+        {banners?.map((banner, index) => (
+          <li class={`${mobileItemLayout(index)} ${desktopItemLayout(index)}`}>
             <Banner {...banner} borderRadius={props.layout?.borderRadius} />
           </li>
         ))}

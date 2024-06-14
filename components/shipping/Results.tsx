@@ -49,22 +49,27 @@ export default function Results({ result }: ComponentProps<typeof action>) {
   }
 
   return (
-    <ul class="flex flex-col gap-6 py-4 px-2 border-y border-base-content">
+    <ul class="flex flex-col gap-4 p-4 border border-base-300 rounded">
       {methods.map((method) => (
-        <li class="grid grid-cols-[70%_1fr_1fr] gap-2 text-sm">
-          <span class="">
-            {method.name}
+        <li class="flex justify-between items-center border-base-200 not-first-child:border-t">
+          <span class="text-button text-center">
+            Entrega {method.name}
           </span>
-          <span class="">
-            Em até {formatShippingEstimate(method.shippingEstimate)}
+          <span class="text-button">
+            até {formatShippingEstimate(method.shippingEstimate)}
           </span>
-          <span class="text-right">
+          <span class="text-base font-semibold text-right">
             {method.price === 0 ? "Grátis" : (
               formatPrice(method.price / 100, "BRL", "pt-BR")
             )}
           </span>
         </li>
       ))}
+      <span class="text-xs font-thin">
+        Os prazos de entrega começam a contar a partir da confirmação do
+        pagamento e podem variar de acordo com a quantidade de produtos na
+        sacola.
+      </span>
     </ul>
   );
 }

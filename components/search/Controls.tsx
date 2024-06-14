@@ -37,25 +37,19 @@ function SearchControls({ url, filters, breadcrumb, sortOptions }: Props) {
         </>
       }
     >
-      <div class="flex flex-col justify-between mb-4 p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px]">
+      <div class="flex flex-col justify-between mb-4 p-4 sm:mb-0 sm:p-0 sm:gap-4 sm:flex-row sm:h-[53px] sm:border-b sm:border-base-200">
         <div class="flex flex-row items-center sm:p-0 mb-2">
           <Breadcrumb itemListElement={breadcrumb?.itemListElement} />
         </div>
 
-        <div class="flex flex-row items-center justify-center gap-2 sm:gap-4 sm:hidden border border-[#dedede] rounded-md h-[50px]">
-          <div class="w-1/2">
-            {sortOptions.length > 0 && (
-              <Sort sortOptions={sortOptions} url={url} noBorder={true} />
-            )}
-          </div>
-          <div class="w-[1px] h-full bg-[#dedede]"></div>
-          <label
-            class="flex items-center justify-center gap-2 w-1/2 text-sm"
-            for={id}
-          >
+        <div class="flex flex-row items-center justify-between border-b border-base-200 sm:gap-4 sm:border-none">
+          <label class="btn btn-ghost sm:hidden" for={id}>
             Filtrar
             <Icon id="FilterList" width={16} height={16} />
           </label>
+          {sortOptions.length > 0 && (
+            <Sort sortOptions={sortOptions} url={url} />
+          )}
         </div>
       </div>
     </Drawer>

@@ -9,13 +9,10 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import { clx } from "../../sdk/clx.ts";
-import { ImageWidget } from "apps/admin/widgets.ts";
-import Image from "apps/website/components/Image.tsx";
 
 /** @titleBy title */
 interface Tab {
   title: string;
-  image?: ImageWidget;
   products: Product[] | null;
 }
 
@@ -43,7 +40,7 @@ function TabbedProductShelf({
   const ti = typeof tabIndex === "number"
     ? Math.min(Math.max(tabIndex, 0), tabs.length)
     : 0;
-  const { products, image } = tabs[ti];
+  const { products } = tabs[ti];
   const viewItemListEvent = useSendEvent({
     on: "view",
     event: {
@@ -66,69 +63,62 @@ function TabbedProductShelf({
       <Header
         title={title || ""}
         description={description || ""}
+        fontSize={layout?.headerfontSize || "Large"}
         alignment={layout?.headerAlignment || "center"}
       />
 
-      <div class="flex justify-between w-full">
-        {tabs.map((tab, index) => (
-          <button
-            class={clx(index === ti && "border-b-[2px] border-primary")}
-            hx-get={useSection({ props: { tabIndex: index } })}
-            hx-swap="outerHTML"
-            hx-target="closest section"
-          >
-            <span class="px-6">{tab.title}</span>
-            <span class="[.htmx-request_&]:inline hidden loading loading-spinner loading-xs" />
-          </button>
-        ))}
+      <div class="flex justify-center">
+        <div class="tabs tabs-boxed">
+          {tabs.map((tab, index) => (
+            <button
+              class={clx("tab tab-lg", index === ti && "tab-active", "gap-2")}
+              hx-get={useSection({ props: { tabIndex: index } })}
+              hx-swap="outerHTML"
+              hx-target="closest section"
+            >
+              <span>{tab.title}</span>
+              <span class="[.htmx-request_&]:inline hidden loading loading-spinner loading-xs" />
+            </button>
+          ))}
+        </div>
       </div>
 
       {!products?.length
         ? <div class="flex justify-center items-center">No Products found</div>
         : (
-          <div class="container grid grid-cols-[20%_1fr] gap-4">
-            <div>
-              {image && <Image src={image} width={240} height={330} />}
-            </div>
-            <div
-              id={id}
-              class="grid"
-              {...viewItemListEvent}
-            >
-              <Slider class="carousel carousel-center sm:carousel-end col-span-full">
-                {products.map((product, index) => (
-                  <Slider.Item
+          <div
+            id={id}
+            {...viewItemListEvent}
+            class="container grid grid-cols-[48px_1fr_48px] px-0 sm:px-5"
+          >
+            <Slider class="carousel carousel-center sm:carousel-end gap-6 col-span-full row-start-2 row-end-5">
+              {products.map((product, index) => (
+                <Slider.Item
+                  index={index}
+                  class="carousel-item w-[270px] sm:w-[292px] first:pl-6 sm:first:pl-0 last:pr-6 sm:last:pr-0"
+                >
+                  <ProductCard
+                    product={product}
+                    itemListName={title}
                     index={index}
-                    class="carousel-item w-1/2 sm:w-1/5"
-                  >
-                    <ProductCard
-                      product={product}
-                      itemListName={title}
-                      index={index}
-                    />
-                  </Slider.Item>
-                ))}
-              </Slider>
+                  />
+                </Slider.Item>
+              ))}
+            </Slider>
 
-              <>
-                <div class="hidden relative z-10 col-start-1 row-start-3">
-                  <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
-                    <Icon
-                      size={24}
-                      id="ChevronRight"
-                      strokeWidth={3}
-                      class="rotate-180"
-                    />
-                  </Slider.PrevButton>
-                </div>
-                <div class="hidden relative z-10 col-start-3 row-start-3">
-                  <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
-                    <Icon size={24} id="ChevronRight" strokeWidth={3} />
-                  </Slider.NextButton>
-                </div>
-              </>
-              <Slider.JS rootId={id} />
-            </div>
+            <>
+              <div class="hidden relative sm:block z-10 col-start-1 row-start-3">
+                <Slider.PrevButton class="btn btn-circle btn-outline absolute right-1/2 bg-base-100">
+                  <Icon size={24} id="ChevronLeft" strokeWidth={3} />
+                </Slider.PrevButton>
+              </div>
+              <div class="hidden relative sm:block z-10 col-start-3 row-start-3">
+                <Slider.NextButton class="btn btn-circle btn-outline absolute left-1/2 bg-base-100">
+                  <Icon size={24} id="ChevronRight" strokeWidth={3} />
+                </Slider.NextButton>
+              </div>
+            </>
+            <Slider.JS rootId={id} />
           </div>
         )}
     </div>
