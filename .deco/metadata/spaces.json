@@ -343,7 +343,12 @@
           }
         }
       },
-      "tags": [],
+      "tags": [
+        {
+          "label": "PRO",
+          "color": "positive"
+        }
+      ],
       "category": "Management"
     },
     {
@@ -364,7 +369,12 @@
           }
         }
       },
-      "tags": [],
+      "tags": [
+        {
+          "label": "PRO",
+          "color": "positive"
+        }
+      ],
       "category": "Management"
     },
     {
@@ -441,7 +451,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 41.66666666666667,
+                "width": 30,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -463,7 +473,7 @@
               },
               {
                 "type": "stack",
-                "width": 58.333333333333336,
+                "width": 70,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -563,11 +573,11 @@
             "title": "",
             "content": [
               {
-                "title": "",
                 "type": "stack",
+                "width": 100,
                 "isClosable": true,
                 "reorderEnabled": true,
-                "width": 100,
+                "title": "",
                 "activeItemIndex": 0,
                 "content": [
                   {
@@ -827,7 +837,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 50,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -841,6 +851,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Properties::list::Properties::%7B%7D"
                     },
+                    "width": 30,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -848,7 +859,7 @@
               },
               {
                 "type": "stack",
-                "width": 50,
+                "width": 58.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -862,6 +873,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Preview::world::Preview::%7B%7D"
                     },
+                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -883,10 +895,10 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Properties",
+          "width": 30,
           "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null,
-            "value": null
+            "__signal": null
           }
         },
         "%2F.deco%2Fblocks%2Fdeco-vtex.json::Preview::world::Preview::%7B%7D": {
@@ -895,6 +907,7 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
+          "width": 70,
           "id": "%2F.deco%2Fblocks%2Fdeco-vtex.json::Preview::world::Preview::%7B%7D",
           "state": {
             "__signal": null
@@ -1365,7 +1378,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 33.333333333333336,
+                "width": 41.66666666666667,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1379,6 +1392,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fnavbar.json::Properties::list::Properties::%7B%7D"
                     },
+                    "width": 30,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -1386,7 +1400,7 @@
               },
               {
                 "type": "stack",
-                "width": 33.333333333333336,
+                "width": 58.333333333333336,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -1400,27 +1414,7 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fnavbar.json::Preview::world::Preview::%7B%7D"
                     },
-                    "isClosable": true,
-                    "reorderEnabled": true
-                  }
-                ]
-              },
-              {
-                "type": "stack",
-                "width": 33.33333333333333,
-                "isClosable": true,
-                "reorderEnabled": true,
-                "title": "",
-                "activeItemIndex": 0,
-                "content": [
-                  {
-                    "id": "%2F.deco%2Fblocks%2Fnavbar.json::JSON%20Properties::braces::JSON%20Properties::%7B%7D",
-                    "title": "<div class=\"contents text-base-700\" id=\"header-%2F.deco%2Fblocks%2Fnavbar.json::JSON%20Properties::braces::JSON%20Properties::%7B%7D\" />",
-                    "type": "component",
-                    "componentName": "component",
-                    "componentState": {
-                      "id": "%2F.deco%2Fblocks%2Fnavbar.json::JSON%20Properties::braces::JSON%20Properties::%7B%7D"
-                    },
+                    "width": 70,
                     "isClosable": true,
                     "reorderEnabled": true
                   }
@@ -1442,6 +1436,7 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Properties",
+          "width": 30,
           "id": "%2F.deco%2Fblocks%2Fnavbar.json::Properties::list::Properties::%7B%7D",
           "state": {
             "__signal": null
@@ -1453,18 +1448,8 @@
           "accepts": "function",
           "render": "function",
           "viewId": "Preview",
+          "width": 70,
           "id": "%2F.deco%2Fblocks%2Fnavbar.json::Preview::world::Preview::%7B%7D",
-          "state": {
-            "__signal": null
-          }
-        },
-        "%2F.deco%2Fblocks%2Fnavbar.json::JSON%20Properties::braces::JSON%20Properties::%7B%7D": {
-          "name": "JSON Properties",
-          "icon": "braces",
-          "accepts": "function",
-          "render": "function",
-          "viewId": "JSON Properties",
-          "id": "%2F.deco%2Fblocks%2Fnavbar.json::JSON%20Properties::braces::JSON%20Properties::%7B%7D",
           "state": {
             "__signal": null
           }
