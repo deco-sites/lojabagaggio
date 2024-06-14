@@ -1,9 +1,10 @@
+import { useScript } from "apps/utils/useScript.ts";
 import { type JSX } from "preact";
 import { clx } from "../../sdk/clx.ts";
-import { useCallback } from "../../sdk/useCallback.ts";
 import { useId } from "../../sdk/useId.ts";
 
-const script = (delta: number) => {
+const onClick = (delta: number) => {
+  // doidera!
   event!.stopPropagation();
   const button = event!.currentTarget as HTMLButtonElement;
   const input = button.parentElement
@@ -15,14 +16,15 @@ const script = (delta: number) => {
 };
 
 function QuantitySelector(
-  { id = useId(), ...props }: JSX.IntrinsicElements["input"],
+  { id = useId(), disabled, ...props }: JSX.IntrinsicElements["input"],
 ) {
   return (
-    <div class="join border rounded-none w-full h-8">
+    <div class="join border rounded w-full">
       <button
         type="button"
-        class="btn btn-square btn-ghost min-h-[30px] h-[30px]"
-        hx-on:click={useCallback(script, -1)}
+        class="btn btn-square btn-ghost"
+        hx-on:click={useScript(onClick, -1)}
+        disabled={disabled}
       >
         -
       </button>
@@ -37,9 +39,10 @@ function QuantitySelector(
         <input
           id={id}
           class={clx(
-            "input text-center [appearance:textfield] flex-grow",
-            "invalid:input-error h-[30px] text-xs font-bold",
+            "input text-center flex-grow [appearance:textfield]",
+            "invalid:input-error",
           )}
+          disabled={disabled}
           inputMode="numeric"
           type="number"
           {...props}
@@ -47,8 +50,9 @@ function QuantitySelector(
       </div>
       <button
         type="button"
-        class="btn btn-square btn-ghost min-h-[30px] h-[30px]"
-        hx-on:click={useCallback(script, 1)}
+        class="btn btn-square btn-ghost"
+        hx-on:click={useScript(onClick, 1)}
+        disabled={disabled}
       >
         +
       </button>

@@ -17,26 +17,6 @@
             "weight": "700"
           }
         ]
-      },
-      {
-        "variations": [
-          {
-            "weight": "100"
-          },
-          {
-            "weight": "400"
-          },
-          {
-            "weight": "700"
-          },
-          {
-            "weight": "500"
-          },
-          {
-            "weight": "100"
-          }
-        ],
-        "family": "Roboto"
       }
     ],
     "__resolveType": "website/loaders/fonts/googleFonts.ts"
@@ -48,16 +28,16 @@
   ],
   "mainColors": {
     "neutral": "#f9f9f9",
-    "primary": "#005143",
-    "warning": "#39393a",
+    "primary": "#0068ae",
+    "warning": "#e08e00",
     "base-100": "#ffffff",
     "tertiary": "#d0181e",
-    "secondary": "#920110",
+    "secondary": "#a4e84b",
     "error": "#c11f1f",
     "info": "#3d4ed1"
   },
   "buttonStyle": {
-    "--border-btn": "2px",
+    "--border-btn": "1px",
     "--rounded-btn": "0.2rem",
     "--animation-btn": "0.25s",
     "--btn-text-case": "normal-case",
@@ -72,13 +52,5 @@
   },
   "__resolveType": "site/sections/Theme/Theme.tsx",
   "mode": "dark",
-  "colorScheme": "any",
-  "complementaryColors": {
-    "base-200": "#9b9595",
-    "base-300": "#727272",
-    "neutral-content": "#f4f4f4",
-    "base-content": "#353535",
-    "primary-content": "#005143",
-    "secondary-content": "#39393a"
-  }
+  "colorScheme": "any"
 }

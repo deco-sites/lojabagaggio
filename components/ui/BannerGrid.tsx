@@ -5,7 +5,7 @@ import { Picture, Source } from "apps/website/components/Picture.tsx";
  * @titleBy alt
  */
 export interface Banner {
-  srcMobile?: ImageWidget;
+  srcMobile: ImageWidget;
   srcDesktop?: ImageWidget;
   /**
    * @description Image alt text
@@ -148,22 +148,18 @@ export default function BannnerGrid(props: Props) {
             } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
           >
             <Picture>
-              {srcMobile && (
-                <Source
-                  media="(max-width: 767px)"
-                  src={srcMobile}
-                  width={100}
-                  height={100}
-                />
-              )}
-              {srcDesktop && (
-                <Source
-                  media="(min-width: 768px)"
-                  src={srcDesktop}
-                  width={250}
-                  height={250}
-                />
-              )}
+              <Source
+                media="(max-width: 767px)"
+                src={srcMobile}
+                width={100}
+                height={100}
+              />
+              <Source
+                media="(min-width: 768px)"
+                src={srcDesktop ? srcDesktop : srcMobile}
+                width={250}
+                height={250}
+              />
               <img
                 class="w-full"
                 sizes="(max-width: 640px) 100vw, 30vw"

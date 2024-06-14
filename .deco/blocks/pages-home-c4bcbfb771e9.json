@@ -8,15 +8,13 @@
       "__resolveType": "Header - 01"
     },
     {
-      "__resolveType": "site/sections/Images/ImageGallery.tsx",
-      "banners": [
+      "__resolveType": "site/sections/Miscellaneous/Slide.tsx",
+      "content": [
         {
-          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/56b6c937-893c-424a-be3d-40fdc406e1b0",
-          "alt": "Cash back no pix",
-          "href": "/"
+          "label": "HOT SALE",
+          "repeat": 30
         }
-      ],
-      "hideMobile": true
+      ]
     },
     {
       "__resolveType": "site/sections/Images/Carousel.tsx",
@@ -24,249 +22,187 @@
       "arrows": true,
       "images": [
         {
-          "alt": "Cencopay",
+          "alt": "Feminino",
           "action": {
+            "href": "/feminino",
             "label": "Explore collection",
             "title": "VTEX Store",
             "subTitle": "Visit our site and start building now:"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/465f9de1-c647-4b56-ae9c-4769162ad542",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/3ca7b6ce-1f1e-4412-82da-f2343f53e249",
-          "link": "/ofertas-com-cashback-cencopay"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/c007e481-b1c6-4122-9761-5c3e554512c1",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/d057fc10-5616-4f12-8d4c-201bb47a81f5"
         },
         {
-          "alt": "Spaten",
+          "alt": "Masculino",
           "action": {
             "href": "/masculino",
             "label": "Explore collection",
             "title": "VTEX Store",
             "subTitle": "Visit our site and start building now:"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/a34a5c47-e0a9-4c51-85dd-fe96c81f9ed1",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/cdc81cb4-25cd-4490-9638-c0e13e9b4cdd",
-          "link": "/1049/?map=productClusterIds"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/c007e481-b1c6-4122-9761-5c3e554512c1",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/d057fc10-5616-4f12-8d4c-201bb47a81f5"
         },
         {
-          "alt": "Corona",
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/e50051e1-948c-43fe-ad1b-0c8a97829253",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/07a38b33-6c77-44bc-80df-92a4dacd5c59",
-          "link": "/1048/?map=productClusterIds"
+          "alt": "Vestidos",
+          "action": {
+            "href": "/feminino/roupas/vestidos",
+            "label": "Explore collection",
+            "title": "VTEX Store",
+            "subTitle": "Visit our site and start building now:"
+          },
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/c007e481-b1c6-4122-9761-5c3e554512c1",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/d057fc10-5616-4f12-8d4c-201bb47a81f5"
         }
       ],
       "preload": true
     },
     {
-      "__resolveType": "site/sections/Images/ImageGallery.tsx",
-      "banners": [
+      "__resolveType": "site/sections/Miscellaneous/Slide.tsx",
+      "content": [
         {
-          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/00d93a31-ac0d-468a-846a-8d2992f70770",
-          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/caf71581-b7dd-4505-afc8-579af91d6083",
-          "href": "/ofertas/ofertas-do-dia/",
-          "alt": "Ofertas",
-          "desktopWidth": 600,
-          "desktopHeight": 250,
-          "mobileWidth": 400,
-          "mobileHeight": 100
-        },
-        {
-          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/95e706b5-b8e4-47c5-988c-eea048aefd10",
-          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/ea842ce5-250e-432f-9cd7-c9f5ce81c2af",
-          "alt": "Dicas",
-          "href": "/institucional/novo-prezunic-vila-isabel/",
-          "desktopWidth": 600,
-          "desktopHeight": 250,
-          "mobileWidth": 400,
-          "mobileHeight": 100
+          "label": "HOT SALE",
+          "repeat": 15
         }
-      ],
+      ]
+    },
+    {
+      "__resolveType": "site/sections/Miscellaneous/CampaignTimer.tsx",
+      "link": {
+        "href": "https://github.com/deco-cx",
+        "text": "Visit our GitHub"
+      },
+      "text": "<p>Design, develop and deliver complete experiences</p>",
+      "labels": {
+        "days": "days",
+        "hours": "hours",
+        "expired": " Expired!",
+        "minutes": "minutes",
+        "seconds": "seconds"
+      },
       "layout": {
-        "borderRadius": {
-          "mobile": "lg",
-          "desktop": "lg"
-        }
-      }
+        "textPosition": "After counter"
+      },
+      "expiresAt": "2024-03-15T17:23:00.000Z"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
-        "showArrows": true,
-        "numberOfSliders": {
-          "desktop": 5,
-          "mobile": 2
-        },
-        "headerAlignment": "left"
+        "showArrows": true
       },
       "products": {
         "props": {
           "sort": "",
-          "count": 10,
+          "count": 29,
           "collection": "160"
         },
         "crossSelling": "similars",
         "__resolveType": "vtex/loaders/legacy/productList.ts"
       },
-      "title": "Ofertas do dia 🥰"
-    },
-    {
-      "__resolveType": "site/sections/Images/ImageGallery.tsx",
-      "layout": {
-        "borderRadius": {
-          "mobile": "lg",
-          "desktop": "lg"
-        }
-      },
-      "banners": [
-        {
-          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/85cdca87-e924-4032-af94-3f94e1377a72",
-          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/527d7776-d56a-45e8-82f7-a4213b306126",
-          "href": "/ofertasprime",
-          "alt": "Prime",
-          "desktopWidth": 410,
-          "desktopHeight": 250,
-          "mobileWidth": 410,
-          "mobileHeight": 250
-        },
-        {
-          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/8ca818f7-2a84-425d-b2e8-f1456f40ccf5",
-          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/2de2038d-778b-4f27-be94-a6994527c419",
-          "alt": "Encartes",
-          "href": "/ofertas/encartes/",
-          "desktopWidth": 410,
-          "desktopHeight": 250,
-          "mobileWidth": 410,
-          "mobileHeight": 250
-        },
-        {
-          "srcMobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/ba131a14-550b-433b-88a1-37fd6a2f69f0",
-          "srcDesktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/30614cd3-afb1-4cae-8795-390ef596e343",
-          "alt": "Whatsapp",
-          "href": "http://bit.ly/zapprezunic",
-          "desktopWidth": 410,
-          "desktopHeight": 250,
-          "mobileWidth": 410,
-          "mobileHeight": 250
-        }
-      ]
+      "title": "Ofertas do dia"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
-        "headerAlignment": "left",
-        "showArrows": true,
-        "numberOfSliders": {
-          "desktop": 5,
-          "mobile": 2
-        }
+        "showArrows": true
       },
-      "title": "Ofertas prime 👑",
       "products": {
+        "__resolveType": "vtex/loaders/legacy/productList.ts",
         "props": {
           "sort": "OrderByBestDiscountDESC",
-          "count": 10,
-          "collection": "1060"
+          "collection": "1060",
+          "count": 14
         },
-        "crossSelling": "similars",
-        "__resolveType": "vtex/loaders/legacy/productList.ts"
-      }
+        "crossSelling": "similars"
+      },
+      "title": "Ofertas prime"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
       "layout": {
-        "headerAlignment": "left",
-        "showArrows": true,
-        "numberOfSliders": {
-          "desktop": 5,
-          "mobile": 2
-        }
+        "showArrows": true
       },
-      "title": "Produtos com cashback",
       "products": {
+        "__resolveType": "vtex/loaders/legacy/productList.ts",
+        "props": {
+          "sort": "",
+          "collection": "1045",
+          "count": 10
+        },
+        "crossSelling": "similars"
+      },
+      "title": "Especial Maturata"
+    },
+    {
+      "__resolveType": "site/sections/Product/ProductShelf.tsx",
+      "layout": {
+        "showArrows": true
+      },
+      "products": {
+        "__resolveType": "vtex/loaders/legacy/productList.ts",
         "props": {
           "sort": "OrderByBestDiscountDESC",
-          "count": 10,
+          "count": 9,
           "collection": "996"
         },
-        "crossSelling": "similars",
-        "__resolveType": "vtex/loaders/legacy/productList.ts"
-      }
+        "crossSelling": "similars"
+      },
+      "title": "Produtos com cashback"
     },
     {
-      "__resolveType": "website/flags/multivariate/section.ts",
-      "variants": [
+      "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
+      "title": "Melhor de cada departamento",
+      "tabs": [
         {
-          "value": {
-            "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
-            "layout": {
-              "headerAlignment": "left",
-              "headerfontSize": "Large"
+          "title": "Aves",
+          "products": {
+            "props": {
+              "sort": "",
+              "count": 9,
+              "query": "vestido",
+              "collection": "619"
             },
-            "title": "Melhor de cada departamento 🙌",
-            "tabs": [
-              {
-                "title": "Aves",
-                "products": {
-                  "props": {
-                    "sort": "",
-                    "count": 9,
-                    "query": "vestido",
-                    "collection": "619"
-                  },
-                  "__resolveType": "vtex/loaders/legacy/productList.ts"
-                },
-                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/e1791620-8e61-47b5-b2e0-4ec4420cb1bb"
-              },
-              {
-                "title": "Bovinos",
-                "products": {
-                  "props": {
-                    "sort": "",
-                    "count": 9,
-                    "collection": "621"
-                  },
-                  "__resolveType": "vtex/loaders/legacy/productList.ts"
-                },
-                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/ed56c180-0e91-430c-b6dc-d157e2863e62"
-              },
-              {
-                "products": {
-                  "__resolveType": "vtex/loaders/legacy/productList.ts",
-                  "props": {
-                    "sort": "",
-                    "collection": "141",
-                    "count": 9
-                  }
-                },
-                "title": "Churrasco",
-                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/a14e9e7a-6587-4b2d-9834-7a201fbe9228"
-              },
-              {
-                "products": {
-                  "__resolveType": "vtex/loaders/legacy/productList.ts",
-                  "props": {
-                    "sort": "OrderByPriceDESC",
-                    "collection": "620",
-                    "count": 9
-                  }
-                },
-                "title": "Suinos",
-                "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10576/3fdb0bfa-f318-4f1c-8efc-16eefc6cb1e0"
-              }
-            ]
-          },
-          "rule": {
-            "__resolveType": "Desktop"
+            "__resolveType": "vtex/loaders/legacy/productList.ts"
           }
         },
         {
-          "value": {
-            "__resolveType": "site/sections/Content/RichText.tsx",
-            "text": "<p>&nbsp;</p>"
-          },
-          "rule": {
-            "__resolveType": "website/matchers/always.ts"
+          "title": "Bovinos",
+          "products": {
+            "props": {
+              "sort": "",
+              "count": 9,
+              "collection": "621"
+            },
+            "__resolveType": "vtex/loaders/legacy/productList.ts"
           }
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/legacy/productList.ts",
+            "props": {
+              "sort": "",
+              "collection": "141",
+              "count": 9
+            }
+          },
+          "title": "Churrasco"
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/legacy/productList.ts",
+            "props": {
+              "sort": "OrderByPriceDESC",
+              "collection": "620",
+              "count": 9
+            }
+          },
+          "title": "Suinos"
         }
-      ]
+      ],
+      "layout": {
+        "headerfontSize": "Large",
+        "headerAlignment": "center"
+      }
     },
     {
       "__resolveType": "Footer - 04"

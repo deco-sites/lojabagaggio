@@ -5,7 +5,6 @@ import Icon from "../../../components/ui/Icon.tsx";
 import Slider from "../../../components/ui/Slider.tsx";
 import { clx } from "../../../sdk/clx.ts";
 import { useId } from "../../../sdk/useId.ts";
-import { Device } from "deco/utils/userAgent.ts";
 
 export interface Props {
   /** @title Integration */
@@ -15,9 +14,6 @@ export interface Props {
     width: number;
     height: number;
   };
-
-  /** @hide true */
-  device?: Device;
 }
 
 /**
@@ -37,10 +33,9 @@ export default function GallerySlider(props: Props) {
   const {
     layout,
     page: { product: { image: images = [] } },
-    device,
   } = props;
 
-  const { width, height } = layout || { width: 300, height: 300 };
+  const { width, height } = layout || { width: 300, height: 370 };
 
   const aspectRatio = `${width} / ${height}`;
 
@@ -53,10 +48,10 @@ export default function GallerySlider(props: Props) {
             {images.map((img, index) => (
               <Slider.Item
                 index={index}
-                class="carousel-item w-full flex justify-center"
+                class="carousel-item w-full"
               >
                 <Image
-                  class="w-[70%] sm:w-full"
+                  class="w-full"
                   sizes="(max-width: 640px) 100vw, 40vw"
                   style={{ aspectRatio }}
                   src={img.url!}
@@ -72,22 +67,17 @@ export default function GallerySlider(props: Props) {
           </Slider>
 
           <Slider.PrevButton
-            class="no-animation absolute left-2 top-1/2 btn border-none bg-transparent"
+            class="no-animation absolute left-2 top-1/2 btn btn-circle btn-outline"
             disabled
           >
-            <Icon size={16} id="ChevronLeft" strokeWidth={5} />
+            <Icon size={24} id="ChevronLeft" strokeWidth={3} />
           </Slider.PrevButton>
 
           <Slider.NextButton
-            class="no-animation absolute right-2 top-1/2 btn border-none bg-transparent"
+            class="no-animation absolute right-2 top-1/2 btn btn-circle btn-outline"
             disabled={images.length < 2}
           >
-            <Icon
-              size={16}
-              id="ChevronLeft"
-              class="rotate-180"
-              strokeWidth={5}
-            />
+            <Icon size={24} id="ChevronRight" strokeWidth={3} />
           </Slider.NextButton>
 
           <div class="absolute top-2 right-2 bg-base-100 rounded-full">
@@ -98,32 +88,30 @@ export default function GallerySlider(props: Props) {
         </div>
 
         {/* Dots */}
-        {device === "desktop" && (
-          <ul
-            class={clx(
-              "carousel carousel-center",
-              "sm:carousel-vertical",
-              "gap-1 px-4 order-2",
-              "sm:gap-2 sm:px-0 sm:order-1",
-            )}
-            style={{ maxHeight: "600px" }}
-          >
-            {images.map((img, index) => (
-              <li class="carousel-item">
-                <Slider.Dot index={index}>
-                  <Image
-                    style={{ aspectRatio }}
-                    class="group-disabled:border-base-300 border rounded "
-                    width={100}
-                    height={123}
-                    src={img.url!}
-                    alt={img.alternateName}
-                  />
-                </Slider.Dot>
-              </li>
-            ))}
-          </ul>
-        )}
+        <ul
+          class={clx(
+            "carousel carousel-center",
+            "sm:carousel-vertical",
+            "gap-1 px-4 order-2",
+            "sm:gap-2 sm:px-0 sm:order-1",
+          )}
+          style={{ maxHeight: "600px" }}
+        >
+          {images.map((img, index) => (
+            <li class="carousel-item">
+              <Slider.Dot index={index}>
+                <Image
+                  style={{ aspectRatio }}
+                  class="group-disabled:border-base-300 border rounded "
+                  width={100}
+                  height={123}
+                  src={img.url!}
+                  alt={img.alternateName}
+                />
+              </Slider.Dot>
+            </li>
+          ))}
+        </ul>
 
         <Slider.JS rootId={id} />
       </div>

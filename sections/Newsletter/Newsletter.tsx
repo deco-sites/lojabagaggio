@@ -50,7 +50,7 @@ export default function Newsletter({
   return (
     <div class="bg-secondary">
       <div class="container flex flex-col rounded p-4 gap-6 lg:p-16 lg:gap-12">
-        <Header title={title} description={description} />
+        <Header title={title} description={description} fontSize="Small" />
 
         <div class="flex justify-center">
           <form

@@ -1,17 +1,19 @@
 {
   "logo": {
     "alt": "Glamour logo by deco",
-    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/d09f7496-2995-4e40-b487-c033773fde85",
-    "width": 62,
-    "height": 62
+    "src": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
+    "width": 100,
+    "height": 16
   },
-  "alerts": [],
+  "alerts": [
+    "Use this template to create your store at deco.cx"
+  ],
   "navItems": {
     "__resolveType": "navbar"
   },
   "__resolveType": "site/sections/Header/Header.tsx",
   "searchbar": {
-    "placeholder": "Buscar produto ou marca...",
+    "placeholder": "What are you looking for?",
     "loader": {
       "data": {
         "searches": [],
@@ -23,20 +25,5 @@
     }
   },
   "mode": "private",
-  "variant": "full",
-  "minicart": {
-    "__resolveType": "site/loaders/minicart.ts"
-  },
-  "user": {
-    "__resolveType": "vtex/loaders/user.ts"
-  },
-  "loading": "lazy",
-  "highlightItems": [],
-  "contentBefore": {
-    "show": true,
-    "text": "<p><span style=\"color: #ffffff\">Conheça o </span><strong><span style=\"color: #ffffff\">Prizunic Prime</span></strong><span style=\"color: #ffffff\"> e ganhe frete grátis</span></p>",
-    "image": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/62d6b505-2f79-4192-8e14-90dda1e99a5d",
-    "bg": "#3f3f3f",
-    "link": "/"
-  }
+  "variant": "full"
 }

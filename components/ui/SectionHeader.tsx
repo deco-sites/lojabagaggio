@@ -2,6 +2,7 @@ import { clx } from "../../sdk/clx.ts";
 
 export interface Props {
   title?: string;
+  fontSize?: "Small" | "Normal" | "Large";
   description?: string;
   alignment?: "center" | "left";
   colorReverse?: boolean;
@@ -20,24 +21,24 @@ function Header({ title, description, colorReverse, alignment }: Props) {
       )}
     >
       {title && (
-        <h2
+        <h1
           class={clx(
-            "sm:text-2xl",
+            "text-2xl font-light leading-8 lg:leading-10 lg:text-3xl",
             colorReverse ? "text-primary-content" : "text-base-content",
           )}
         >
           {title}
-        </h2>
+        </h1>
       )}
       {description && (
-        <h3
+        <h2
           class={clx(
             "leading-6 font-light lg:leading-8 lg:text-2xl",
             colorReverse ? "text-primary-content" : "text-base-content",
           )}
         >
           {description}
-        </h3>
+        </h2>
       )}
     </div>
   );

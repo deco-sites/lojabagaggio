@@ -1,5 +1,6 @@
 import type { ImageWidget } from "apps/admin/widgets.ts";
 import { Picture, Source } from "apps/website/components/Picture.tsx";
+import Button from "../../components/ui/Button.tsx";
 import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
@@ -15,7 +16,16 @@ export interface Banner {
   mobile: ImageWidget;
   /** @description Image's alt text */
   alt: string;
-  link?: string;
+  action?: {
+    /** @description when user clicks on the image, go to this link */
+    href: string;
+    /** @description Image text title */
+    title: string;
+    /** @description Image text subtitle */
+    subTitle: string;
+    /** @description Button label */
+    label: string;
+  };
 }
 
 export interface Props {
@@ -93,7 +103,7 @@ function BannerItem(
     alt,
     mobile,
     desktop,
-    link,
+    action,
   } = image;
   const params = { promotion_name: image.alt };
   const selectPromotionEvent = useSendEvent({
@@ -108,24 +118,40 @@ function BannerItem(
   return (
     <a
       {...selectPromotionEvent}
-      href={link ?? "#"}
-      aria-label={alt}
+      href={action?.href ?? "#"}
+      aria-label={action?.label}
       class="relative overflow-y-hidden w-full"
     >
+      {action && (
+        <div class="absolute top-0 md:bottom-0 bottom-1/2 left-0 right-0 sm:right-auto max-w-[407px] flex flex-col justify-end gap-4 px-8 py-12">
+          <span class="text-2xl font-light text-base-100">
+            {action.title}
+          </span>
+          <span class="font-normal text-4xl text-base-100">
+            {action.subTitle}
+          </span>
+          <Button
+            class="bg-base-100 text-sm font-light py-4 px-6 w-fit"
+            aria-label={action.label}
+          >
+            {action.label}
+          </Button>
+        </div>
+      )}
       <Picture preload={lcp} {...viewPromotionEvent}>
         <Source
           media="(max-width: 767px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={mobile}
-          width={414}
-          height={256}
+          width={430}
+          height={590}
         />
         <Source
           media="(min-width: 768px)"
           fetchPriority={lcp ? "high" : "auto"}
           src={desktop}
-          width={1054}
-          height={246}
+          width={1440}
+          height={600}
         />
         <img
           class="object-cover w-full h-full"
@@ -173,7 +199,7 @@ function Dots({ images, interval = 0 }: Props) {
 function Buttons() {
   return (
     <>
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-1 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Slider.PrevButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
@@ -183,7 +209,7 @@ function Buttons() {
           />
         </Slider.PrevButton>
       </div>
-      <div class="hidden sm:flex items-center justify-center z-10 col-start-3 row-start-2">
+      <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Slider.NextButton class="btn btn-circle glass">
           <Icon
             class="text-base-100"
@@ -204,7 +230,7 @@ function BannerCarousel(props: Props) {
   return (
     <div
       id={id}
-      class="container grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min"
+      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min min-h-[660px]"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => (

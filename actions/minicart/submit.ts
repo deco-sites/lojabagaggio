@@ -18,41 +18,54 @@ const actions: Record<string, CartSubmitActions> = {
   nuvemshop: nuvemshop as CartSubmitActions,
 };
 
-export interface CartSubmitActions<AC = unknown> {
-  setQuantity?: (
-    props: {
-      items: Array<{ index: number; quantity: number }>;
-      original: unknown;
-    },
-    req: Request,
-    ctx: AC,
-  ) => Promise<Minicart>;
-  setCoupon?: (
-    props: { text: string | null },
-    req: Request,
-    ctx: AC,
-  ) => Promise<Minicart>;
+interface CartForm {
+  items: number[];
+  coupon: string | null;
+  action: string | null;
+  original: unknown;
+  addToCart: unknown;
 }
 
+export interface CartSubmitActions<AC = unknown> {
+  addToCart?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
+  setQuantity?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
+  setCoupon?: (props: CartForm, req: Request, ctx: AC) => Promise<Minicart>;
+}
+
+const safeParse = (payload: string | null) => {
+  try {
+    return JSON.parse(payload || "null");
+  } catch {
+    return null;
+  }
+};
+
 // Reconstruct the cart state from the received form data
-const cartFrom = (
-  form: FormData,
-): { coupon: string | null; items: number[] } => {
-  const coupon = form.get("coupon")?.toString() ?? null;
+const cartFrom = (form: FormData) => {
+  const cart: CartForm = {
+    items: [],
+    coupon: null,
+    original: null,
+    action: null,
+    addToCart: null,
+  };
 
-  const items: number[] = [];
-  for (const [key, value] of form.entries()) {
-    const [item, it] = key.split("::");
-    const index = Number(it);
-
-    if (item !== "item" || Number.isNaN(index)) {
-      continue;
+  for (const [name, value] of form.entries()) {
+    if (name === "coupon") {
+      cart.coupon = value.toString();
+    } else if (name === "action") {
+      cart.action = value.toString();
+    } else if (name === "original") {
+      cart.original = safeParse(decodeURIComponent(value.toString()));
+    } else if (name.startsWith("item::")) {
+      const [_, it] = name.split("::");
+      cart.items[Number(it)] = Number(value);
+    } else if (name === "add-to-cart") {
+      cart.addToCart = safeParse(decodeURIComponent(value.toString()));
     }
-
-    items[index] = Number(value);
   }
 
-  return { coupon, items };
+  return cart;
 };
 
 async function action(
@@ -60,30 +73,21 @@ async function action(
   req: Request,
   ctx: AppContext,
 ): Promise<Minicart> {
-  const { setQuantity, setCoupon } = actions[usePlatform()];
+  const { setQuantity, setCoupon, addToCart } = actions[usePlatform()];
 
-  const form = await req.formData();
+  const form = cartFrom(await req.formData());
 
-  // Original, platform specific cart state
-  const original = JSON.parse(
-    decodeURIComponent(form.get("original")?.toString() ?? ""),
-  );
+  const handler = form.action === "set-coupon"
+    ? setCoupon
+    : form.action === "add-to-cart"
+    ? addToCart
+    : setQuantity;
 
-  const verb = form.get("action")?.toString();
-  const cart = cartFrom(form);
-
-  if (verb === "setCoupon") {
-    return setCoupon!({ text: cart.coupon }, req, ctx);
+  if (!handler) {
+    throw new Error(`Unsupported action on platform ${usePlatform()}`);
   }
 
-  return setQuantity!(
-    {
-      items: cart.items.map((quantity, index) => ({ quantity, index })),
-      original,
-    },
-    req,
-    ctx,
-  );
+  return await handler(form, req, ctx);
 }
 
 export default action;

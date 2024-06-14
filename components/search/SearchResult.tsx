@@ -1,6 +1,6 @@
 import type { ProductListingPage } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
-import { scriptAsDataURI } from "apps/utils/dataURI.ts";
+import { useScript } from "apps/utils/useScript.ts";
 import { useSection } from "deco/hooks/useSection.ts";
 import { SectionProps } from "deco/mod.ts";
 import ProductCard from "../../components/product/ProductCard.tsx";
@@ -11,7 +11,6 @@ import { useId } from "../../sdk/useId.ts";
 import { useOffer } from "../../sdk/useOffer.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
 import SearchControls from "./Controls.tsx";
-import Sort from "./Sort.tsx";
 
 export interface Layout {
   /**
@@ -106,7 +105,7 @@ function PageResult(props: SectionProps<typeof loader>) {
         class={clx(
           "grid items-center",
           "grid-cols-2 gap-2",
-          "sm:grid-cols-4 sm:gap-2",
+          "sm:grid-cols-4 sm:gap-10",
         )}
       >
         {products?.map((product, index) => (
@@ -226,28 +225,13 @@ function Result(props: SectionProps<typeof loader>) {
 
   const id = useId();
 
-  const _url = new URL(url);
-  const query = _url.searchParams.get("q");
-
-  if (query) {
-    breadcrumb.itemListElement = [
-      ...breadcrumb.itemListElement,
-      {
-        "@type": "ListItem",
-        position: breadcrumb.itemListElement.length + 1,
-        name: query,
-        item: url,
-      },
-    ];
-  }
-
   return (
-    <div class="bg-white">
+    <>
       <div id={id} {...viewItemListEvent}>
         {partial
           ? <PageResult {...props} />
           : (
-            <div class="container px-2 sm:px-0 sm:py-10 flex flex-col gap-2 items-center justify-center">
+            <div class="container px-4 sm:px-0 py-4 sm:py-10 flex flex-col gap-2 items-center justify-center">
               <SearchControls
                 url={url}
                 sortOptions={sortOptions}
@@ -255,35 +239,12 @@ function Result(props: SectionProps<typeof loader>) {
                 breadcrumb={breadcrumb}
               />
 
-              <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr] gap-6">
-                <aside class="w-full hidden sm:block self-start">
+              <div class="grid place-items-center grid-cols-1 sm:grid-cols-[250px_1fr]">
+                <aside class="hidden sm:block self-start">
                   <Filters filters={filters} />
                 </aside>
 
                 <div class="self-start">
-                  <div class="hidden sm:flex justify-between items-center">
-                    {pageInfo?.records && pageInfo?.recordPerPage && (
-                      <div class="flex flex-col gap-2">
-                        {query && (
-                          <p class="text-sm font-bold">
-                            Você buscou por: {query}
-                          </p>
-                        )}
-                        <p class="text-sm font-bold">
-                          Página {zeroIndexedOffsetPage} de {Math.ceil(
-                            pageInfo?.records / pageInfo?.recordPerPage,
-                          )}
-                        </p>
-                      </div>
-                    )}
-                    <div class="flex justify-between items-center gap-2">
-                      <p class="whitespace-nowrap">Ordenar por</p>
-                      {sortOptions.length > 0 && (
-                        <Sort sortOptions={sortOptions} url={url} />
-                      )}
-                    </div>
-                  </div>
-
                   <PageResult {...props} />
                 </div>
               </div>
@@ -293,9 +254,15 @@ function Result(props: SectionProps<typeof loader>) {
 
       <script
         type="module"
-        src={scriptAsDataURI(setPageQuerystring, `${pageInfo.currentPage}`, id)}
+        dangerouslySetInnerHTML={{
+          __html: useScript(
+            setPageQuerystring,
+            `${pageInfo.currentPage}`,
+            id,
+          ),
+        }}
       />
-    </div>
+    </>
   );
 }
 

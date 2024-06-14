@@ -1,15 +1,10 @@
 import { ProductListingPage } from "apps/commerce/types.ts";
-import { scriptAsDataURI } from "apps/utils/dataURI.ts";
-import { JSX } from "preact";
-import { clx } from "../../sdk/clx.ts";
+import { useScript } from "apps/utils/useScript.ts";
 
 const SORT_QUERY_PARAM = "sort";
 const PAGE_QUERY_PARAM = "page";
 
-export type Props = Pick<ProductListingPage, "sortOptions"> & {
-  url: string;
-  noBorder?: boolean;
-};
+export type Props = Pick<ProductListingPage, "sortOptions"> & { url: string };
 
 const getUrl = (href: string, value: string) => {
   const url = new URL(href);
@@ -18,16 +13,6 @@ const getUrl = (href: string, value: string) => {
   url.searchParams.set(SORT_QUERY_PARAM, value);
 
   return url.href;
-};
-
-const script = (id: string) => {
-  document.getElementById(id)?.addEventListener(
-    "change",
-    function (e) {
-      window.location.href =
-        (e as JSX.TargetedEvent<HTMLSelectElement, Event>).currentTarget.value;
-    },
-  );
 };
 
 const labels: Record<string, string> = {
@@ -41,7 +26,7 @@ const labels: Record<string, string> = {
   "discount:desc": "Maior desconto",
 };
 
-function Sort({ sortOptions, url, noBorder }: Props) {
+function Sort({ sortOptions, url }: Props) {
   const current = getUrl(
     url,
     new URL(url).searchParams.get(SORT_QUERY_PARAM) ?? "",
@@ -53,13 +38,14 @@ function Sort({ sortOptions, url, noBorder }: Props) {
 
   return (
     <>
+      <label for="sort" class="sr-only">Sort by</label>
       <select
-        id="sort"
         name="sort"
-        class={clx(
-          noBorder ? "" : "select-bordered",
-          "select w-full max-w-sm rounded-lg text-sm",
-        )}
+        class="select select-bordered w-full max-w-sm rounded-lg"
+        hx-on:change={useScript(() => {
+          const select = event!.currentTarget as HTMLSelectElement;
+          window.location.href = select.value;
+        })}
       >
         {options.map(({ value, label }) => (
           <option
@@ -71,7 +57,6 @@ function Sort({ sortOptions, url, noBorder }: Props) {
           </option>
         ))}
       </select>
-      <script type="module" src={scriptAsDataURI(script, "sort")} />
     </>
   );
 }
