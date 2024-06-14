@@ -34,7 +34,6 @@ function Login() {
         aria-label="Login"
       >
         <Icon id="User" size={20} strokeWidth={0.4} />
-        <span>LOGIN</span>
       </a>
       <a
         class="btn btn-sm btn-ghost font-thin no-animation hidden"
@@ -42,7 +41,6 @@ function Login() {
         aria-label="Account"
       >
         <Icon id="User" size={20} strokeWidth={0.4} />
-        <span>ACCOUNT</span>
       </a>
       <script
         type="module"
