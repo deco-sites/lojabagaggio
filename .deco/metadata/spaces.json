@@ -712,7 +712,8 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fsite.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         },
         "%2F.deco%2Fblocks%2Fsite.json::Preview::world::Preview::%7B%7D": {
@@ -1544,7 +1545,8 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2FHeader%2520-%252001.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         },
         "%2F.deco%2Fblocks%2FHeader%2520-%252001.json::Preview::world::Preview::%7B%7D": {
@@ -1666,8 +1668,7 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fnavbar.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null,
-            "value": null
+            "__signal": null
           }
         },
         "%2F.deco%2Fblocks%2Fnavbar.json::Preview::world::Preview::%7B%7D": {
