@@ -20,7 +20,6 @@ function Alert({ alerts = [], interval = 5 }: Props) {
           <Slider.Item index={index} class="carousel-item">
             <span class="text-sm text-secondary-content flex justify-center items-center w-screen h-[38px]">
               {alert}
-              
             </span>
           </Slider.Item>
         ))}
