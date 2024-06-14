@@ -10,7 +10,7 @@
  */
 
 import { Suggestion } from "apps/commerce/types.ts";
-import { useScript } from "apps/utils/useScript.ts";
+import { scriptAsDataURI } from "apps/utils/dataURI.ts";
 import { asResolved, Resolved } from "deco/mod.ts";
 import {
   SEARCHBAR_INPUT_FORM_ID,
@@ -44,7 +44,7 @@ const script = (formId: string, name: string, popupId: string) => {
   form?.addEventListener("submit", () => {
     const search_term = input?.value;
     if (search_term) {
-      window.DECO.events.dispatch({
+      globalThis.window.DECO.events.dispatch({
         name: "search",
         params: { search_term },
       });
@@ -78,30 +78,15 @@ export default function Searchbar(
   const slot = useId();
 
   return (
-    <div
-      class="w-full grid gap-8 px-4 py-6"
-      style={{ gridTemplateRows: "min-content auto" }}
-    >
-      <form id={SEARCHBAR_INPUT_FORM_ID} action={ACTION} class="join">
-        <button
-          type="submit"
-          class="btn join-item btn-square no-animation"
-          aria-label="Search"
-          for={SEARCHBAR_INPUT_FORM_ID}
-          tabIndex={-1}
-        >
-          <span class="loading loading-spinner loading-xs hidden [.htmx-request_&]:inline" />
-          <Icon
-            class="inline [.htmx-request_&]:hidden"
-            id="MagnifyingGlass"
-            size={24}
-            strokeWidth={0.01}
-          />
-        </button>
+    <div class="w-full gap-8 flex justify-center">
+      <form
+        id={SEARCHBAR_INPUT_FORM_ID}
+        action={ACTION}
+        class="flex pl-4 justify-between join rounded-none  border sm:rounded-lg  border-lightGray w-full sm:max-w-[810px]  h-9 relative"
+      >
         <input
-          autoFocus
           tabIndex={0}
-          class="input input-bordered join-item flex-grow"
+          class="w-full text-xs border-none outline-none"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -113,30 +98,34 @@ export default function Searchbar(
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
         />
-        <label
-          type="button"
-          class="join-item btn btn-ghost btn-square hidden sm:inline-flex"
-          for={SEARCHBAR_POPUP_ID}
-          aria-label="Toggle searchbar"
+        <button
+          type="submit"
+          class="bg-lightGray  w-10 absolute top-[-0.8px] -right-1 h-[34.9px] text-white rounded-e-lg border-none ml-1 border  flex items-center justify-center"
+          aria-label="Search"
+          for={SEARCHBAR_INPUT_FORM_ID}
+          tabIndex={-1}
         >
-          <Icon id="XMark" size={24} strokeWidth={2} />
-        </label>
+          <Icon
+            class="inline text-white "
+            id="MagnifyingGlass"
+            size={24}
+            strokeWidth={0.01}
+          />
+        </button>
       </form>
 
       {/* Suggestions slot */}
-      <div id={slot} />
+      <div id={slot} class="absolute" />
 
       {/* Send search events as the user types */}
       <script
         type="module"
-        dangerouslySetInnerHTML={{
-          __html: useScript(
-            script,
-            SEARCHBAR_INPUT_FORM_ID,
-            NAME,
-            SEARCHBAR_POPUP_ID,
-          ),
-        }}
+        src={scriptAsDataURI(
+          script,
+          SEARCHBAR_INPUT_FORM_ID,
+          NAME,
+          SEARCHBAR_POPUP_ID,
+        )}
       />
     </div>
   );
