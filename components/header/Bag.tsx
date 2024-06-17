@@ -23,8 +23,9 @@ const onLoad = (id: string) =>
     );
   });
 
-function Bag() {
+function Bag({ device }: { device?: string }) {
   const id = useId();
+  const size = device !== "desktop" ? 24 : 28 
 
   return (
     <>
@@ -37,10 +38,10 @@ function Bag() {
           id={id}
           class={clx(
             "text-lightGray",
-            "after:hidden after:indicator-item after:badge after:badge-secondary after:font-semibold after:bg-primaryContent after:w-6 after:h-6 after:border-none after:text-xs after:text-white after:badge-sm after:content-[attr(data-count)]",
+            "after:hidden after:indicator-item after:badge after:badge-secondary after:font-semibold after:bg-primaryContent after:w-4 after:h-4 lg:after:w-6 lg:after:h-6 after:border-none after:text-xs after:text-white after:badge-sm after:content-[attr(data-count)]",
           )}
         >
-          <Icon id="bag" size={28} strokeWidth={2} />
+          <Icon id="bag" size={size} strokeWidth={2} />
         </span>
       </label>
       <script
