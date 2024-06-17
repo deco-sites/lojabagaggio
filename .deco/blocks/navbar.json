@@ -229,20 +229,9 @@
             }
           ],
           "name": "Modelos"
-        },
-        {
-          "image": [],
-          "children": []
         }
       ],
-      "image": [
-        {
-          "image": [],
-          "video": [],
-          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/a87497d2-c243-4859-86b5-e5c0e060a4b3",
-          "embedUrl": "https://www.bagaggio.com.br/carteiras?order=OrderByReleaseDateDESC"
-        }
-      ],
+      "image": [],
       "name": "CARTEIRAS",
       "url": "/carteiras?order=OrderByReleaseDateDESC"
     },
@@ -284,12 +273,7 @@
           ]
         }
       ],
-      "image": [
-        {
-          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/65ab3937-c1b9-4c0f-a805-0868e38505ad",
-          "embedUrl": "https://www.bagaggio.com.br/carteiras?order=OrderByReleaseDateDESC"
-        }
-      ],
+      "image": [],
       "name": "BOLSAS",
       "url": "/bolsas?order=OrderByReleaseDateDESC"
     },
@@ -320,12 +304,7 @@
           "name": "Categoria"
         }
       ],
-      "image": [
-        {
-          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/93db5a1d-fc43-413f-b004-a9de7f6c4a4f",
-          "embedUrl": "/pastas?order=OrderByTopSaleDESC"
-        }
-      ],
+      "image": [],
       "name": "PASTAS",
       "url": "/pastas?order=OrderByTopSaleDESC"
     },
@@ -475,164 +454,10 @@
       "url": "/volta-as-aulas"
     },
     {
-      "children": [
-        {
-          "image": [],
-          "children": [
-            {
-              "image": [],
-              "children": [],
-              "name": "Almofada de Pescoço",
-              "url": "/acessorios/almofada-de-pescoco?order=OrderByTopSaleDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Frasqueira",
-              "url": "/acessorios/frasqueiras"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Organizador de Mala",
-              "url": "/acessorios/organizador-de-mala"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Capa de Mala",
-              "url": "/acessorios/capa-de-mala?order=OrderByTopSaleDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Necessaire",
-              "url": "/acessorios/necessaire?order=OrderByReleaseDateDESC"
-            }
-          ],
-          "name": "Viagem"
-        },
-        {
-          "image": [],
-          "children": [
-            {
-              "image": [],
-              "children": [],
-              "name": "Cadeado",
-              "url": "/acessorios/cadeado?order=OrderByTopSaleDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Tag de Mala",
-              "url": "/acessorios/tag-de-mala"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Balança",
-              "url": "/acessorios/balanca"
-            },
-            {
-              "image": [],
-              "children": [],
-              "url": "/acessorios/Chaveiro?order=OrderByTopSaleDESC",
-              "name": "Chaveiro"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Porta Terno",
-              "url": "/acessorios/porta-terno"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Tag de Mala Personalizável",
-              "url": "/acessorios?initialMap=c&initialQuery=acessorios&map=category-1,atributos&order=OrderByTopSaleDESC&query=/acessorios/personalizaveis&searchState"
-            }
-          ]
-        },
-        {
-          "image": [],
-          "children": [
-            {
-              "image": [],
-              "children": [],
-              "name": "Shoulder Bag",
-              "url": "/shoulderbag"
-            },
-            {
-              "image": [],
-              "children": [],
-              "url": "/acessorios/pochete?order=OrderByTopSaleDESC",
-              "name": "Pochete"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Cinto",
-              "url": "/cinto?order=OrderByTopSaleDESC"
-            }
-          ],
-          "name": "Dia a Dia"
-        }
-      ],
-      "image": [
-        {
-          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/462df1f1-cd76-4014-b4a8-b9f88aa9e5fe",
-          "embedUrl": "/acessorios?order=OrderByTopSaleDESC"
-        }
-      ],
+      "children": [],
+      "image": [],
       "name": "ACESSÓRIOS",
       "url": "/acessorios?order=OrderByTopSaleDESC"
-    },
-    {
-      "children": [
-        {
-          "image": [],
-          "children": [
-            {
-              "image": [],
-              "children": [],
-              "name": "Garrafas Térmicas",
-              "url": "/termicos/garrafa-termica?order=OrderByReleaseDateDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Potes Térmicos",
-              "url": "/termicos/potes-termicos?order=OrderByTopSaleDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Lancheira Térmica",
-              "url": "/termicos/lancheira-termica?order=OrderByTopSaleDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Porta Vinho",
-              "url": "/termicos/termicos?initialMap=c&initialQuery=termicos&map=category-1,category-2&order=OrderByReleaseDateDESC&query=/termicos/porta-vinho&searchState"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Garrafas Térmicas Personalizaveis",
-              "url": "/termicos?initialMap=c&initialQuery=termicos&map=category-1,atributos&order=OrderByTopSaleDESC&query=/termicos/personalizavel&searchState"
-            }
-          ]
-        }
-      ],
-      "image": [
-        {
-          "url": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/823c4660-29f0-4a9c-9389-4ea7a94008e8",
-          "embedUrl": "/termicos?order=OrderByTopSaleDESC"
-        }
-      ],
-      "name": "Térmicos",
-      "url": "/termicos?order=OrderByReleaseDateDESC"
     },
     {
       "children": [],
@@ -641,25 +466,7 @@
       "url": "/para-empresas"
     },
     {
-      "children": [
-        {
-          "image": [],
-          "children": [
-            {
-              "image": [],
-              "children": [],
-              "name": "Produtos com até 60% off",
-              "url": "/outlet?order=OrderByTopSaleDESC"
-            },
-            {
-              "image": [],
-              "children": [],
-              "name": "Leve 3 Pague 2",
-              "url": "/leve3pague2?order=OrderByReleaseDateDESC"
-            }
-          ]
-        }
-      ],
+      "children": [],
       "image": [],
       "name": "outlet",
       "url": "/outlet?order=OrderByReleaseDateDESC"
