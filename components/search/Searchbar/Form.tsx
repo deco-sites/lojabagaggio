@@ -73,20 +73,23 @@ const script = (formId: string, name: string, popupId: string) => {
 const Suggestions = import.meta.resolve("./Suggestions.tsx");
 
 export default function Searchbar(
-  { placeholder = "O que você procura? ", loader }: SearchbarProps,
+  { placeholder = "O que você procura? ", loader, device }: SearchbarProps & {
+    device?: string;
+  },
 ) {
   const slot = useId();
+  const size = device !== "desktop" ? 16 : 22;
 
   return (
     <div class="w-full gap-8 flex justify-center">
       <form
         id={SEARCHBAR_INPUT_FORM_ID}
         action={ACTION}
-        class="flex pl-4 justify-between join rounded-none  border sm:rounded-lg  border-lightGray w-full sm:max-w-[810px]  h-9 relative"
+        class="flex pl-4 justify-between join  border rounded-lg  border-lightGray w-full sm:max-w-[810px]  h-8 lg:h-9 relative"
       >
         <input
           tabIndex={0}
-          class="w-full text-xs border-none outline-none"
+          class="w-[98%] text-xs border-none outline-none pr-0"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -100,15 +103,15 @@ export default function Searchbar(
         />
         <button
           type="submit"
-          class="bg-lightGray  w-10 absolute top-[-0.8px] -right-1 h-9 text-white rounded-e-lg border-none ml-1 border  flex items-center justify-center"
+          class="lg:bg-lightGray w-10 absolute top-[-0.8px] -right-1 h-8 lg:h-9 text-white lg:rounded-e-lg border-none ml-1 border  flex items-center justify-center"
           aria-label="Search"
           for={SEARCHBAR_INPUT_FORM_ID}
           tabIndex={-1}
         >
           <Icon
-            class="text-white flex justify-center items-center"
+            class="lg:text-white text-lightGray flex justify-center items-center"
             id="MagnifyingGlass"
-            size={22}
+            size={size}
             strokeWidth={0.01}
           />
         </button>
