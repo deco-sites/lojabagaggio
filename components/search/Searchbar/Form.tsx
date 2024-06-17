@@ -73,7 +73,7 @@ const script = (formId: string, name: string, popupId: string) => {
 const Suggestions = import.meta.resolve("./Suggestions.tsx");
 
 export default function Searchbar(
-  { placeholder = "What are you looking for?", loader }: SearchbarProps,
+  { placeholder = "O que você procura? ", loader }: SearchbarProps,
 ) {
   const slot = useId();
 
@@ -100,15 +100,15 @@ export default function Searchbar(
         />
         <button
           type="submit"
-          class="bg-lightGray  w-10 absolute top-[-0.8px] -right-1 h-[34.9px] text-white rounded-e-lg border-none ml-1 border  flex items-center justify-center"
+          class="bg-lightGray  w-10 absolute top-[-0.8px] -right-1 h-9 text-white rounded-e-lg border-none ml-1 border  flex items-center justify-center"
           aria-label="Search"
           for={SEARCHBAR_INPUT_FORM_ID}
           tabIndex={-1}
         >
           <Icon
-            class="inline text-white "
+            class="text-white flex justify-center items-center"
             id="MagnifyingGlass"
-            size={24}
+            size={22}
             strokeWidth={0.01}
           />
         </button>

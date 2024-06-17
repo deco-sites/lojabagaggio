@@ -54,16 +54,17 @@ const Desktop = (
   { navItems, logo, searchbar }: Props,
 ) => (
   <>
-    <div className="flex flex-col w-full px-6 items-center">
-      <div className="w-full flex justify-between items-center py-3">
-        <div className="flex justify-between items-center py-3">
+    <div className="flex flex-col w-9/10 m-auto max-w-screen-3xl items-center">
+      <div className="w-full flex justify-between items-center py-[0.7rem]">
+        <div className="flex justify-between items-center py-3 w-full max-w-45">
           {logo && (
-            <a href="/" aria-label="Store logo">
+            <a href="/" aria-label="Store logo" class="w-full">
               <Image
                 src={logo.src}
                 alt={logo.alt}
                 width={logo.width || 100}
                 height={logo.height || 23}
+                class="w-full max-w-45"
               />
             </a>
           )}
@@ -73,14 +74,14 @@ const Desktop = (
           <Searchbar {...searchbar} />
         </div>
 
-        <div className="flex-none flex items-center justify-end gap-2 col-span-1">
+        <div className="flex-none flex items-center justify-end gap-6">
           <Login />
           <a
-            className="btn btn-sm btn-ghost font-thin no-animation"
+            className=" no-animation"
             href="/wishlist"
             aria-label="Wishlist"
           >
-            <Icon id="Heart" size={24} strokeWidth={0.4} />
+            <Icon id="wishlist" size={28} strokeWidth={0.4} />
           </a>
 
           <div className="flex items-center text-xs font-thin">
@@ -90,8 +91,8 @@ const Desktop = (
       </div>
 
       <div className="lex w-full">
-        <ul className="flex gap-6 col-span-1 justify-start">
-          {navItems?.slice(0, 4).map((item) => <NavItem key={item.url} item={item} />)}
+        <ul className="flex gap-4 items-center justify-between px-4">
+          {navItems?.map((item) => <NavItem key={item.url} item={item} />)}
         </ul>
       </div>
     </div>

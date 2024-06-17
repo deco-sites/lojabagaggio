@@ -27,10 +27,11 @@ export default {
       },
       fontFamily: {
         "roboto": "Roboto, sans-serif",
+        "titillium": "Titillium Web, sans-serif",
       },
       colors: {
         primary: "#005143",
-        PrimaryContent: "#005143",
+        primaryContent: "#005143",
         secondary: "#920110",
         warning: "#39393A",
         white: "#FFFFFF",
@@ -45,6 +46,15 @@ export default {
       width: {
         "45": "180px",
         "9/10": "90%",
+      },
+      maxWidth: {
+        "45": "180px",
+        "2/4xl": "720px",
+        "screen-3xl": "1920px",
+      },
+      minWidth: {
+        "45": "180px",
+        "2/4xl": "720px",
       },
     },
   },
