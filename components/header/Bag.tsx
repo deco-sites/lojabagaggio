@@ -36,11 +36,11 @@ function Bag() {
         <span
           id={id}
           class={clx(
-            "btn btn-circle btn-sm btn-ghost no-animation",
-            "after:hidden after:indicator-item after:badge after:badge-secondary after:badge-sm after:content-[attr(data-count)] after:font-thin",
+            "text-lightGray",
+            "after:hidden after:indicator-item after:badge after:badge-secondary after:font-semibold after:bg-primaryContent after:w-6 after:h-6 after:border-none after:text-xs after:text-white after:badge-sm after:content-[attr(data-count)]",
           )}
         >
-          <Icon id="ShoppingCart" size={24} strokeWidth={2} />
+          <Icon id="bag" size={28} strokeWidth={2} />
         </span>
       </label>
       <script
