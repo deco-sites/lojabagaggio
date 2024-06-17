@@ -29,18 +29,18 @@ function Login() {
   return (
     <div id={id}>
       <a
-        class="btn btn-sm btn-ghost font-thin no-animation"
+        class="text-lightGray no-animation "
         href="/login"
         aria-label="Login"
       >
-        <Icon id="User" size={28} strokeWidth={0.4} />
+        <Icon id="login" size={32} strokeWidth={0.4} />
       </a>
       <a
-        class="btn btn-sm btn-ghost font-thin no-animation hidden"
+        class="text-lightGray no-animation hidden"
         href="/account"
         aria-label="Account"
       >
-        <Icon id="User" size={28} strokeWidth={0.4} />
+        <Icon id="login" size={32} strokeWidth={0.4} />
       </a>
       <script
         type="module"
