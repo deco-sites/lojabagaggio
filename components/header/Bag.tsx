@@ -25,7 +25,7 @@ const onLoad = (id: string) =>
 
 function Bag({ device }: { device?: string }) {
   const id = useId();
-  const size = device !== "desktop" ? 24 : 28 
+  const size = device !== "desktop" ? 24 : 28;
 
   return (
     <>
