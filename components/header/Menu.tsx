@@ -1,6 +1,5 @@
 import Icon from "../../components/ui/Icon.tsx";
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
-
 export interface Props {
   navItems: SiteNavigationElement[];
 }
@@ -9,46 +8,63 @@ function MenuItem(
   { item, isParent }: { item: SiteNavigationElement; isParent?: boolean },
 ) {
   const hasChildren = item.children && item.children.length > 0;
+  const hasOutlet = item.name?.toLowerCase() === "outlet";
+  const color = hasOutlet ? "text-primary" : "text-graphite";
 
   return (
     <div
-      className={` h-12 ${
-        hasChildren
-          ? "collapse collapse-arrow"
+      className={`${
+        (hasChildren || isParent)
+          ? "collapse collapse-arrow "
           : "collapse-title !px-0 !text-sm flex items-center justify-between"
       }`}
     >
-      {hasChildren
+      {hasChildren || isParent
         ? (
           <>
             {item.name && isParent
               ? (
                 <>
-                  <input type="checkbox" />
+                  <input type="checkbox" className="h-12 !min-h-12" />
                   <div
-                    className={`collapse-title collapse-arrow font-roboto font-semibold  text-graphite lowercase  !px-0 !text-base flex items-center justify-between`}
+                    className={`collapse-title collapse-arrow font-roboto font-semibold !h-12   text-graphite lowercase !p-0 !min-h-12 !text-base flex items-center justify-between`}
                   >
-                    <span class="first-letter:capitalize">{item.name}</span>
+                    <span className={`first-letter:capitalize ${color}`}>
+                      {item.name}
+                    </span>
                   </div>
-
                   <div className="collapse-content">
-                    <ul>
-                      {isParent && (
-                        <li className="">
-                          <a
-                            className="py-2  text-graphite text-sm font-titillium"
-                            href={item.url}
-                          >
-                            Ver todos
+                    {hasChildren
+                      ? (
+                        <>
+                          <ul>
+                            {isParent && (
+                              <li className="">
+                                <a
+                                  className="py-2 text-graphite text-sm font-titillium"
+                                  href={item.url}
+                                >
+                                  Ver todos
+                                </a>
+                              </li>
+                            )}
+                            {item.children?.map((node) => (
+                              <li key={node.name}>
+                                <MenuItem item={node} />
+                              </li>
+                            ))}
+                          </ul>
+                        </>
+                      )
+                      : (
+                        <>
+                          <a href={item.url} className="" alt={item.name}>
+                            <span className="text-sm font-titillium font-normal text-graphite">
+                              Saiba mais
+                            </span>
                           </a>
-                        </li>
+                        </>
                       )}
-                      {item.children?.map((node) => (
-                        <li key={node}>
-                          <MenuItem item={node} />
-                        </li>
-                      ))}
-                    </ul>
                   </div>
                 </>
               )
@@ -56,15 +72,14 @@ function MenuItem(
                 <div className="">
                   <ul>
                     {item.children?.map((node) => (
-                      <li key={node}>
+                      <li key={node.name}>
                         <MenuItem item={node} />
                       </li>
                     ))}
-
                     {isParent && (
                       <li className="grid place-content-center w-64 mt-4 mx-auto bg-warning">
                         <a
-                          className="py-2 px-4 text-white font-se"
+                          className="py-2 px-4 text-white font-semibold"
                           href={item.url}
                         >
                           Ver todos
@@ -77,15 +92,13 @@ function MenuItem(
           </>
         )
         : (
-          <a
-            href={item.url}
-            className={`${""}`}
-            alt={item.name}
-          >
-            <span class="text-sm font-titillium font-normal text-graphite">
-              {item.name}
-            </span>
-          </a>
+          <>
+            <a href={item.url} className="" alt={item.name}>
+              <span className="text-sm font-titillium font-normal text-graphite">
+                {item.name}
+              </span>
+            </a>
+          </>
         )}
     </div>
   );
