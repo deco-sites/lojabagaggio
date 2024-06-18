@@ -50,6 +50,18 @@ export interface SectionProps {
 
 type Props = Omit<SectionProps, "alert" | "variant">;
 
+const menu = ` <div class="flex items-center gap-1">
+          <Login />
+          <div class="font-roboto font-normal font-base text-warning h-10">
+            <h1 class="leading-[20px]">
+              <span class="">Olá, Visitante</span>
+            </h1>
+            <p class="leanding-[20px] h-3">
+              <span class="font-bold">Entre</span> ou <span class="font-bold">cadastre-se</span>
+            </p>
+          </div>
+        </div>`;
+
 const Desktop = (
   { navItems, logo, searchbar }: Props,
 ) => (
@@ -104,7 +116,33 @@ const Mobile = ({ logo, device, searchbar }: Props & { device?: string }) => (
     <Drawer
       id={SIDEMENU_DRAWER_ID}
       aside={
-        <Drawer.Aside title="Menu" drawer={SIDEMENU_DRAWER_ID}>
+        <Drawer.Aside title={menu} drawer={SIDEMENU_DRAWER_ID}>
+          <div class="flex justify-between items-center px-4 py-6 h-[88px]">
+            <div class="flex items-center gap-1">
+              <Login />
+              <div class="font-roboto font-normal font-base text-warning h-10">
+                <h1 class="leading-[20px]">
+                  <span class="">Olá, Visitante</span>
+                </h1>
+                <p class="leanding-[20px] h-3">
+                  <span class="font-bold">Entre</span> ou{" "}
+                  <span class="font-bold">cadastre-se</span>
+                </p>
+              </div>
+            </div>
+            <label
+              for={SIDEMENU_DRAWER_ID}
+              aria-label="X"
+              class="btn btn-ghost"
+            >
+              <Icon id="XMark" size={24} strokeWidth={2} />
+            </label>
+          </div>
+          <div class="text-center bg-lightGray w-full h-9">
+            <p class="font-roboto font-medium text-white text-sm py-2">
+              Navegue por categoria
+            </p>
+          </div>
           <div
             id={SIDEMENU_CONTAINER_ID}
             className="h-full flex items-center justify-center"
@@ -116,27 +154,26 @@ const Mobile = ({ logo, device, searchbar }: Props & { device?: string }) => (
       }
     />
     <div
-      class="flex flex-col w-full  px-6 pb-6 gap-2"
+      class="flex flex-col items-center justify-center w-full  px-4 pb-2 gap-2"
       style={{ height: NAVBAR_HEIGHT }}
     >
-      <div className="grid grid-cols-2 justify-between items-center w-full">
+      <div className="grid grid-cols-2 justify-between items-center w-full h-14">
         <div class="flex items-center justify-around">
           <label
             htmlFor={SIDEMENU_DRAWER_ID}
-            className="btn btn-circle md:btn-sm btn-xs btn-ghost mr-6"
+            className="btn btn-circle md:btn-sm btn-xs btn-ghost mr-6 text-lightGray"
             aria-label="open menu"
             hx-target={`#${SIDEMENU_CONTAINER_ID}`}
             hx-swap="outerHTML"
             hx-trigger="click once"
             hx-get={useSection({ props: { variant: "menu" } })}
           >
-            <Icon id="Bars3" size={20} strokeWidth={0.01} />
+            <Icon id="Bars3" size={24} strokeWidth={0.01} />
           </label>
           {logo && (
             <a
               href="/"
               className="flex-grow inline-flex items-center justify-center"
-              style={{ minHeight: NAVBAR_HEIGHT }}
               aria-label="Store logo"
             >
               <Image
@@ -156,7 +193,7 @@ const Mobile = ({ logo, device, searchbar }: Props & { device?: string }) => (
       </div>
 
       {/** search */}
-      <div className=" w-full">
+      <div className="w-full px-1">
         <Searchbar {...searchbar} device={device} />
       </div>
     </div>
