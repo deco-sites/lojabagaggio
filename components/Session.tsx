@@ -2,7 +2,7 @@ import { Head } from "$fresh/runtime.ts";
 import { type Person } from "apps/commerce/types.ts";
 import { useScript } from "apps/utils/useScript.ts";
 import { type AppContext } from "../apps/site.ts";
-import { MINICART_DRAWER_ID, SIDEMENU_DRAWER_ID } from "../constants.ts";
+import { MINICART_DRAWER_ID } from "../constants.ts";
 import { useComponent } from "../sections/Component.tsx";
 import { type Item } from "./minicart/Item.tsx";
 import CartProvider, { type Minicart } from "./minicart/Minicart.tsx";
