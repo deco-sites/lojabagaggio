@@ -2,7 +2,6 @@ import { useScript } from "apps/utils/useScript.ts";
 import { type ComponentChildren } from "preact";
 import { clx } from "../../sdk/clx.ts";
 import { useId } from "../../sdk/useId.ts";
-import Icon from "./Icon.tsx";
 
 export interface Props {
   open?: boolean;
@@ -73,7 +72,7 @@ function Drawer({
 }
 
 function Aside(
-  { title, drawer, children }: {
+  { children }: {
     title: string;
     drawer: string;
     children: ComponentChildren;
@@ -82,17 +81,9 @@ function Aside(
   return (
     <div
       data-aside
-      class="bg-base-100 grid grid-rows-[auto_1fr] h-full divide-y"
+      class="bg-base-100 grid grid-rows-[auto_1fr] h-full"
       style={{ maxWidth: "100vw" }}
     >
-      <div class="flex justify-between items-center">
-        <h1 class="px-4 py-3">
-          <span class="font-medium text-2xl">{title}</span>
-        </h1>
-        <label for={drawer} aria-label="X" class="btn btn-ghost">
-          <Icon id="XMark" size={24} strokeWidth={2} />
-        </label>
-      </div>
       {children}
     </div>
   );

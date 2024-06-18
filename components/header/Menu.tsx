@@ -5,23 +5,88 @@ export interface Props {
   navItems: SiteNavigationElement[];
 }
 
-function MenuItem({ item }: { item: SiteNavigationElement }) {
+function MenuItem(
+  { item, isParent }: { item: SiteNavigationElement; isParent?: boolean },
+) {
+  const hasChildren = item.children && item.children.length > 0;
+
   return (
-    <div class="collapse collapse-plus">
-      <input type="checkbox" />
-      <div class="collapse-title">{item.name}</div>
-      <div class="collapse-content">
-        <ul>
-          <li>
-            <a class="underline text-sm" href={item.url}>Ver todos</a>
-          </li>
-          {item.children?.map((node) => (
-            <li>
-              <MenuItem item={node} />
-            </li>
-          ))}
-        </ul>
-      </div>
+    <div
+      className={` h-12 ${
+        hasChildren
+          ? "collapse collapse-arrow"
+          : "collapse-title !px-0 !text-sm flex items-center justify-between"
+      }`}
+    >
+      {hasChildren
+        ? (
+          <>
+            {item.name && isParent
+              ? (
+                <>
+                  <input type="checkbox" />
+                  <div
+                    className={`collapse-title collapse-arrow font-roboto font-semibold  text-graphite lowercase  !px-0 !text-base flex items-center justify-between`}
+                  >
+                    <span class="first-letter:capitalize">{item.name}</span>
+                  </div>
+
+                  <div className="collapse-content">
+                    <ul>
+                      {isParent && (
+                        <li className="">
+                          <a
+                            className="py-2  text-graphite text-sm font-titillium"
+                            href={item.url}
+                          >
+                            Ver todos
+                          </a>
+                        </li>
+                      )}
+                      {item.children?.map((node) => (
+                        <li key={node}>
+                          <MenuItem item={node} />
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </>
+              )
+              : (
+                <div className="">
+                  <ul>
+                    {item.children?.map((node) => (
+                      <li key={node}>
+                        <MenuItem item={node} />
+                      </li>
+                    ))}
+
+                    {isParent && (
+                      <li className="grid place-content-center w-64 mt-4 mx-auto bg-warning">
+                        <a
+                          className="py-2 px-4 text-white font-se"
+                          href={item.url}
+                        >
+                          Ver todos
+                        </a>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              )}
+          </>
+        )
+        : (
+          <a
+            href={item.url}
+            className={`${""}`}
+            alt={item.name}
+          >
+            <span class="text-sm font-titillium font-normal text-graphite">
+              {item.name}
+            </span>
+          </a>
+        )}
     </div>
   );
 }
@@ -29,34 +94,34 @@ function MenuItem({ item }: { item: SiteNavigationElement }) {
 function Menu({ navItems }: Props) {
   return (
     <div
-      class="flex flex-col h-full overflow-y-auto"
+      class="flex flex-col h-full overflow-y-auto bg-[#00514308]"
       style={{ minWidth: "100vw" }}
     >
-      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 overflow-y-auto">
+      <ul class="px-4 flex-grow flex flex-col divide-y divide-base-200 ">
         {navItems.map((item) => (
           <li>
-            <MenuItem item={item} />
+            <MenuItem item={item} isParent={true} />
           </li>
         ))}
       </ul>
 
-      <ul class="flex flex-col py-2 bg-base-200">
+      <ul class="flex flex-col py-2">
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
             href="/wishlist"
           >
-            <Icon id="Heart" size={24} strokeWidth={2} />
-            <span class="text-sm">Lista de desejos</span>
+            <Icon id="wishlist" size={24} strokeWidth={2} />
+            <span class="text-sm">Meus favoritos</span>
           </a>
         </li>
         <li>
           <a
             class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
+            href="/account"
           >
-            <Icon id="MapPin" size={24} strokeWidth={2} />
-            <span class="text-sm">Nossas lojas</span>
+            <Icon id="bag" size={24} strokeWidth={2} />
+            <span class="text-sm">Meus pedidos</span>
           </a>
         </li>
         <li>
@@ -65,16 +130,7 @@ function Menu({ navItems }: Props) {
             href="https://www.deco.cx"
           >
             <Icon id="Phone" size={24} strokeWidth={2} />
-            <span class="text-sm">Fale conosco</span>
-          </a>
-        </li>
-        <li>
-          <a
-            class="flex items-center gap-4 px-4 py-2"
-            href="https://www.deco.cx"
-          >
-            <Icon id="User" size={24} strokeWidth={2} />
-            <span class="text-sm">Minha conta</span>
+            <span class="text-sm">Blog</span>
           </a>
         </li>
       </ul>

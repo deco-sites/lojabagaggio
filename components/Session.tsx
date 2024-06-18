@@ -9,6 +9,7 @@ import CartProvider, { type Minicart } from "./minicart/Minicart.tsx";
 import Drawer from "./ui/Drawer.tsx";
 import UserProvider from "./user/Provider.tsx";
 import WishlistProvider, { type Wishlist } from "./wishlist/Provider.tsx";
+import Icon from "./ui/Icon.tsx";
 
 declare global {
   interface Window {
@@ -343,6 +344,18 @@ export default function Session(
         class="drawer-end z-50"
         aside={
           <Drawer.Aside title="My Bag" drawer={MINICART_DRAWER_ID}>
+            <div class="flex justify-between items-center px-4 py-6 h-[88px]">
+              <h2 class="text-lg font-bold">My Bag</h2>
+              <div class="flex items-center gap-1">
+                <label
+                  for={MINICART_DRAWER_ID}
+                  aria-label="X"
+                  class="btn btn-ghost"
+                >
+                  <Icon id="XMark" size={24} strokeWidth={2} />
+                </label>
+              </div>
+            </div>
             <div
               class="h-full flex flex-col bg-base-100 items-center justify-center overflow-auto"
               style={{
