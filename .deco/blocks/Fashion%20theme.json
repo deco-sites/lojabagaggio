@@ -4,13 +4,13 @@
       {
         "variations": [
           {
+            "weight": "400"
+          },
+          {
             "weight": "100"
           },
           {
-            "weight": "300"
-          },
-          {
-            "weight": "400"
+            "weight": "700"
           },
           {
             "weight": "500"
@@ -19,27 +19,10 @@
             "weight": "600"
           },
           {
-            "weight": "700"
+            "weight": "300"
           }
         ],
         "family": "Roboto"
-      },
-      {
-        "variations": [
-          {
-            "weight": "400"
-          },
-          {
-            "weight": "500"
-          },
-          {
-            "weight": "600"
-          },
-          {
-            "weight": "700"
-          }
-        ],
-        "family": "Titillium Web"
       }
     ],
     "__resolveType": "website/loaders/fonts/googleFonts.ts"
