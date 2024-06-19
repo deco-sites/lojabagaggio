@@ -45,6 +45,12 @@
       "preload": true
     },
     {
+      "__resolveType": "Category List - 01"
+    },
+    {
+      "__resolveType": "Product Shelf - 03"
+    },
+    {
       "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
       "layout": {
         "headerfontSize": "Large",
