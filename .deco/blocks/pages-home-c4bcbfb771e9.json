@@ -91,6 +91,9 @@
           }
         }
       ]
+    },
+    {
+      "__resolveType": "Footer - 04"
     }
   ],
   "__resolveType": "website/pages/Page.tsx",
