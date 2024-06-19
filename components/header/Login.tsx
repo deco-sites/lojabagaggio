@@ -29,14 +29,14 @@ function Login() {
   return (
     <div id={id}>
       <a
-        class="text-lightGray no-animation "
+        class=" text-primary sm:text-lightGray no-animation "
         href="/login"
         aria-label="Login"
       >
         <Icon id="login" size={32} strokeWidth={0.4} />
       </a>
       <a
-        class="text-lightGray no-animation hidden"
+        class=" text-primary sm:text-lightGray no-animation hidden"
         href="/account"
         aria-label="Account"
       >
