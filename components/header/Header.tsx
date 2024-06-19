@@ -77,7 +77,7 @@ const Desktop = (
         <div className="flex-none flex items-center justify-end gap-6">
           <Login />
           <a
-            className=" no-animation"
+            className=" no-animation text-lightGray"
             href="/wishlist"
             aria-label="Wishlist"
           >
