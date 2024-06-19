@@ -45,21 +45,6 @@
       "preload": true
     },
     {
-      "__resolveType": "site/sections/Product/ProductShelf.tsx",
-      "layout": {
-        "showArrows": true
-      },
-      "products": {
-        "props": {
-          "sort": "",
-          "count": 29
-        },
-        "crossSelling": "similars",
-        "__resolveType": "vtex/loaders/legacy/productList.ts"
-      },
-      "title": "Ofertas do dia"
-    },
-    {
       "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
       "layout": {
         "headerfontSize": "Large",
