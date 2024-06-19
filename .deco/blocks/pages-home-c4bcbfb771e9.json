@@ -9,47 +9,40 @@
     },
     {
       "__resolveType": "site/sections/Images/Carousel.tsx",
-      "dots": false,
+      "dots": true,
       "arrows": true,
       "images": [
         {
           "action": {
-            "href": "/feminino",
-            "label": "Explore collection",
-            "subTitle": "Visit our site and start building now:",
-            "title": "VTEX Store"
+            "href": "/feminino"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/6b96d386-7630-4a6e-8007-343fc2a2948e",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/add0cafc-f8a3-4c7f-94fc-a2812873ba8a",
           "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/4e15280c-141f-40e1-903c-722b74425db1",
           "alt": "Inverno"
         },
         {
-          "alt": "Masculino",
           "action": {
-            "href": "/masculino",
-            "label": "Explore collection",
-            "title": "VTEX Store",
-            "subTitle": "Visit our site and start building now:"
+            "href": "/"
           },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/c007e481-b1c6-4122-9761-5c3e554512c1",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/d057fc10-5616-4f12-8d4c-201bb47a81f5"
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/fd23a95c-cf9d-44dc-b7e7-343ae56ac2f4",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/1a494e98-de7d-4398-a49f-2945722c5ca5",
+          "alt": "Promo"
         },
         {
-          "alt": "Vestidos",
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/1eeca74b-f7a8-4d60-a98f-22b215e4153f",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/9788c3aa-cd1d-40fa-8917-baff0a299170",
+          "alt": "Bolsas",
           "action": {
-            "href": "/feminino/roupas/vestidos",
-            "label": "Explore collection",
-            "title": "VTEX Store",
-            "subTitle": "Visit our site and start building now:"
-          },
-          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/c007e481-b1c6-4122-9761-5c3e554512c1",
-          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/d057fc10-5616-4f12-8d4c-201bb47a81f5"
+            "href": "/"
+          }
+        },
+        {
+          "desktop": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/86af74dd-7598-44b3-b3cf-054827a0a8cf",
+          "mobile": "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/10646/2054501a-77ba-43a8-a1bb-160d156464c2",
+          "alt": "Donna"
         }
       ],
       "preload": true
-    },
-    {
-      "__resolveType": "Category List - 01"
     },
     {
       "__resolveType": "site/sections/Product/ProductShelf.tsx",
@@ -68,6 +61,10 @@
     },
     {
       "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
+      "layout": {
+        "headerfontSize": "Large",
+        "headerAlignment": "center"
+      },
       "title": "Melhor de cada departamento",
       "tabs": [
         {
@@ -93,11 +90,7 @@
             "__resolveType": "vtex/loaders/legacy/productList.ts"
           }
         }
-      ],
-      "layout": {
-        "headerfontSize": "Large",
-        "headerAlignment": "center"
-      }
+      ]
     },
     {
       "__resolveType": "Footer - 04"

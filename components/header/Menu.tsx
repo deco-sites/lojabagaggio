@@ -37,7 +37,7 @@ function MenuItem(
                     {hasChildren
                       ? (
                         <>
-                          <ul class="flex flex-col gap-4 ml-6 my-4">
+                          <ul className="flex flex-col gap-4 ml-6 my-4">
                             {isParent && (
                               <li className=" hover:text-">
                                 <a
@@ -48,8 +48,8 @@ function MenuItem(
                                 </a>
                               </li>
                             )}
-                            {item.children?.map((node) => (
-                              <li key={node.name}>
+                            {item.children?.map((node, index) => (
+                              <li key={`${node.name}-${index}`}>
                                 <MenuItem item={node} />
                               </li>
                             ))}
@@ -74,9 +74,9 @@ function MenuItem(
               )
               : (
                 <div className="">
-                  <ul class="flex flex-col gap-4 ">
-                    {item.children?.map((node) => (
-                      <li key={node.name} class={``}>
+                  <ul className="flex flex-col gap-4 ">
+                    {item.children?.map((node, index) => (
+                      <li key={`${node.name}-${index}`} className={``}>
                         <MenuItem item={node} />
                       </li>
                     ))}
