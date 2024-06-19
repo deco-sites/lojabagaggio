@@ -1,0 +1,52 @@
+{
+  "buttonStyle": {
+    "--border-btn": "1px",
+    "--rounded-btn": "0.2rem",
+    "--animation-btn": "0.25s"
+  },
+  "__resolveType": "site/sections/Theme/Theme.tsx",
+  "font": {
+    "fonts": [
+      {
+        "variations": [
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "300"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "600"
+          },
+          {
+            "weight": "700"
+          }
+        ],
+        "family": "Roboto"
+      },
+      {
+        "variations": [
+          {
+            "weight": "100"
+          },
+          {
+            "weight": "400"
+          },
+          {
+            "weight": "500"
+          },
+          {
+            "weight": "600"
+          },
+          {
+            "weight": "700"
+          }
+        ],
+        "family": "Titillium Web"
+      }
+    ]
+  }
+}
