@@ -50,18 +50,6 @@ export interface SectionProps {
 
 type Props = Omit<SectionProps, "alert" | "variant">;
 
-const menu = ` <div class="flex items-center gap-1">
-          <Login />
-          <div class="font-roboto font-normal font-base text-warning h-10">
-            <h1 class="leading-[20px]">
-              <span class="">Olá, Visitante</span>
-            </h1>
-            <p class="leanding-[20px] h-3">
-              <span class="font-bold">Entre</span> ou <span class="font-bold">cadastre-se</span>
-            </p>
-          </div>
-        </div>`;
-
 const Desktop = (
   { navItems, logo, searchbar }: Props,
 ) => (
@@ -116,7 +104,7 @@ const Mobile = ({ logo, device, searchbar }: Props & { device?: string }) => (
     <Drawer
       id={SIDEMENU_DRAWER_ID}
       aside={
-        <Drawer.Aside title={menu} drawer={SIDEMENU_DRAWER_ID}>
+        <Drawer.Aside title={"Menu"} drawer={SIDEMENU_DRAWER_ID}>
           <div class="flex justify-between items-center px-4 py-6 h-[88px]">
             <div class="flex items-center gap-1">
               <Login />
@@ -124,10 +112,12 @@ const Mobile = ({ logo, device, searchbar }: Props & { device?: string }) => (
                 <h1 class="leading-[20px]">
                   <span class="">Olá, Visitante</span>
                 </h1>
-                <p class="leanding-[20px] h-3">
-                  <span class="font-bold">Entre</span> ou{" "}
-                  <span class="font-bold">cadastre-se</span>
-                </p>
+                <a href="/login" alt="login">
+                  <p class="leanding-[20px] h-3">
+                    <span class="font-bold">Entre</span> ou{" "}
+                    <span class="font-bold">cadastre-se</span>
+                  </p>
+                </a>
               </div>
             </div>
             <label
