@@ -13,5 +13,6 @@ export const USER_ID = "user-json";
 export const WISHLIST_ID = "wishlist-json";
 export const WISHLIST_FORM_ID = "wishlist-form";
 
-export const HEADER_HEIGHT = "122px";
+export const HEADER_HEIGHT = "165px";
+export const HEADER_HEIGHT_SHOW_ALERT = "259px";
 export const NAVBAR_HEIGHT = "122px";
