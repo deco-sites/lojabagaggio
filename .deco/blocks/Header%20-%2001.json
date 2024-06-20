@@ -22,5 +22,31 @@
       "__resolveType": "resolved"
     }
   },
-  "mode": "private"
+  "mode": "private",
+  "alert": {
+    "alerts": [
+      {
+        "title": "1ª DEVOLUÇÃO GRÁTIS\"",
+        "description": "Seu produto não era o que esperava?Solicite a troca através do e-mail atendimento@bagaggio.com.br ou no nosso chat. De segunda à sexta, das 09 às 18h"
+      },
+      {
+        "title": "COMPRE PELO WHATSAPP",
+        "description": "Entre em contato com uma de nossas lojas e compre pelo Whatsapp"
+      },
+      {
+        "title": "10% OFF NA SUA PRIMEIRA COMPRA",
+        "description": "Use o cupom SOUBAGAGGIO e garanta 10% de desconto na sua primeira compra. *desconto não cumulativo com outras promoções do site"
+      },
+      {
+        "title": "TROQUE FÁCIL",
+        "description": "Para solicitar a troca, devolução ou uso da garantia acesse o link [**Troque Fácil**](https://bagaggio.troquefacil.com.br/) apresente o número do pedido e o CPF vinculado a compra. Em seguida, selecione o produto e o motivo da solicitação"
+      },
+      {
+        "title": "PARA EMPRESAS",
+        "description": "Atendimento exclusivo para empresas, por telefone, e-mail e whatsapp. Solicite seu orçamento."
+      }
+    ],
+    "backgroundColor": "#0274BB",
+    "interval": 2
+  }
 }
