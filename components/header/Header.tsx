@@ -5,6 +5,7 @@ import { useDevice } from "deco/hooks/useDevice.ts";
 import { useSection } from "deco/hooks/useSection.ts";
 import {
   HEADER_HEIGHT,
+  HEADER_HEIGHT_SHOW_ALERT,
   NAVBAR_HEIGHT,
   SIDEMENU_CONTAINER_ID,
   SIDEMENU_DRAWER_ID,
@@ -27,8 +28,23 @@ export interface Logo {
   height?: number;
 }
 
+/** @title {{{title}}} */
+export interface inforCard {
+  title: string;
+  description?: string;
+  link?: string;
+  image?: ImageWidget;
+  activeForm?: boolean;
+}
+
+export interface TopAlert {
+  backgroundColor?: string;
+  alerts?: inforCard[];
+  interval?: number;
+}
+
 export interface SectionProps {
-  alerts?: string[];
+  alert?: TopAlert;
 
   /**
    * @title Navigation items
@@ -46,12 +62,14 @@ export interface SectionProps {
   logo?: Logo;
 
   variant?: "menu";
+
+  isShow?: boolean;
 }
 
-type Props = Omit<SectionProps, "alert" | "variant">;
+type Props = Omit<SectionProps, "variant">;
 
 const Desktop = (
-  { navItems, logo, searchbar }: Props,
+  { navItems, logo, searchbar, isShow }: Props,
 ) => (
   <>
     <div className="flex flex-col w-9/10 m-auto max-w-screen-3xl items-center">
@@ -92,7 +110,9 @@ const Desktop = (
 
       <div className="lex w-full">
         <ul className="flex gap-4 items-center justify-between px-4">
-          {navItems?.map((item) => <NavItem key={item.url} item={item} />)}
+          {navItems?.map((item) => (
+            <NavItem key={item.url} item={item} isShow={isShow} />
+          ))}
         </ul>
       </div>
     </div>
@@ -191,7 +211,8 @@ const Mobile = ({ logo, device, searchbar }: Props & { device?: string }) => (
 );
 
 function Header({
-  alerts = [],
+  alert,
+  isShow,
   logo = {
     src:
       "https://ozksgdmyrqcxcwhnbepg.supabase.co/storage/v1/object/public/assets/2291/986b61d4-3847-4867-93c8-b550cb459cc7",
@@ -205,7 +226,7 @@ function Header({
 
   return (
     <header
-      style={{ height: HEADER_HEIGHT }}
+      style={{ height: isShow ? HEADER_HEIGHT_SHOW_ALERT : HEADER_HEIGHT }}
       // Refetch the header in two situations
       // 1. When the window is resized so we have a gracefull Developer Experience
       // 2. When the user changes tab, so we can update the minicart badge when the user comes back
@@ -213,11 +234,14 @@ function Header({
       hx-get={useSection()}
       hx-target="closest section"
       hx-swap="outerHTML"
+      id="header"
     >
       <div className="bg-base-100 fixed w-full z-40">
-        {alerts.length > 0 && <Alert alerts={alerts} />}
+        {alert?.alerts && alert.alerts.length > 0 && (
+          <Alert alert={alert} isShow={isShow} />
+        )}
         {device === "desktop"
-          ? <Desktop logo={logo} {...props} />
+          ? <Desktop logo={logo} {...props} isShow={isShow} />
           : <Mobile logo={logo} {...props} device={device} />}
       </div>
     </header>
