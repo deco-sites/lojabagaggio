@@ -1,9 +1,11 @@
 import type { SiteNavigationElement } from "apps/commerce/types.ts";
 import Image from "apps/website/components/Image.tsx";
 
-import { HEADER_HEIGHT } from "../../constants.ts";
+import { HEADER_HEIGHT, HEADER_HEIGHT_SHOW_ALERT } from "../../constants.ts";
 
-function NavItem({ item }: { item: SiteNavigationElement }) {
+function NavItem(
+  { item, isShow }: { item: SiteNavigationElement; isShow?: boolean },
+) {
   const { url, name, children } = item;
   const hasImage = item?.image?.[0];
   return (
@@ -29,7 +31,11 @@ function NavItem({ item }: { item: SiteNavigationElement }) {
         (
           <div
             class="fixed hidden mt-8 hover:flex group-hover:flex bg-base-100 z-50 items-start  justify-center gap-6  w-screen  "
-            style={{ top: "0px", left: "0px", marginTop: HEADER_HEIGHT }}
+            style={{
+              top: "0px",
+              left: "0px",
+              marginTop: isShow ? HEADER_HEIGHT_SHOW_ALERT : HEADER_HEIGHT,
+            }}
           >
             <div class=" w-[86%]  max-w-[1920px] flex items-start  justify-between ">
               <ul
