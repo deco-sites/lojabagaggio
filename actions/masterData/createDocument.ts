@@ -1,36 +1,32 @@
-
-
 export interface Props {
-    data: Record<string, unknown>;
-    acronym: string;
+  data: Record<string, unknown>;
+  acronym: string;
 }
 
 export const formFirstPurchase = async (
-    props: Props,
-    _req: Request,
-
+  props: Props,
+  _req: Request,
 ): Promise<unknown | null> => {
-    const { data, acronym } = props;
+  const { data, acronym } = props;
 
-
-    try {
-        const response = await fetch(
-            `https://www.bagaggio.com.br/api/dataentities/${acronym}/documents/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                "content-type": "aplication/json",
-            },
-            body: JSON.stringify(data),
+  try {
+    const response = await fetch(
+      `https://www.bagaggio.com.br/api/dataentities/${acronym}/documents/`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "content-type": "aplication/json",
         },
-        );
-        const res = await response.json();
+        body: JSON.stringify(data),
+      },
+    );
+    const res = await response.json();
 
-        return res;
-    } catch (e) {
-        return e;
-    }
-
+    return res;
+  } catch (e) {
+    return e;
+  }
 };
 
-export default formFirstPurchase; 
+export default formFirstPurchase;

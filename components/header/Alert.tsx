@@ -3,8 +3,6 @@ import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
-import { useScript } from "apps/utils/useScript.ts";
-
 
 export interface inforCard {
   title: string;
@@ -67,36 +65,6 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
 
   const { backgroundColor, alerts } = alert;
   const interval = alert.interval ? alert.interval : 5;
-
-  function validateForm(event:Event ) {
-    event.preventDefault();
-    console.log("aqui")
-    const form = event.target as HTMLFormElement;
-    const firstName = form.querySelector<HTMLInputElement>(
-      'input[name="firstName"]',
-    );
-    const birthDate = form.querySelector<HTMLInputElement>(
-      'input[name="birthDate"]',
-    );
-    const email = form.querySelector<HTMLInputElement>('input[name="email"]');
-
-    if (!firstName?.value) {
-       console.log("Por favor, preencha o nome.");
-    } else if (!birthDate?.value) {
-      console.log("Por favor, preencha a data de nascimento.");
-    } else if (!email?.value) {
-      console.log("Por favor, preencha o e-mail.");
-    } else if (!validateEmail(email.value)) {
-      console.log("Por favor, insira um e-mail válido.");
-    } else {
-       form.submit(); 
-    }
-  }
-
-  function validateEmail(email: string) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  }
   return (
     <div style={{ background: backgroundColor }} class="w-full">
       <div
@@ -124,23 +92,21 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                     </span>
                   )}
 
-                  {isShow && (
+                  {isShow && alert.activeForm && (
                     <div class="w-full flex justify-between">
                       <form
                         hx-post="https://www.bagaggio.com.br/api/dataentities/DN/documents/"
-                        hx-headers='{"Content-Type": "application/json"}'
                         hx-trigger="submit"
                         hx-target="this"
                         hx-swap="outerHTML"
                         hx-after="console.log('Formulário enviado com sucesso!')"
-                        hx-on:click={(event: Event) =>
-                          useScript(validateForm, event)}
                         class="w-full grid grid-cols-3 justify-between items-center gap-4"
                       >
                         <input
                           type="text"
                           name="firstName"
                           class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
+                          required
                         />
                         <input
                           type="date"
@@ -148,6 +114,7 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                           name="birthDate"
                           class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
                           placeholder={`dd/mm/aaaa`}
+                          required
                         />
                         <input
                           type="email"
@@ -155,6 +122,7 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                           id=""
                           class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
                           placeholder="E-mail"
+                          required
                         />
                         <button
                           type="submit"
