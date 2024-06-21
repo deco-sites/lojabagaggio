@@ -2,8 +2,9 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
-import * as $$$$$$$$$0 from "./actions/minicart/submit.ts";
-import * as $$$$$$$$$1 from "./actions/wishlist/submit.ts";
+import * as $$$$$$$$$0 from "./actions/masterData/createDocument.ts";
+import * as $$$$$$$$$1 from "./actions/minicart/submit.ts";
+import * as $$$$$$$$$2 from "./actions/wishlist/submit.ts";
 import * as $$$$$$$$$$$0 from "./apps/deco/analytics.ts";
 import * as $$$$$$$$$$$1 from "./apps/deco/htmx.ts";
 import * as $$$$$$$$$$$2 from "./apps/deco/vtex.ts";
@@ -111,8 +112,9 @@ const manifest = {
     "site/sections/Theme/Theme.tsx": $$$$$$42,
   },
   "actions": {
-    "site/actions/minicart/submit.ts": $$$$$$$$$0,
-    "site/actions/wishlist/submit.ts": $$$$$$$$$1,
+    "site/actions/masterData/createDocument.ts": $$$$$$$$$0,
+    "site/actions/minicart/submit.ts": $$$$$$$$$1,
+    "site/actions/wishlist/submit.ts": $$$$$$$$$2,
   },
   "apps": {
     "site/apps/deco/analytics.ts": $$$$$$$$$$$0,

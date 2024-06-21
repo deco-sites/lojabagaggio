@@ -3,18 +3,20 @@ import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
+import { useScript } from "apps/utils/useScript.ts";
+
 
 export interface inforCard {
   title: string;
   description?: string;
-  link?:string; 
-  image?: ImageWidget; 
-  activeForm?: boolean; 
+  link?: string;
+  image?: ImageWidget;
+  activeForm?: boolean;
 }
 
 export interface TopAlert {
   backgroundColor?: string;
-  alerts?: inforCard[]; 
+  alerts?: inforCard[];
   interval?: number;
 }
 
@@ -24,12 +26,11 @@ export interface Props {
    * @title Autoplay interval
    * @description time (in seconds) to start the carousel autoplay
    */
-
 }
 
-function Dots({ alert}: Props) {
+function Dots({ alert }: Props) {
   const { alerts } = alert;
-  const  interval = alert.interval ? alert.interval : 5;
+  const interval = alert.interval ? alert.interval : 5;
   return (
     <>
       <style
@@ -65,20 +66,54 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
   const id = useId();
 
   const { backgroundColor, alerts } = alert;
-  const  interval = alert.interval ? alert.interval : 5;
+  const interval = alert.interval ? alert.interval : 5;
 
+  function validateForm(event:Event ) {
+    event.preventDefault();
+    console.log("aqui")
+    const form = event.target as HTMLFormElement;
+    const firstName = form.querySelector<HTMLInputElement>(
+      'input[name="firstName"]',
+    );
+    const birthDate = form.querySelector<HTMLInputElement>(
+      'input[name="birthDate"]',
+    );
+    const email = form.querySelector<HTMLInputElement>('input[name="email"]');
+
+    if (!firstName?.value) {
+       console.log("Por favor, preencha o nome.");
+    } else if (!birthDate?.value) {
+      console.log("Por favor, preencha a data de nascimento.");
+    } else if (!email?.value) {
+      console.log("Por favor, preencha o e-mail.");
+    } else if (!validateEmail(email.value)) {
+      console.log("Por favor, insira um e-mail válido.");
+    } else {
+       form.submit(); 
+    }
+  }
+
+  function validateEmail(email: string) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  }
   return (
     <div style={{ background: backgroundColor }} class="w-full">
       <div
         id={id}
-        class="reltive flex flex-col py-3"
+        class="relative flex flex-col py-3"
       >
         <Slider class="carousel carousel-center w-screen gap-6">
           {alerts &&
             alerts.map((alert, index) => (
               <Slider.Item index={index} class="carousel-item w-full">
                 <div class="flex flex-col items-center justify-center w-[80%] m-auto ">
-                  <a href="" class={`${alert.link ? "cursor-pointer" : "pointer-events-none"}`}>
+                  <a
+                    href=""
+                    class={`${
+                      alert.link ? "cursor-pointer" : "pointer-events-none"
+                    }`}
+                  >
                     <span class="text-base font-semibold tracking-wide  font-roboto text-white flex justify-center items-center w-screen">
                       {alert.title}
                     </span>
@@ -87,6 +122,48 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                     <span class="text-sm text-white font-roboto font-normal pt-1 flex justify-center items-center text-center">
                       {alert.description}
                     </span>
+                  )}
+
+                  {isShow && (
+                    <div class="w-full flex justify-between">
+                      <form
+                        hx-post="https://www.bagaggio.com.br/api/dataentities/DN/documents/"
+                        hx-headers='{"Content-Type": "application/json"}'
+                        hx-trigger="submit"
+                        hx-target="this"
+                        hx-swap="outerHTML"
+                        hx-after="console.log('Formulário enviado com sucesso!')"
+                        hx-on:click={(event: Event) =>
+                          useScript(validateForm, event)}
+                        class="w-full grid grid-cols-3 justify-between items-center gap-4"
+                      >
+                        <input
+                          type="text"
+                          name="firstName"
+                          class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
+                        />
+                        <input
+                          type="date"
+                          id=""
+                          name="birthDate"
+                          class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
+                          placeholder={`dd/mm/aaaa`}
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          id=""
+                          class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
+                          placeholder="E-mail"
+                        />
+                        <button
+                          type="submit"
+                          class="bg-graphite text-white btn "
+                        >
+                          Enviar
+                        </button>
+                      </form>
+                    </div>
                   )}
                 </div>
               </Slider.Item>
