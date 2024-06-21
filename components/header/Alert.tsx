@@ -95,7 +95,7 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                   {isShow && alert.activeForm && (
                     <div class="w-full flex justify-between">
                       <form
-                        hx-post="https://www.bagaggio.com.br/api/dataentities/DN/documents/"
+                        hx-post="/api/dataentities/DN/documents/"
                         hx-trigger="submit"
                         hx-target="this"
                         hx-swap="outerHTML"
