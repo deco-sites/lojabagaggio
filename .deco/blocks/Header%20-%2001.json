@@ -35,7 +35,8 @@
       },
       {
         "title": "10% OFF NA SUA PRIMEIRA COMPRA",
-        "description": "Use o cupom SOUBAGAGGIO e garanta 10% de desconto na sua primeira compra. *desconto não cumulativo com outras promoções do site"
+        "description": "Use o cupom SOUBAGAGGIO e garanta 10% de desconto na sua primeira compra. *desconto não cumulativo com outras promoções do site",
+        "activeForm": true
       },
       {
         "title": "TROQUE FÁCIL",
@@ -47,6 +48,6 @@
       }
     ],
     "backgroundColor": "#0274BB",
-    "interval": 2
+    "interval": 50
   }
 }
