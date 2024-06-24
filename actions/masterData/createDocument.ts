@@ -11,7 +11,7 @@ export const formFirstPurchase = async (
 
   try {
     const response = await fetch(
-      `https://www.bagaggio.com.br/api/dataentities/${acronym}/documents/`,
+      `/api/dataentities/${acronym}/documents/`,
       {
         method: "POST",
         headers: {

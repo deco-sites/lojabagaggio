@@ -3,6 +3,7 @@ import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
+import FormFirstPurchase from "./formFirstPurchase.tsx";
 
 export interface inforCard {
   title: string;
@@ -86,52 +87,13 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                       {alert.title}
                     </span>
                   </a>
+                  
+                  {isShow && alert.activeForm && <FormFirstPurchase />}
+
                   {alert.description && isShow && (
                     <span class="text-sm text-white font-roboto font-normal pt-1 flex justify-center items-center text-center">
                       {alert.description}
                     </span>
-                  )}
-
-                  {isShow && alert.activeForm && (
-                    <div class="w-full flex justify-between">
-                      <form
-                        hx-post="/api/dataentities/DN/documents/"
-                        hx-trigger="submit"
-                        hx-target="this"
-                        hx-swap="outerHTML"
-                        hx-after="console.log('Formulário enviado com sucesso!')"
-                        class="w-full grid grid-cols-3 justify-between items-center gap-4"
-                      >
-                        <input
-                          type="text"
-                          name="firstName"
-                          class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
-                          required
-                        />
-                        <input
-                          type="date"
-                          id=""
-                          name="birthDate"
-                          class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
-                          placeholder={`dd/mm/aaaa`}
-                          required
-                        />
-                        <input
-                          type="email"
-                          name="email"
-                          id=""
-                          class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite"
-                          placeholder="E-mail"
-                          required
-                        />
-                        <button
-                          type="submit"
-                          class="bg-graphite text-white btn "
-                        >
-                          Enviar
-                        </button>
-                      </form>
-                    </div>
                   )}
                 </div>
               </Slider.Item>
