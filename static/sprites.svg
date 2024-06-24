@@ -135,4 +135,9 @@
 		<path d="M3.33341 5.00002H1.66675V16.6667C1.66675 17.5834 2.41675 18.3334 3.33341 18.3334H15.0001V16.6667H3.33341V5.00002ZM16.6667 1.66669H6.66675C5.75008 1.66669 5.00008 2.41669 5.00008 3.33335V13.3334C5.00008 14.25 5.75008 15 6.66675 15H16.6667C17.5834 15 18.3334 14.25 18.3334 13.3334V3.33335C18.3334 2.41669 17.5834 1.66669 16.6667 1.66669ZM16.6667 13.3334H6.66675V3.33335H16.6667V13.3334ZM8.33341 7.50002H15.0001V9.16669H8.33341V7.50002ZM8.33341 10H11.6667V11.6667H8.33341V10ZM8.33341 5.00002H15.0001V6.66669H8.33341V5.00002Z" fill="#353535"/>
 	</symbol>
 
+	<symbol xmlns="http://www.w3.org/2000/svg" id="Lupa" viewBox="0 0 20 20" fill="none"><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-custom-link"/><link xmlns="" type="text/css" rel="stylesheet" id="dark-mode-general-link"/><style xmlns="" lang="en" type="text/css" id="dark-mode-custom-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-style"/><style xmlns="" lang="en" type="text/css" id="dark-mode-native-sheet"/>
+		<path d="M19.0004 19.0004L14.6504 14.6504" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="#191919" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+	</symbol>
+
 </svg>
