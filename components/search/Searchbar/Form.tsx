@@ -89,7 +89,7 @@ export default function Searchbar(
       >
         <input
           tabIndex={0}
-          class="w-[98%] text-xs border-none outline-none pr-0"
+          class="w-[98%] text-xs border-none outline-none pr-0 font-base"
           name={NAME}
           placeholder={placeholder}
           autocomplete="off"
@@ -100,6 +100,7 @@ export default function Searchbar(
           hx-trigger={`input changed delay:300ms, ${NAME}`}
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
+          style={{ fontSize: '16px' }}
         />
         <button
           type="submit"
@@ -118,7 +119,7 @@ export default function Searchbar(
       </form>
 
       {/* Suggestions slot */}
-      <div id={slot} class="absolute" />
+      <div id={slot} class="absolute w-full m-auto top-[153px] sm:top-28" />
 
       {/* Send search events as the user types */}
       <script
