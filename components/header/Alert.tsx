@@ -3,7 +3,7 @@ import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import Icon from "../ui/Icon.tsx";
 import { useSection } from "deco/hooks/useSection.ts";
-import FormFirstPurchase from "./formFirstPurchase.tsx";
+import FormFirstPurchase from "./Form/FormFirstPurchase.tsx";
 
 export interface inforCard {
   title: string;
@@ -87,8 +87,9 @@ function Alert({ alert, isShow }: Props & { isShow?: boolean }) {
                       {alert.title}
                     </span>
                   </a>
-                  
-                  {isShow && alert.activeForm && <FormFirstPurchase />}
+
+                  {isShow && alert.activeForm &&
+                    <FormFirstPurchase status="" />}
 
                   {alert.description && isShow && (
                     <span class="text-sm text-white font-roboto font-normal pt-1 flex justify-center items-center text-center">

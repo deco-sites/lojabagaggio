@@ -41,49 +41,53 @@ function CartItem({ item, index, locale, currency }: Props) {
     <fieldset
       // deno-lint-ignore no-explicit-any
       data-item-id={(item as any).item_id}
-      class="grid grid-rows-1 gap-2"
+      class="grid grid-rows-1 gap-2 py-2"
       style={{ gridTemplateColumns: "auto 1fr" }}
     >
       <Image
         alt={name}
         src={image}
-        style={{ aspectRatio: "108 / 150" }}
-        width={108}
-        height={150}
+        style={{ aspectRatio: "80 / 80" }}
+        width={80}
+        height={80}
         class="h-full object-contain"
       />
 
       {/* Info */}
       <div class="flex flex-col gap-2">
         {/* Name and Remove button */}
-        <div class="flex justify-between items-center">
-          <legend>{name}</legend>
+        <div class="flex justify-between items-center  mb-2 ">
+          <legend class=" font-roboto text-darkGray text-sm  w-full max-w-[172px] h-full  max-h-[42px]">
+            {name}
+          </legend>
           <button
             class={clx(isGift && "hidden", "btn btn-ghost btn-square")}
             hx-on:click={useScript(removeItemHandler)}
           >
-            <Icon id="Trash" size={24} />
+            <Icon id="TrashMinicart" size={24} />
           </button>
         </div>
 
         {/* Price Block */}
-        <div class="flex items-center gap-2">
-          <span class="line-through text-sm">
-            {formatPrice(listPrice, currency, locale)}
-          </span>
-          <span class="text-sm text-secondary">
-            {isGift ? "Grátis" : formatPrice(price, currency, locale)}
-          </span>
-        </div>
+        <div class="flex items-center justify-between gap-1">
+          <div class="flex flex-col ">
+            <span class="line-through text-xs text-[#777]">
+              {formatPrice(listPrice, currency, locale)}
+            </span>
+            <span class="text-base font-bold font-roboto text-primary">
+              {isGift ? "Grátis" : formatPrice(price, currency, locale)}
+            </span>
+          </div>
 
-        {/* Quantity Selector */}
-        <div class={clx(isGift && "hidden")}>
-          <QuantitySelector
-            min={0}
-            max={QUANTITY_MAX_VALUE}
-            value={quantity}
-            name={`item::${index}`}
-          />
+          {/* Quantity Selector */}
+          <div class={clx(isGift && "hidden")}>
+            <QuantitySelector
+              min={0}
+              max={QUANTITY_MAX_VALUE}
+              value={quantity}
+              name={`item::${index}`}
+            />
+          </div>
         </div>
       </div>
     </fieldset>

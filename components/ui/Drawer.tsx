@@ -81,7 +81,7 @@ function Aside(
   return (
     <div
       data-aside
-      class="bg-base-100 grid grid-rows-[auto_1fr] h-full"
+      class="bg-base-100 grid grid-rows-[auto_1fr] h-full max-w-[400px]"
       style={{ maxWidth: "100vw" }}
     >
       {children}
