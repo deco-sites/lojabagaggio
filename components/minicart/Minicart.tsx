@@ -5,8 +5,8 @@ import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
 import Coupon from "./Coupon.tsx";
-import FreeShippingProgressBar from "./FreeShippingProgressBar.tsx";
 import CartItem, { Item } from "./Item.tsx";
+
 
 export interface Minicart {
   /** Cart from the ecommerce platform */
@@ -118,7 +118,7 @@ export default function Cart({
       locale,
       currency,
       enableCoupon = true,
-      freeShippingTarget,
+      // freeShippingTarget,
       checkoutHref,
     },
   },
@@ -181,7 +181,8 @@ export default function Cart({
             )
             : (
               <>
-                {/* Free Shipping Bar */}
+                {
+                  /* Free Shipping Bar
                 <div class="px-2 py-4 w-full">
                   <FreeShippingProgressBar
                     total={total}
@@ -189,7 +190,8 @@ export default function Cart({
                     currency={currency}
                     target={freeShippingTarget}
                   />
-                </div>
+                </div> */
+                }
 
                 {/* Cart Items */}
                 <ul
@@ -197,7 +199,7 @@ export default function Cart({
                   class="mt-6 px-2 flex-grow overflow-y-auto flex flex-col gap-6 w-full"
                 >
                   {items.map((item, index) => (
-                    <li>
+                    <li class="border-b border-base-200 ">
                       <CartItem
                         item={item}
                         index={index}
@@ -220,17 +222,20 @@ export default function Cart({
                         </span>
                       </div>
                     )}
+
+                    {/* <Form items={skus}/> */}
+
+                    {enableCoupon && <Coupon coupon={coupon} />}
+                  </div>
+
+                  {/* Total */}
+                  <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
                     <div class="w-full flex justify-between px-4 text-sm">
                       <span>Subtotal</span>
                       <output form={MINICART_FORM_ID}>
                         {formatPrice(subtotal, currency, locale)}
                       </output>
                     </div>
-                    {enableCoupon && <Coupon coupon={coupon} />}
-                  </div>
-
-                  {/* Total */}
-                  <div class="border-t border-base-200 pt-4 flex flex-col justify-end items-end gap-2 mx-4">
                     <div class="flex justify-between items-center w-full">
                       <span>Total</span>
                       <output

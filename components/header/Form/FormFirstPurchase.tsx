@@ -1,10 +1,7 @@
+import { AppContext } from "../../../apps/site.ts";
+import { useComponent } from "../../../sections/Component.tsx";
+import Section from "../../ui/Section.tsx";
 import { SectionProps } from "deco/mod.ts";
-import { AppContext } from "../../apps/site.ts";
-import Icon from "../../components/ui/Icon.tsx";
-import Section from "../../components/ui/Section.tsx";
-import { clx } from "../../sdk/clx.ts";
-import { usePlatform } from "../../sdk/usePlatform.tsx";
-import { useComponent } from "../Component.tsx";
 
 interface NoticeProps {
   title?: string;
@@ -27,15 +24,21 @@ export interface Props {
 }
 
 export async function action(props: Props, req: Request, ctx: AppContext) {
-  const platform = usePlatform();
-
   const form = await req.formData();
-  const email = `${form.get("email") ?? ""}`;
 
-  if (platform === "vtex") {
+  const email = `${form.get("email") ?? ""}`;
+  const birthDate = `${form.get("birthDate") ?? ""}`;
+  const firstName = `${form.get("firstName") ?? ""}`;
+
+  if (email && firstName && birthDate) {
     // deno-lint-ignore no-explicit-any
-    await (ctx as any).invoke("vtex/actions/newsletter/subscribe.ts", {
-      email,
+    await (ctx as any).invoke("vtex/actions/masterdata/createDocument.ts", {
+      acronym: "DN",
+      data: {
+        email,
+        birthDate,
+        firstName,
+      },
     });
 
     return { ...props, status: "success" };
@@ -52,15 +55,15 @@ function Notice(
   { description }: { title?: string; description?: string },
 ) {
   return (
-    <div class="flex flex-col justify-center items-center sm:items-start gap-4">
-      <span class="text-sm font-normal text-base-300 text-center sm:text-start">
+    <div class="flex flex-col justify-center items-center sm:items-start">
+      <span class="text-sm font-normal text-white text-center sm:text-start">
         {description}
       </span>
     </div>
   );
 }
 
-function Newsletter({
+export default function FormFirstPurchase({
   success = {
     description:
       "Agora é só checar no seu e-mail o cupom que deixamos para você",
@@ -69,21 +72,12 @@ function Newsletter({
     description:
       "Something went wrong. Please try again. If the problem persists, please contact us.",
   },
-  label = "Sign up",
-  placeholder = "Enter your email address",
   status,
 }: SectionProps<typeof loader, typeof action>) {
   if (status === "success" || status === "failed") {
     return (
-      <Section.Container class="bg-base-200">
+      <Section.Container class="">
         <div class="p-14 flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-10">
-          <Icon
-            size={80}
-            class={clx(
-              status === "success" ? "text-success" : "text-error",
-            )}
-            id={status === "success" ? "check-circle" : "error"}
-          />
           <Notice {...status === "success" ? success : failed} />
         </div>
       </Section.Container>
@@ -91,27 +85,43 @@ function Newsletter({
   }
 
   return (
-    <Section.Container class="bg-base-200">
-      <div class="p-14 grid grid-flow-row sm:grid-cols-2 gap-10 sm:gap-20 place-items-center">
+    <Section.Container class="">
+      <div class="w-full flex flex-col justify-between max-w-[1222px] my-4">
         <form
-          hx-target="closest section"
-          hx-swap="outerHTML"
           hx-post={useComponent(import.meta.url)}
-          class="flex flex-col sm:flex-row gap-4 w-full"
+          hx-target="this"
+          hx-swap="outerHTML"
+          class="w-full flex justify-between items-center gap-4"
         >
           <input
-            name="email"
-            class="input input-bordered flex-grow"
             type="text"
-            placeholder={placeholder}
+            placeholder={"Nome"}
+            name="firstName"
+            class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite px-4 w-[30%] max-w-80"
+            required
           />
-
+          <input
+            type="date"
+            id=""
+            name="birthDate"
+            class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite px-4 w-[30%] max-w-80"
+            placeholder={`dd/mm/aaaa`}
+            required
+          />
+          <input
+            type="email"
+            name="email"
+            id=""
+            class=" rounded-[10px] bg-white border border-[#cecece] h-[46px] text-graphite px-4 w-[40%] max-w-[489px]"
+            placeholder="E-mail"
+            required
+          />
           <button
-            class="btn btn-primary"
             type="submit"
+            class="bg-graphite w-full max-w-[104px]  text-white btn rounded-[23px] border-transparent h-[46px] font-medium font-roboto  "
           >
             <span class="[.htmx-request_&]:hidden inline">
-              {label}
+              Enviar
             </span>
             <span class="[.htmx-request_&]:inline hidden loading loading-spinner" />
           </button>
@@ -120,5 +130,3 @@ function Newsletter({
     </Section.Container>
   );
 }
-
-export default Newsletter;

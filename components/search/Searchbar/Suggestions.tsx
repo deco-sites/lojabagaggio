@@ -7,7 +7,6 @@ import Icon from "../../ui/Icon.tsx";
 import { ACTION, NAME } from "./Form.tsx";
 import ProductCardSearch from "../../product/ProductCardSearch.tsx";
 
-
 export interface Props {
   /**
    * @title Suggestions Integration

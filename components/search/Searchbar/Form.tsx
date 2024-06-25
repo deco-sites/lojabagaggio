@@ -100,7 +100,7 @@ export default function Searchbar(
           hx-trigger={`input changed delay:300ms, ${NAME}`}
           hx-indicator={`#${SEARCHBAR_INPUT_FORM_ID}`}
           hx-swap="innerHTML"
-          style={{ fontSize: '16px' }}
+          style={{ fontSize: "16px" }}
         />
         <button
           type="submit"
