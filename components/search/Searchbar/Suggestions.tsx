@@ -5,7 +5,8 @@ import { clx } from "../../../sdk/clx.ts";
 import { ComponentProps } from "../../../sections/Component.tsx";
 import Icon from "../../ui/Icon.tsx";
 import { ACTION, NAME } from "./Form.tsx";
-import ProductCardSearch from "./ProductCardSearch.tsx";
+import ProductCardSearch from "../../product/ProductCardSearch.tsx";
+
 
 export interface Props {
   /**

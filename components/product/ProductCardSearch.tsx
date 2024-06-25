@@ -1,11 +1,11 @@
 import type { Product } from "apps/commerce/types.ts";
 import { mapProductToAnalyticsItem } from "apps/commerce/utils/productToAnalyticsItem.ts";
 import Image from "apps/website/components/Image.tsx";
-import { useOffer } from "../../../sdk/useOffer.ts";
-import { relative } from "../../../sdk/url.ts";
-import { useSendEvent } from "../../../sdk/useSendEvent.ts";
-import { clx } from "../../../sdk/clx.ts";
-import { formatPrice } from "../../../sdk/format.ts";
+import { useOffer } from "../../sdk/useOffer.ts";
+import { relative } from "../../sdk/url.ts";
+import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import { clx } from "../../sdk/clx.ts";
+import { formatPrice } from "../../sdk/format.ts";
 
 interface Props {
     product: Product;
