@@ -600,7 +600,7 @@
             "content": [
               {
                 "type": "stack",
-                "width": 41.66666666666667,
+                "width": 37.3134328358209,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -622,7 +622,7 @@
               },
               {
                 "type": "stack",
-                "width": 58.333333333333336,
+                "width": 62.686567164179095,
                 "isClosable": true,
                 "reorderEnabled": true,
                 "title": "",
@@ -661,7 +661,8 @@
           "width": 30,
           "id": "%2F.deco%2Fblocks%2Fnavbar.json::Properties::list::Properties::%7B%7D",
           "state": {
-            "__signal": null
+            "__signal": null,
+            "value": null
           }
         },
         "%2F.deco%2Fblocks%2Fnavbar.json::Preview::world::Preview::%7B%7D": {
@@ -906,9 +907,9 @@
                     "componentState": {
                       "id": "%2F.deco%2Fblocks%2Fsite.json::Properties::list::Properties::%7B%7D"
                     },
-                    "width": 30,
                     "isClosable": true,
-                    "reorderEnabled": true
+                    "reorderEnabled": true,
+                    "width": 30
                   }
                 ]
               },

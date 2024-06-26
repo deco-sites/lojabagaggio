@@ -344,13 +344,13 @@ export default function Session(
         class="drawer-end z-50"
         aside={
           <Drawer.Aside title="My Bag" drawer={MINICART_DRAWER_ID}>
-            <div class="flex justify-between items-center p-4  h-[40px]">
+            <div class="flex justify-between items-center m-4  h-[40px]">
               <h2 class=" text-xl font-bold  text-warning">Minha Sacola</h2>
               <div class="flex items-center gap-1">
                 <label
                   for={MINICART_DRAWER_ID}
                   aria-label="X"
-                  class="btn btn-ghost"
+                  class="btn btn-ghost !p-0"
                 >
                   <Icon id="XMark" size={24} strokeWidth={2} />
                 </label>

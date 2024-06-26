@@ -2,7 +2,7 @@
  * TODO: support other platforms. Currently only for VTEX
  */
 import { AppContext } from "apps/vtex/mod.ts";
-import type { SimulationOrderForm, SKU, Sla } from "apps/vtex/utils/types.ts";
+import type { SKU, Sla } from "apps/vtex/utils/types.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { ComponentProps } from "../../sections/Component.tsx";
 
@@ -22,11 +22,11 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
   const form = await req.formData();
 
   try {
-    const result = await ctx.invoke("vtex/actions/cart/simulation.ts", {
+    const result = await ctx.invoke.vtex.actions.cart.simulation({
       items: props.items,
       postalCode: `${form.get("postalCode") ?? ""}`,
       country: "BRA",
-    }) as SimulationOrderForm | null;
+    });
 
     return { result };
   } catch {
