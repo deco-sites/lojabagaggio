@@ -4,7 +4,7 @@ import { clx } from "../../sdk/clx.ts";
 import { formatPrice } from "../../sdk/format.ts";
 import { useScript } from "apps/utils/useScript.ts";
 import Icon from "../ui/Icon.tsx";
-import QuantitySelector from "../ui/QuantitySelector.tsx";
+import QuantitySelectorMinicart from "./QuantitySelectorMinicart.tsx";
 
 export type Item = AnalyticsItem & {
   listPrice: number;
@@ -20,19 +20,25 @@ export interface Props {
 
 const QUANTITY_MAX_VALUE = 100;
 
-const removeItemHandler = () => {
-  const itemID = (event?.currentTarget as HTMLButtonElement | null)
-    ?.closest("fieldset")
-    ?.getAttribute("data-item-id");
-
-  if (typeof itemID === "string") {
-    window.STOREFRONT.CART.setQuantity(itemID, 0);
-  }
-};
-
 function CartItem({ item, index, locale, currency }: Props) {
   const { image, listPrice, price = Infinity, quantity } = item;
   const isGift = price < 0.01;
+
+  const removeItemHandler = () => {
+    const itemID = (event?.currentTarget as HTMLButtonElement | null)
+      ?.closest("fieldset")
+      ?.getAttribute("data-item-id");
+
+    if (typeof itemID === "string") {
+      window.STOREFRONT.CART.setQuantity(itemID, 0);
+      const selectElement = document.querySelector(
+        ".meu-select",
+      ) as HTMLSelectElement;
+
+      selectElement.value = "0";
+      selectElement.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+  };
 
   // deno-lint-ignore no-explicit-any
   const name = (item as any).item_name;
@@ -57,7 +63,7 @@ function CartItem({ item, index, locale, currency }: Props) {
       <div class="flex flex-col gap-2">
         {/* Name and Remove button */}
         <div class="flex justify-between items-center  mb-2 ">
-          <legend class=" font-roboto text-darkGray text-sm  w-full max-w-[172px] h-full  max-h-[42px]">
+          <legend class=" font-roboto text-darkGray text-sm  w-full max-w-[172px] h-full">
             {name}
           </legend>
           <button
@@ -81,7 +87,7 @@ function CartItem({ item, index, locale, currency }: Props) {
 
           {/* Quantity Selector */}
           <div class={clx(isGift && "hidden")}>
-            <QuantitySelector
+            <QuantitySelectorMinicart
               min={0}
               max={QUANTITY_MAX_VALUE}
               value={quantity}

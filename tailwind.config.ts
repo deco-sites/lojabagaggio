@@ -56,6 +56,9 @@ export default {
         "45": "180px",
         "2/4xl": "720px",
       },
+      boxShadow: {
+        'minicart': '0 0 12px rgba(0, 0, 0, 0.07)',
+      },
     },
   },
 };

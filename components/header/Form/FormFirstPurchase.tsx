@@ -1,4 +1,5 @@
-import { AppContext } from "../../../apps/site.ts";
+
+import { AppContext } from "apps/vtex/mod.ts";
 import { useComponent } from "../../../sections/Component.tsx";
 import Section from "../../ui/Section.tsx";
 import { SectionProps } from "deco/mod.ts";
@@ -31,8 +32,8 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
   const firstName = `${form.get("firstName") ?? ""}`;
 
   if (email && firstName && birthDate) {
-    // deno-lint-ignore no-explicit-any
-    await (ctx as any).invoke("vtex/actions/masterdata/createDocument.ts", {
+  
+    await ctx.invoke.vtex.actions.masterdata.createDocument({
       acronym: "DN",
       data: {
         email,

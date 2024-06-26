@@ -32,6 +32,26 @@
   animation: progress-frame ease normal
 }
 
+.scrooll-thin{
+  scrollbar-width: thin; /* Tamanho fino */
+  scrollbar-color: #39393a #ccc; /* Cor do thumb e do track */
+}
+
+.scrooll-thin::-webkit-scrollbar {
+  width: 12px; /* Largura do scrollbar */
+}
+
+.scrooll-thin::-webkit-scrollbar-track {
+  background: #ccc; /* Cor do fundo do track */
+}
+
+.scrooll-thin::-webkit-scrollbar-thumb {
+  background-color: #39393a; /* Cor do thumb */
+  border-radius: 10px; /* Arredondamento dos cantos */
+  border: 3px solid #ccc; /* Espaço entre o thumb e o track */
+}
+
+
 @keyframes progress-frame {
   0% {
     --dot-progress: 0%
