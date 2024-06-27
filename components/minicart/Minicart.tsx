@@ -6,6 +6,8 @@ import { formatPrice } from "../../sdk/format.ts";
 import { useComponent } from "../../sections/Component.tsx";
 import Coupon from "./Coupon.tsx";
 import CartItem, { Item } from "./Item.tsx";
+import ShippingSimulation from "./ShippingSimulation/ShippingSimulation.tsx";
+import { SKU } from "apps/vtex/utils/types.ts";
 
 export interface Minicart {
   /** Cart from the ecommerce platform */
@@ -124,6 +126,13 @@ export default function Cart({
 }: { cart: Minicart }) {
   const count = items.length;
 
+  const skus: SKU[] = items.map((item) => ({
+    // @ts-ignore erro
+    id: Number(item.item_id),
+    quantity: 1,
+    seller: "1",
+  }));
+
   return (
     <>
       <form
@@ -213,11 +222,18 @@ export default function Cart({
                     {/* <Form items={skus}/> */}
 
                     {enableCoupon && <Coupon coupon={coupon} />}
+                    <ShippingSimulation items={skus} />
                   </div>
 
                   {/**SubTotal */}
                   <div class="border-t border-base-200  py-6 flex flex-col justify-end items-end gap-2 mx-4">
                     <div class="flex flex-col w-full max-w-[312px] m-auto">
+                      <output
+                        id="ResultShipping"
+                        hx-ignore
+                        form={MINICART_FORM_ID}
+                      />
+                      {/* Results Slot */}
                       <div class="w-full flex justify-between p-4 font-roboto font-base text-[#777] font-semibold ">
                         <span>Subtotal</span>
                         <output form={MINICART_FORM_ID}>

@@ -7,7 +7,9 @@ export interface Props {
 function Coupon({ coupon }: Props) {
   return (
     <div class="flex justify-between items-center px-4 mb-5">
-      <span class="font-medium  text-xs text-graphite uppercase font-roboto">Cupom de desconto</span>
+      <span class="font-medium  text-xs text-graphite uppercase font-roboto">
+        Cupom de desconto
+      </span>
 
       <div class="join max-w-[222px] ml-3">
         <input

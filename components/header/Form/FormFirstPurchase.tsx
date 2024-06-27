@@ -1,4 +1,3 @@
-
 import { AppContext } from "apps/vtex/mod.ts";
 import { useComponent } from "../../../sections/Component.tsx";
 import Section from "../../ui/Section.tsx";
@@ -32,7 +31,6 @@ export async function action(props: Props, req: Request, ctx: AppContext) {
   const firstName = `${form.get("firstName") ?? ""}`;
 
   if (email && firstName && birthDate) {
-  
     await ctx.invoke.vtex.actions.masterdata.createDocument({
       acronym: "DN",
       data: {
