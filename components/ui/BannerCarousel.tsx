@@ -207,21 +207,21 @@ function Buttons() {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
-        <Slider.PrevButton class="btn btn-circle glass">
+        <Slider.PrevButton class="">
           <Icon
             class="text-base-100"
-            size={24}
-            id="ChevronLeft"
+            size={64}
+            id="BagChevronLeft"
             strokeWidth={3}
           />
         </Slider.PrevButton>
       </div>
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
-        <Slider.NextButton class="btn btn-circle glass">
+        <Slider.NextButton class="">
           <Icon
             class="text-base-100"
-            size={24}
-            id="ChevronRight"
+            size={64}
+            id="BagChevronRight"
             strokeWidth={3}
           />
         </Slider.NextButton>

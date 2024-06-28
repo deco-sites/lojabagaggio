@@ -147,4 +147,46 @@
 	<symbol id="check-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol>
 	<symbol id="error" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M480-280q17 0 28.5-11.5T520-320q0-17-11.5-28.5T480-360q-17 0-28.5 11.5T440-320q0 17 11.5 28.5T480-280Zm-40-160h80v-240h-80v240Zm40 360q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></symbol>
 
+	<symbol id="BagChevronLeft" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g clip-path="url(#clip0_3_1196)">
+		<g filter="url(#filter0_d_3_1196)">
+		<path d="M10.8334 33.9444C10.8334 45.9106 20.5339 55.6111 32.5 55.6111C44.4662 55.6111 54.1667 45.9106 54.1667 33.9444C54.1667 21.9782 44.4662 12.2778 32.5 12.2778C20.5339 12.2778 10.8334 21.9782 10.8334 33.9444Z" fill="white" fill-opacity="0.9"/>
+		<path d="M36.1111 26.7222L28.8889 33.9444L36.1111 41.1666" stroke="#666666" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"/>
+		</g>
+		</g>
+		<defs>
+		<filter id="filter0_d_3_1196" x="4.1008e-05" y="2.88888" width="65" height="65" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+		<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+		<feOffset dy="1.44444"/>
+		<feGaussianBlur stdDeviation="5.41667"/>
+		<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+		<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_1196"/>
+		<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_1196" result="shape"/>
+		</filter>
+		<clipPath id="clip0_3_1196">
+		<rect width="65" height="65" fill="white" transform="matrix(-1 0 0 -1 65 65)"/>
+		</clipPath>
+		</defs>
+   </symbol>
+
+   <symbol id="BagChevronRight" viewBox="0 0 65 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<g filter="url(#filter0_d_3_1190)">
+		<path d="M54.1666 31.0556C54.1666 19.0894 44.4661 9.38892 32.5 9.38892C20.5338 9.38892 10.8333 19.0894 10.8333 31.0556C10.8333 43.0218 20.5338 52.7222 32.5 52.7222C44.4661 52.7222 54.1666 43.0218 54.1666 31.0556Z" fill="white" fill-opacity="0.9"/>
+		<path d="M28.8889 38.2778L36.1111 31.0556L28.8889 23.8334" stroke="#666666" stroke-width="1.44444" stroke-linecap="round" stroke-linejoin="round"/>
+		</g>
+		<defs>
+		<filter id="filter0_d_3_1190" x="-2.00272e-05" y="2.74181e-05" width="65" height="65" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+		<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+		<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+		<feOffset dy="1.44444"/>
+		<feGaussianBlur stdDeviation="5.41667"/>
+		<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+		<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_3_1190"/>
+		<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_3_1190" result="shape"/>
+		</filter>
+		</defs>
+	</symbol>
+    <symbol id="chevron-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></symbol>
+	<symbol id="close" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></symbol>
 </svg>

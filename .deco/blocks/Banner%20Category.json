@@ -1,0 +1,51 @@
+{
+  "__resolveType": "site/sections/Content/BannerCarouselCategory.tsx",
+  "cards": [
+    {
+      "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/ff7e160b-4c45-449a-8beb-4252d651dd2f___27d277c296bc281a1b4655fcbebf9f6c.png",
+      "alt": "Malas",
+      "title": "Malas",
+      "link": "/Malas"
+    },
+    {
+      "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/19719486-b680-4f04-8c11-9f52ab7193e2___a6b8545d774b50602a98809585735c52.png",
+      "alt": "Mochila",
+      "title": "Mochila",
+      "link": "/Mochila"
+    },
+    {
+      "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/08f9b384-221b-4f99-be58-51eb1ac5e247___3af6443d1f9d70a71a701a1ea8ee24f7.png",
+      "alt": "Carteiras",
+      "title": "Carteiras",
+      "link": "/Carteiras"
+    },
+    {
+      "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/cdfd4d0e-e3c1-4d92-a955-1da4d91a7018___bbeb01d831e275c1d811357777dd279b.png",
+      "alt": "Térmicos",
+      "title": "Térmicos",
+      "link": "/Térmicos"
+    },
+    {
+      "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/b4cd5c96-90ff-47c8-bbbb-908e596e105c___79a5ff6ec6609859e2d2eb25261918fd.png",
+      "alt": "Bolsas",
+      "title": "Bolsas",
+      "link": "/Bolsas"
+    },
+    {
+      "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/747b5685-1840-44bd-a8e6-7eef9cc1975f___a54088f21ee50f6a5e3e07e60f45e9fb.png",
+      "alt": "Pasta",
+      "title": "Pasta",
+      "link": "/pasta"
+    }
+  ],
+  "layout": {
+    "numberOfSliders": {
+      "mobile": 3,
+      "desktop": 5
+    },
+    "headerAlignment": "center",
+    "headerfontSize": "Normal",
+    "showArrows": true
+  },
+  "title": "Compre por Categoria"
+}

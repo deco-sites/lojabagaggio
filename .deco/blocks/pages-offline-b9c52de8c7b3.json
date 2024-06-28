@@ -21,6 +21,24 @@
     },
     {
       "__resolveType": "Footer - 01"
+    },
+    {
+      "__resolveType": "site/sections/Content/BannerCarouselCategory.tsx",
+      "title": "Compre por Categoria",
+      "cards": [
+        {
+          "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/ff7e160b-4c45-449a-8beb-4252d651dd2f___27d277c296bc281a1b4655fcbebf9f6c.png",
+          "alt": "Malas",
+          "title": "Malas",
+          "link": "/Malas"
+        },
+        {
+          "image": "https://lojabagaggio.vtexassets.com/assets/vtex.file-manager-graphql/images/19719486-b680-4f04-8c11-9f52ab7193e2___a6b8545d774b50602a98809585735c52.png",
+          "alt": "Mochila",
+          "title": "Mochila",
+          "link": "/Mochila"
+        }
+      ]
     }
   ],
   "__resolveType": "website/pages/Page.tsx"
