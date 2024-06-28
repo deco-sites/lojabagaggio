@@ -45,6 +45,9 @@
       "preload": true
     },
     {
+      "__resolveType": "Banner Category"
+    },
+    {
       "__resolveType": "Footer - 04"
     }
   ],
