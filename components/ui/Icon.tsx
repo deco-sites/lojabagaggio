@@ -54,7 +54,11 @@ export type AvailableIcons =
   | "Lupa"
   | "TrashMinicart"
   | "check-circle"
-  | "error";
+  | "error"
+  | "BagChevronLeft"
+  | "BagChevronRight"
+  | "close"
+  | "chevron-right";
 
 interface Props extends JSX.SVGAttributes<SVGSVGElement> {
   /**

@@ -59,6 +59,9 @@ export default {
       boxShadow: {
         'minicart': '0 0 12px rgba(0, 0, 0, 0.07)',
       },
+      backgroundImage: {
+        "bag-arrow": "url('/image/bag-arrow-right.webp)"
+      }
     },
   },
 };

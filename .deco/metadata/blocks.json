@@ -211,12 +211,6 @@
     "blockType": "pages",
     "__resolveType": "website/pages/Page.tsx"
   },
-  "/.deco/blocks/pages-offline-b9c52de8c7b3.json": {
-    "name": "Offline",
-    "path": "/offline",
-    "blockType": "pages",
-    "__resolveType": "website/pages/Page.tsx"
-  },
   "/.deco/blocks/pages-productpage-ce4850591828.json": {
     "name": "Product Page",
     "path": "/produtos/:slug",
@@ -294,5 +288,9 @@
   "/.deco/blocks/Preview%20%2Fsections%2FImages%2FCarousel.tsx.json": {
     "blockType": "sections",
     "__resolveType": "site/sections/Images/Carousel.tsx"
+  },
+  "/.deco/blocks/Banner%20Category.json": {
+    "blockType": "sections",
+    "__resolveType": "site/sections/Content/BannerCarouselCategory.tsx"
   }
 }
