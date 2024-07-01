@@ -141,10 +141,10 @@ function AddToCartButton(props: Props) {
 
       <button
         disabled
-        class="flex-grow peer-checked:hidden btn no-animation"
+        class="flex-grow peer-checked:hidden !uppercase btn !border-none rounded-lg h-12 font-roboto font-semibold text-lg  !bg-primary hover:brightness-90 text-white no-animation"
         hx-on:click={useScript(onClick)}
       >
-        Add to Bag
+        comprar
       </button>
 
       {/* Quantity Input */}

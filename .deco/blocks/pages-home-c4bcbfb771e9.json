@@ -57,7 +57,7 @@
             "props": {
               "sort": "price:desc",
               "collection": "715",
-              "count": 4
+              "count": 6
             }
           },
           "title": "Mlehores malas "
@@ -68,7 +68,7 @@
             "props": {
               "sort": "price:desc",
               "collection": "504",
-              "count": 4
+              "count": 6
             }
           },
           "title": "Mais vendidas"

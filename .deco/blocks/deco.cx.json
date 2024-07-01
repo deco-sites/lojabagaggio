@@ -2,7 +2,8 @@
   "buttonStyle": {
     "--border-btn": "1px",
     "--rounded-btn": "0.2rem",
-    "--animation-btn": "0.25s"
+    "--animation-btn": "0.25s",
+    "--btn-focus-scale": 0.95
   },
   "__resolveType": "site/sections/Theme/Theme.tsx",
   "font": {
@@ -23,6 +24,9 @@
           },
           {
             "weight": "700"
+          },
+          {
+            "weight": "900"
           }
         ],
         "family": "Roboto"
@@ -48,5 +52,14 @@
         "family": "Titillium Web"
       }
     ]
-  }
+  },
+  "colorScheme": "light",
+  "otherStyles": {
+    "--rounded-box": "1rem",
+    "--rounded-badge": "1.9rem",
+    "--animation-input": "0.2s",
+    "--tab-border": "1px",
+    "--tab-radius": "0.5rem"
+  },
+  "mode": "dark"
 }

@@ -68,15 +68,15 @@ function TabbedProductShelf({
       />
 
       <div class="flex justify-center">
-        <div class="tabs tabs-boxed">
+        <div class="tabs tabs-boxed !p-0 gap-2 bg-transparent ">
           {tabs.map((tab, index) => (
             <button
-              class={clx("tab tab-lg", index === ti && "tab-active", "gap-2")}
+              class={clx("tab h-9 tab-lg rounded-[6px] bg-[#3232321a]", index === ti && "tab-active opacity-90 !bg-[#323232] !text-white", "gap-2")}
               hx-get={useSection({ props: { tabIndex: index } })}
               hx-swap="outerHTML"
               hx-target="closest section"
             >
-              <span>{tab.title}</span>
+              <span class={clx( "capitalize duration-300 ease-out  text-lg font-roboto font-medium  ",  index === ti ? "!text-white" : "text-[#aeaeae]")}>{tab.title}</span>
               <span class="[.htmx-request_&]:inline hidden loading loading-spinner loading-xs" />
             </button>
           ))}
