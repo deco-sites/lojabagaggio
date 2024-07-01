@@ -49,6 +49,33 @@
       "__resolveType": "Banner Category"
     },
     {
+      "__resolveType": "site/sections/Product/ProductShelfTabbed.tsx",
+      "tabs": [
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "715",
+              "count": 4
+            }
+          },
+          "title": "Mlehores malas "
+        },
+        {
+          "products": {
+            "__resolveType": "vtex/loaders/intelligentSearch/productList.ts",
+            "props": {
+              "sort": "price:desc",
+              "collection": "504",
+              "count": 4
+            }
+          },
+          "title": "Mais vendidas"
+        }
+      ]
+    },
+    {
       "__resolveType": "Banner Grid - 01"
     },
     {
