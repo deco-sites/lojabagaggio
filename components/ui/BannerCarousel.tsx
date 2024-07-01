@@ -209,7 +209,7 @@ function Buttons() {
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Slider.PrevButton class="">
           <Icon
-            class="text-base-100"
+            class=""
             size={64}
             id="BagChevronLeft"
             strokeWidth={3}
@@ -219,7 +219,7 @@ function Buttons() {
       <div class="flex items-center justify-center z-10 col-start-3 row-start-2">
         <Slider.NextButton class="">
           <Icon
-            class="text-base-100"
+            class=""
             size={64}
             id="BagChevronRight"
             strokeWidth={3}
