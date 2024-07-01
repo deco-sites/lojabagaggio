@@ -86,7 +86,6 @@ const RADIUS_DESKTOP = {
 };
 
 const DEFAULT_PROPS: Props = {
-  title: "Summer bags",
   banners: [
     {
       alt: "a",
@@ -124,52 +123,57 @@ export default function BannnerGrid(props: Props) {
   } = { ...DEFAULT_PROPS, ...props };
 
   return (
-    <section class="container w-full px-4 md:px-0 mx-auto">
+    <section class="w-full  md:px-0 mx-auto py-12 sm:py-9">
       {title &&
         (
           <div class="py-6 md:py-0 md:pb-[40px] flex items-center mt-6">
             <h2 class="text-lg leading-5 font-semibold uppercase">
               {title}
             </h2>
-
-            <div class="bg-[#e5e5ea] h-[1px] w-full ml-4"></div>
           </div>
         )}
       <div
-        class={`grid gap-4 md:gap-6 ${
+        class={`grid gap-2 sm:gap-1 ${
           MOBILE_COLUMNS[itemsPerLine?.mobile ?? 2]
         } ${DESKTOP_COLUMNS[itemsPerLine?.desktop ?? 4]}`}
       >
-        {banners.map(({ href, srcMobile, srcDesktop, alt }) => (
-          <a
-            href={href}
-            class={`overflow-hidden ${
+        {banners.map(({ href, srcMobile, srcDesktop, alt }, index) => (
+          <div
+            key={index}
+            class={`overflow-hidden cursor-pointer group relative ${
               RADIUS_MOBILE[borderRadius.mobile ?? "none"]
             } ${RADIUS_DESKTOP[borderRadius.desktop ?? "none"]} `}
           >
-            <Picture>
-              <Source
-                media="(max-width: 767px)"
-                src={srcMobile}
-                width={100}
-                height={100}
-              />
-              <Source
-                media="(min-width: 768px)"
-                src={srcDesktop ? srcDesktop : srcMobile}
-                width={250}
-                height={250}
-              />
-              <img
-                class="w-full"
-                sizes="(max-width: 640px) 100vw, 30vw"
-                src={srcMobile}
-                alt={alt}
-                decoding="async"
-                loading="lazy"
-              />
-            </Picture>
-          </a>
+            <a
+              href={href}
+            >
+              <Picture>
+                <Source
+                  media="(max-width: 767px)"
+                  src={srcMobile}
+                  width={100}
+                  height={100}
+                />
+                <Source
+                  media="(min-width: 768px)"
+                  src={srcDesktop ? srcDesktop : srcMobile}
+                  width={250}
+                  height={250}
+                />
+                <img
+                  class="w-full"
+                  sizes="(max-width: 640px) 100vw, 30vw"
+                  src={srcMobile}
+                  alt={alt}
+                  decoding="async"
+                  loading="lazy"
+                />
+              </Picture>
+            </a>
+            <div class="absolute hidden transition !duration-300 !ease-in-out  group-hover:flex items-center justify-center h-full bg-[#00000099]  opacity-100 top-1/2 transform -translate-y-1/2 w-full text-center">
+              <a href={href} class="uppercase text-base flex items-center justify-center w-[138px] bg-primary border-primary hover:bg-[#072c75] hover:border-[#072c75] rounded border h-10 text-white font-roboto font-medium ">Veja mais!</a>
+            </div>
+          </div>
         ))}
       </div>
     </section>
