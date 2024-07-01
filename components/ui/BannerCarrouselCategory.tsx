@@ -51,8 +51,6 @@ export default function BannerCarrouselCategory(
 
   const isDesktop = device === "desktop";
 
-  console.log(isDesktop);
-
   const id = useId();
   return (
     <div className="container w-full m-auto sm:max-w-[1027px] px-2 overflow-hidden">
@@ -129,7 +127,7 @@ export default function BannerCarrouselCategory(
             <div class="relative block z-10 col-start-1 row-start-2">
               <Slider.PrevButton class="absolute -left-3 -top-[14px] flex justify-center items-center mb-2 ">
                 <Icon
-                  size={65}
+                  size={ isDesktop ? 65 : 52}
                   id="BagChevronLeft"
                   class="text-black"
                 />
@@ -138,9 +136,9 @@ export default function BannerCarrouselCategory(
             <div class="relative block z-10 col-start-3 row-start-2">
               <Slider.NextButton class="absolute -right-3 -top-[14px] flex justify-center items-center mb-2 ">
                 <Icon
-                  size={65}
+                  size={ isDesktop ? 65 : 52}
                   id="BagChevronRight"
-                  class=" w-[65px] text-black"
+                  class="text-black"
                 />
               </Slider.NextButton>
             </div>
@@ -161,7 +159,7 @@ export default function BannerCarrouselCategory(
                                 `,
               }}
             />
-            <ul class="carousel justify-center gap-4 z-10 col-span-full row-start-5 ">
+            <ul class="carousel justify-center gap-1 z-10 col-span-full row-start-5 ">
               {cards?.map((_, index) => (
                 <li
                   class={`carousel-item   md:${
@@ -169,8 +167,8 @@ export default function BannerCarrouselCategory(
                   } ${((index === 0) || (index % 3 === 0)) ? "" : "hidden"}`}
                 >
                   <Slider.Dot index={index}>
-                    <div class="py-5">
-                      <div class=" w-[10px] h-[10px] md:w-[14px] md:h-[14px] sm:w-[16px] sm:h-[16px] group-disabled:bg-[#a9a9a9] rounded-full bg-transparent border border-[#a4a4a4]" />
+                    <div class="py-2">
+                      <div class="w-[10px] h-[10px] md:w-[14px] md:h-[14px] sm:w-[16px] sm:h-[16px] group-disabled:bg-[#a9a9a9] rounded-full bg-transparent border border-[#a4a4a4]"/>
                     </div>
                   </Slider.Dot>
                 </li>

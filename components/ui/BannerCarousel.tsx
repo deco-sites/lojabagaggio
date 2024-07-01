@@ -5,6 +5,7 @@ import Icon from "../../components/ui/Icon.tsx";
 import Slider from "../../components/ui/Slider.tsx";
 import { useId } from "../../sdk/useId.ts";
 import { useSendEvent } from "../../sdk/useSendEvent.ts";
+import { AppContext } from "../../apps/site.ts";
 
 /**
  * @titleBy alt
@@ -49,6 +50,9 @@ export interface Props {
    * @description time (in seconds) to start the carousel autoplay
    */
   interval?: number;
+
+  /** @hidden */
+  device?: string;
 }
 
 const DEFAULT_PROPS = {
@@ -191,7 +195,7 @@ function Dots({ images, interval = 0 }: Props) {
             <Slider.Dot index={index}>
               <div class="py-5">
                 <div
-                  class="w-[10px] sm:w-[10px] h-[10px]  rounded-full group-disabled:animate-progress bg-gradient-to-r from-base-100 from-[length:var(--dot-progress)] to-[#a9a9a9] to-[length:var(--dot-progress)]"
+                  class="w-[10px] h-[10px] md:w-[14px] md:h-[14px] sm:w-[16px] sm:h-[16px] group-disabled:bg-[#a9a9a9] rounded-full bg-transparent border border-[#a4a4a4]"
                   style={{ animationDuration: `${interval}s` }}
                 />
               </div>
@@ -203,14 +207,14 @@ function Dots({ images, interval = 0 }: Props) {
   );
 }
 
-function Buttons() {
+function Buttons({ isDesktop }: { isDesktop?: boolean }) {
   return (
     <>
       <div class="flex items-center justify-center z-10 col-start-1 row-start-2">
         <Slider.PrevButton class="">
           <Icon
             class=""
-            size={64}
+            size={isDesktop ? 64 : 52}
             id="BagChevronLeft"
             strokeWidth={3}
           />
@@ -220,7 +224,7 @@ function Buttons() {
         <Slider.NextButton class="">
           <Icon
             class=""
-            size={64}
+            size={isDesktop ? 64 : 52}
             id="BagChevronRight"
             strokeWidth={3}
           />
@@ -234,10 +238,12 @@ function BannerCarousel(props: Props) {
   const id = useId();
   const { images, preload, interval } = { ...DEFAULT_PROPS, ...props };
 
+  const isDesktop = props.device === "desktop";
+
   return (
     <div
       id={id}
-      class="grid grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_48px_1fr_64px] sm:min-h-min h-auto"
+      class="grid overflow-hidden grid-cols-[48px_1fr_48px] sm:grid-cols-[120px_1fr_120px] grid-rows-[1fr_156px_64px] sm:grid-rows-[1fr_48px_1fr_64px] sm:min-h-min h-auto"
     >
       <Slider class="carousel carousel-center w-full col-span-full row-span-full gap-6">
         {images?.map((image, index) => (
@@ -250,7 +256,7 @@ function BannerCarousel(props: Props) {
         ))}
       </Slider>
 
-      {props.arrows && <Buttons />}
+      {props.arrows && <Buttons isDesktop={isDesktop} />}
 
       {props.dots && <Dots images={images} interval={interval} />}
 
@@ -260,3 +266,7 @@ function BannerCarousel(props: Props) {
 }
 
 export default BannerCarousel;
+
+export const loader = (props: Props, _req: Request, ctx: AppContext) => {
+  return { ...props, device: ctx.device };
+};
