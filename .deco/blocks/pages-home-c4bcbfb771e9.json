@@ -42,7 +42,8 @@
           "alt": "Donna"
         }
       ],
-      "preload": true
+      "preload": true,
+      "interval": 3
     },
     {
       "__resolveType": "Banner Category"

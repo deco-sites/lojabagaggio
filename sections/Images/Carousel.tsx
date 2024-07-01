@@ -1,1 +1,1 @@
-export { default } from "../../components/ui/BannerCarousel.tsx";
+export { default, loader } from "../../components/ui/BannerCarousel.tsx";
