@@ -51,7 +51,6 @@
   border: 3px solid #ccc; /* Espaço entre o thumb e o track */
 }
 
-
 @keyframes progress-frame {
   0% {
     --dot-progress: 0%
