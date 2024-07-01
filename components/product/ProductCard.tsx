@@ -26,8 +26,8 @@ interface Props {
   class?: string;
 }
 
-const WIDTH = 287;
-const HEIGHT = 287;
+const WIDTH = 285;
+const HEIGHT = 285;
 const ASPECT_RATIO = `${WIDTH} / ${HEIGHT}`;
 
 function ProductCard({
@@ -71,13 +71,15 @@ function ProductCard({
   return (
     <div
       {...event}
-      class={clx("card card-compact group text-sm", _class)}
+      class={clx(
+        "card w-full card-compact group rounded border border-transparent pb-5 hover:border-base-200",
+        "text-sm",
+        _class,
+      )}
     >
       <figure
         class={clx(
           "relative bg-base-200",
-          "rounded border border-transparent",
-          "group-hover:border-primary",
         )}
         style={{ aspectRatio: ASPECT_RATIO }}
       >
@@ -127,7 +129,17 @@ function ProductCard({
         </a>
 
         {/* Wishlist button */}
-        <div class="absolute top-0 left-0 w-full flex items-center justify-between">
+        <div class="absolute pt-1 top-0 left-0 w-[58px] items-center flex flex-col justify-between">
+          {/* Discounts */}
+          <span
+            class={clx(
+              "w-[45px] h-[45px] flex flex-col justify-center items-center rounded font-roboto font-bold bg-[#292929] text-white text-center",
+              (percent < 1 || !inStock) && "opacity-0",
+            )}
+          >
+            <span class="text-sm text-end">{percent}%</span>
+            <span class="font-norma italic text-xs uppercase">off</span>
+          </span>
           {/* Notify Me */}
           <span
             class={clx(
@@ -137,37 +149,32 @@ function ProductCard({
           >
             Notify me
           </span>
-
-          {/* Discounts */}
-          <span
-            class={clx(
-              "text-sm/4 font-normal text-black bg-primary bg-opacity-15 text-center rounded-badge px-2 py-1",
-              (percent < 1 || !inStock) && "opacity-0",
-            )}
-          >
-            {percent} % off
-          </span>
         </div>
 
-        <div class="absolute bottom-0 right-0">
+        <div class="absolute top-0 right-0">
           <WishlistButton item={item} variant="icon" />
         </div>
       </figure>
 
-      <a href={relativeUrl} class="pt-5">
-        <span class="font-medium">
+      <a href={relativeUrl} class="pt-4 px-2">
+        <span class="font-base ">
           {title}
         </span>
 
         <div class="flex gap-2 pt-2">
           {listPrice && (
-            <span class="line-through font-normal text-gray-400">
+            <span class="line-through font-semibold  text-[#777] font-roboto text-sm">
               {formatPrice(listPrice, offers?.priceCurrency)}
             </span>
           )}
-          <span class="font-medium text-base-300">
-            {formatPrice(price, offers?.priceCurrency)}
-          </span>
+          <p class="text-base-300">
+            <span class="text-black font-black font-roboto font-sm">
+              {formatPrice(price, offers?.priceCurrency)}
+            </span>{" "}
+            <span class="font-roboto text-sm text-black font-normal">
+              no pix
+            </span>
+          </p>
         </div>
       </a>
 
@@ -201,11 +208,10 @@ function ProductCard({
               seller={seller}
               item={item}
               class={clx(
-                "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
+                "opacity-0 group-hover:opacity-100 ",
+                "justify-start border-none text-sm font-medium px-0 no-animation w-[95%] m-auto ",
                 "disabled:!bg-transparent disabled:!opacity-50",
-                "btn-primary hover:!text-primary disabled:!text-primary",
+                "group-hover:!text-white disabled:!text-primary",
               )}
             />
           )
@@ -214,13 +220,12 @@ function ProductCard({
               href={relativeUrl}
               class={clx(
                 "btn",
-                "btn-outline justify-start border-none !text-sm !font-medium px-0 no-animation w-full",
-                "hover:!bg-transparent",
+                "btn-outline justify-start border-none text-sm font-medium px-0 no-animation w-[95%] m-auto",
                 "disabled:!bg-transparent disabled:!opacity-75",
                 "btn-error hover:!text-error disabled:!text-error",
               )}
             >
-              Sold out
+              Indisponíveis
             </a>
           )}
       </div>
